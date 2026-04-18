@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include("include/config.php");
+include("includes/config.php");
 if(isset($_POST['submit']))
 {
 	$username=$_POST['username'];
@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
             mysqli_stmt_close($upd_stmt);
         }
         $_SESSION['alogin']=$username;
-        $_SESSION['id']=$num['id'];
+        $_SESSION['aid']=$num['id'];
         header("location:change-password.php");
         exit();
     }

@@ -8,8 +8,15 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN a2enmod rewrite
 
 # Update Apache to listen on the port provided by Cloud Run ($PORT)
-# Cloud Run defaults to 8080, but we should make it dynamic
-RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
+# Configure Apache to listen on the port provided by Cloud Run
+RUN sed -i 's/Listen 80/Listen ${PORT}/' /etc/apache2/ports.conf
+RUN sed -i 's/:80/:${PORT}/' /etc/apache2/sites-available/000-default.conf
+
+# Set production environment defaults
+ENV PORT=8080
+ENV APP_DEBUG=false
+
+CMD ["sh", "-c", "apache2-foreground"]
 
 # Copy your store files to the container
 COPY . /var/www/html/

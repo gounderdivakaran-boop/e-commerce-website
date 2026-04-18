@@ -30,12 +30,22 @@ $imgnewfile3=md5($productimage3.time()).$extension3;
 $addedby=$_SESSION['aid'];
 
 
-    move_uploaded_file($_FILES["productimage1"]["tmp_name"],"productimages/".$imgnewfile1);
-    move_uploaded_file($_FILES["productimage2"]["tmp_name"],"productimages/".$imgnewfile2);
-    move_uploaded_file($_FILES["productimage3"]["tmp_name"],"productimages/".$imgnewfile3);
 $sql=mysqli_query($con,"insert into products(category,subCategory,productName,productCompany,productPrice,productDescription,shippingCharge,productAvailability,productImage1,productImage2,productImage3,productPriceBeforeDiscount,addedBy) values('$category','$subcat','$productname','$productcompany','$productprice','$productdescription','$productscharge','$productavailability','$imgnewfile1','$imgnewfile2','$imgnewfile3','$productpricebd','$addedby')");
-echo "<script>alert('Product Added added successfully');</script>";
-echo "<script>window.location.href='manage-subcategories.php'</script>";
+
+if($sql) {
+    $lastid = mysqli_insert_id($con);
+    $dir="productimages/$lastid";
+    if(!is_dir($dir)){
+        mkdir($dir, 0777, true);
+    }
+    move_uploaded_file($_FILES["productimage1"]["tmp_name"],$dir."/".$imgnewfile1);
+    move_uploaded_file($_FILES["productimage2"]["tmp_name"],$dir."/".$imgnewfile2);
+    move_uploaded_file($_FILES["productimage3"]["tmp_name"],$dir."/".$imgnewfile3);
+    echo "<script>alert('Product Added successfully');</script>";
+    echo "<script>window.location.href='manage-products.php'</script>";
+} else {
+    echo "<script>alert('Error: " . mysqli_error($con) . "');</script>";
+}
 }
 
 
@@ -113,28 +123,24 @@ while($row=mysqli_fetch_array($query))
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Name</div>
 <div class="col-4"><input type="text"    name="productName"  placeholder="Enter Product Name" class="form-control" required>
-</select>
 </div>
 </div>
 
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Company</div>
 <div class="col-4"><input type="text"    name="productCompany"  placeholder="Enter Product Comapny Name" class="form-control" required>
-</select>
 </div>
 </div>
 
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Price Before Discount</div>
 <div class="col-4"><input type="text"    name="productpricebd"  placeholder="Enter Product Price" class="form-control" required>
-</select>
 </div>
 </div>
 
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Price After Discount(Selling Price)</div>
 <div class="col-4"><input type="text"    name="productprice"  placeholder="Enter Product Price" class="form-control" required>
-</select>
 </div>
 </div>
 
@@ -147,7 +153,6 @@ while($row=mysqli_fetch_array($query))
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Shipping Charge</div>
 <div class="col-4"><input type="text"    name="productShippingcharge"  placeholder="Enter Product Shipping Charge" class="form-control" required>
-</select>
 </div>
 </div>
 
