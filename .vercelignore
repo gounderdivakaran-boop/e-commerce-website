@@ -8,5 +8,5 @@ docker-compose.yml
 node_modules
 .vscode
 .idea
-api/NexusElite_Final_Backup.sql
-api/restore_db.sql
+admin/productimages
+api/admin/productimages
