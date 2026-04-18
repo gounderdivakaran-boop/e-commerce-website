@@ -101,28 +101,24 @@ while($result=mysqli_fetch_array($ret))
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Name</div>
 <div class="col-6"><input type="text"    name="productName"  value="<?php echo htmlentities($row['productName']);?>" class="form-control" required>
-</select>
 </div>
 </div>
 
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Company</div>
 <div class="col-6"><input type="text"    name="productCompany"  value="<?php echo htmlentities($row['productCompany']);?>" class="form-control" required>
-</select>
 </div>
 </div>
 
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Price Before Discount</div>
 <div class="col-6"><input type="text"    name="productpricebd"  value="<?php echo htmlentities($row['productPriceBeforeDiscount']);?>" class="form-control" required>
-</select>
 </div>
 </div>
 
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Price After Discount(Selling Price)</div>
 <div class="col-6"><input type="text"    name="productprice"  value="<?php echo htmlentities($row['productPrice']);?>" class="form-control" required>
-</select>
 </div>
 </div>
 
@@ -135,7 +131,6 @@ while($result=mysqli_fetch_array($ret))
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Shipping Charge</div>
 <div class="col-6"><input type="text"    name="productShippingcharge"  value="<?php echo htmlentities($row['shippingCharge']);?>" class="form-control" required>
-</select>
 </div>
 </div>
 
@@ -152,20 +147,19 @@ if($pa=='In Stock'):
 <option value="In Stock">In Stock</option>
 <?php endif; ?>
 </select>
-</select>
 </div>
 </div>
 
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Featured Image</div>
-<div class="col-6"><img src="productimages/<?php echo htmlentities($row['productImage1']);?>" width="250"><br />
+<div class="col-6"><img src="productimages/<?php echo $pid;?>/<?php echo htmlentities($row['productImage1']);?>" width="250"><br />
     <a href="change-image1.php?id=<?php echo $row['pid'];?>">Change Image</a>
 </div>
 </div>
 
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Image 2</div>
-<div class="col-6"><img src="productimages/<?php echo htmlentities($row['productImage2']);?>" width="250"><br />
+<div class="col-6"><img src="productimages/<?php echo $pid;?>/<?php echo htmlentities($row['productImage2']);?>" width="250"><br />
     <a href="change-image2.php?id=<?php echo $row['pid'];?>">Change Image</a>
 </div>
 </div>
@@ -173,7 +167,7 @@ if($pa=='In Stock'):
 
 <div class="row" style="margin-top:1%;">
 <div class="col-2">Product Image 3</div>
-<div class="col-6"><img src="productimages/<?php echo htmlentities($row['productImage3']);?>" width="250"><br />
+<div class="col-6"><img src="productimages/<?php echo $pid;?>/<?php echo htmlentities($row['productImage3']);?>" width="250"><br />
     <a href="change-image3.php?id=<?php echo $row['pid'];?>">Change Image</a>
 </div>
 </div>
