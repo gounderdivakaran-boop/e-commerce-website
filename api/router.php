@@ -22,7 +22,8 @@ if (empty($uri)) {
 $isAdmin = (strpos($uri, 'admin/') === 0 || $uri === 'admin');
 
 if ($isAdmin) {
-    $page = ($uri === 'admin') ? 'index.php' : substr($uri, 6);
+    $page = ($uri === 'admin' || $uri === 'admin/') ? 'index.php' : substr($uri, 6);
+    if (empty($page) || $page === '/') $page = 'index.php';
     if (!str_ends_with($page, '.php')) $page .= '.php';
     $targetDir = $apiDir . '/admin';
     $file = $targetDir . '/' . $page;
