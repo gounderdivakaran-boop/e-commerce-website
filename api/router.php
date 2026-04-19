@@ -1,3 +1,10 @@
+<?php
+/**
+ * Single-entry-point router for Vercel.
+ * All requests go through this file, which resolves
+ * the correct PHP page from the api/ directory.
+ */
+
 ob_start();
 
 // Error reporting optimized for environment
@@ -45,7 +52,8 @@ if (file_exists($file)) {
 } else {
     http_response_code(404);
     echo "<!DOCTYPE html><html><head><title>404 - Not Found</title>";
-    echo "<style>body{font-family:'Outfit',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#f8fafc;}";
+    echo "<style>body{font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#f8fafc;}";
     echo ".box{text-align:center;padding:60px;}.box h1{font-size:80px;color:#6366f1;margin:0;}.box p{color:#64748b;font-size:18px;}</style></head>";
-    echo "<body><div class='box'><h1>404</h1><p>The page you're looking for doesn't exist.</p><a href='/' style='color:#6366f1;'>Go Home</a></div></body></html>";
+    echo "<body><div class='box'><h1>404</h1><p>The page you're looking for doesn't exist.</p><a href='/' style='color:#6366f1; text-decoration: none;'>&larr; Go Home</a></div></body></html>";
 }
+?>
