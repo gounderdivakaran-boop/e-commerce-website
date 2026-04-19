@@ -6,7 +6,11 @@
  */
 
 ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+// Log the request for debugging
+error_log("Router handling request: " . $_SERVER['REQUEST_URI']);
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = ltrim($uri, '/');
@@ -24,12 +28,12 @@ $isAdmin = (strpos($uri, 'admin/') === 0 || $uri === 'admin');
 if ($isAdmin) {
     $page = ($uri === 'admin' || $uri === 'admin/') ? 'index.php' : substr($uri, 6);
     if (empty($page) || $page === '/') $page = 'index.php';
-    if (!str_ends_with($page, '.php')) $page .= '.php';
+    if (substr($page, -4) !== '.php') $page .= '.php';
     $targetDir = $apiDir . '/admin';
     $file = $targetDir . '/' . $page;
 } else {
     $page = $uri;
-    if (!str_ends_with($page, '.php') && !str_contains($page, '.')) $page .= '.php';
+    if (substr($page, -4) !== '.php' && strpos($page, '.') === false) $page .= '.php';
     $targetDir = $apiDir;
     $file = $targetDir . '/' . $page;
 }
