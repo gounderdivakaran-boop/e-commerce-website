@@ -27,8 +27,8 @@
         }
     ],
     "bugs": "https://github.com/lyonlai/bootstrap-paginator/issues",
-    "homepage": "http://bootstrappaginator.org/",
-    "docs": "http://bootstrappaginator.org/",
+    "homepage": "https://bootstrappaginator.org/",
+    "docs": "https://bootstrappaginator.org/",
     "download": "https://github.com/lyonlai/bootstrap-paginator/archive/master.zip",
     "dependencies": {
         "jquery": ">=1.7"

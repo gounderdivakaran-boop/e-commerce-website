@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+$(document).ready(function () {
     if($('.datatable-1').length>0){
         $('.datatable-1').dataTable();
         $('.dataTables_paginate').addClass('btn-group datatable-pagination');

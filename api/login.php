@@ -92,10 +92,11 @@ if(isset($_POST['login'])) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
-	    <meta name="robots" content="all">
+	    <title>Nexus Elite | Secure Member Access</title>
 
-	    <title>Shopping Portal | Signi-in | Signup</title>
+	    <!-- Vercel Security Meta -->
+	    <meta name="robots" content="all">
+	    <meta name="theme-color" content="#6366f1">
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -126,7 +127,7 @@ if(isset($_POST['login'])) {
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
         <!-- Fonts --> 
-		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="assets/images/favicon.ico">

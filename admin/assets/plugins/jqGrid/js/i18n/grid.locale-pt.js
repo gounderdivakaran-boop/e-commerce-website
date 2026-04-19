@@ -1,10 +1,10 @@
 ;(function($){
 /**
  * jqGrid Portuguese Translation
-* Tradu��o da jqGrid em Portugues por Frederico Carvalho, http://www.eyeviewdesign.pt
+* Tradu��o da jqGrid em Portugues por Frederico Carvalho, https://www.eyeviewdesign.pt
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -40,7 +40,7 @@ $.extend($.jgrid,{
 	        maxValue:"O valor deve ser menor ou igual a",
 	        email: "N�o � um endere�o de email v�lido",
 	        integer: "Por favor, introduza um numero inteiro",
-			url: "is not a valid URL. Prefix required ('http://' or 'https://')",
+			url: "is not a valid URL. Prefix required ('https://' or 'https://')",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",

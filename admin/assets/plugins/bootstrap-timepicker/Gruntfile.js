@@ -79,7 +79,7 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         banner: '/*! <%= meta.project %> v<%= meta.version %> \n' +
-          '* http://jdewit.github.com/bootstrap-timepicker \n' +
+          '* https://jdewit.github.com/bootstrap-timepicker \n' +
           '* Copyright (c) <%= grunt.template.today("yyyy") %> Joris de Wit \n' +
           '* MIT License \n' +
           '*/'

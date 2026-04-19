@@ -24,7 +24,7 @@
  *
  * @requires  jQuery v1.2 or higher
  * @author    Nicolas Perriault <nperriault _at_ gmail _dot_ com>
- * @license   MIT (http://www.opensource.org/licenses/mit-license.php)
+ * @license   MIT (https://www.opensource.org/licenses/mit-license.php)
  * @param     Object  config  Plugin configuration
  * @return    jQuery(this)
  *

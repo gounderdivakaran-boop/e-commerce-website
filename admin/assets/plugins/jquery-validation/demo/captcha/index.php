@@ -13,8 +13,8 @@ session_start();
 $_SESSION['captcha_id'] = $str;
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
  <title>AJAX CAPTCHA</title>
@@ -48,7 +48,7 @@ $_SESSION['captcha_id'] = $str;
 
 <body>
 
-<h1><acronym title="Asynchronous JavaScript And XML">AJAX</acronym> <acronym title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</acronym>, based on <a href="http://psyrens.com/captcha/">http://psyrens.com/captcha/</a></h1>
+<h1><acronym title="Asynchronous JavaScript And XML">AJAX</acronym> <acronym title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</acronym>, based on <a href="https://psyrens.com/captcha/">https://psyrens.com/captcha/</a></h1>
 
 <form id="captchaform" action="">
 <fieldset>

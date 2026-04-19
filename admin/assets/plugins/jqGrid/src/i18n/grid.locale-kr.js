@@ -2,10 +2,10 @@
 /**
  * jqGrid English Translation
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 			email: "유효하지 않은 이메일주소입니다",
 			integer: "유효한 숫자를 입력하세요",
 			date: "유효한 날짜를 입력하세요",
-			url: "은 유효하지 않은 URL입니다. 문장앞에 다음단어가 필요합니다('http://' or 'https://')",
+			url: "은 유효하지 않은 URL입니다. 문장앞에 다음단어가 필요합니다('https://' or 'https://')",
 			nodefined : " 은 정의도지 않았습니다!",
 			novalue : " 반환값이 필요합니다!",
 			customarray : "사용자정의 함수는 배열을 반환해야 합니다!",

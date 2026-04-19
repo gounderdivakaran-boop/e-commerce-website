@@ -2,10 +2,10 @@
 /**
  * jqGrid Ukrainian Translation v1.0 02.07.2009
  * Sergey Dyagovchenko
- * http://d.sumy.ua
+ * https://d.sumy.ua
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
         email: "некоректна адреса електронної пошти",
         integer: "Будь ласка, введення дійсне ціле значення",
         date: "Будь ласка, введення дійсне значення дати",
-        url: "не дійсний URL. Необхідна приставка ('http://' or 'https://')",
+        url: "не дійсний URL. Необхідна приставка ('https://' or 'https://')",
 		nodefined : " is not defined!",
 		novalue : " return value is required!",
 		customarray : "Custom function should return array!",

@@ -1,9 +1,9 @@
-Just a simple way to create masks to your currency form fields with [jQuery](http://jquery.com/).
+Just a simple way to create masks to your currency form fields with [jQuery](https://jquery.com/).
 
 ***
 ### Show Time!
 
-To view a complete demonstration of it's features and usage, access our [examples page](http://plentz.github.com/jquery-maskmoney)!
+To view a complete demonstration of it's features and usage, access our [examples page](https://plentz.github.com/jquery-maskmoney)!
 
 ***
 ### Usage:
@@ -50,15 +50,15 @@ We have 2 bonus methods that can be useful to you:
 ### Contributors:
 
  * [Aurélio Saraiva](mailto:aureliosaraiva@gmail.com)
- * [Raul Pereira da Silva](http://raulpereira.com)
- * [Diego Plentz](http://plentz.org)
- * [Otávio Ribeiro Medeiros](http://github.com/otaviomedeiros)
- * [Víctor Cruz](http://github.com/xtream)
- * [Synapse Studios](http://github.com/synapsestudios)
- * [Guilherme Garnier](http://blog.guilhermegarnier.com/)
- * [Plínio Balduino](http://github.com/pbalduino)
+ * [Raul Pereira da Silva](https://raulpereira.com)
+ * [Diego Plentz](https://plentz.org)
+ * [Otávio Ribeiro Medeiros](https://github.com/otaviomedeiros)
+ * [Víctor Cruz](https://github.com/xtream)
+ * [Synapse Studios](https://github.com/synapsestudios)
+ * [Guilherme Garnier](https://blog.guilhermegarnier.com/)
+ * [Plínio Balduino](https://github.com/pbalduino)
  * [Luis Fernando Gomes](https://github.com/luiscoms)
- * [Gary Moore](http://www.gmoore.net/)
+ * [Gary Moore](https://www.gmoore.net/)
 
 ***
 ### License:

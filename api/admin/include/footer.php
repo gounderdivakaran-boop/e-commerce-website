@@ -2,6 +2,6 @@
 		<div class="container">
 			 
 
-			<b class="copyright">&copy;  Shopping Portal </b>
+			<b class="copyright">&copy;  Nexus Elite </b>
 		</div>
 	</div>

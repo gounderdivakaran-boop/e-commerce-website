@@ -3,8 +3,8 @@
  * jqGrid Icelandic Translation
  * jtm@hi.is Univercity of Iceland
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -41,7 +41,7 @@ $.extend($.jgrid,{
 	        email: "er ekki löglegt email",
 	        integer: "Vinsamlega settu inn tölu",
 			date: "Vinsamlega setti inn dagsetningu",
-			url: "er ekki löglegt URL. Vantar ('http://' eða 'https://')",
+			url: "er ekki löglegt URL. Vantar ('https://' eða 'https://')",
 			nodefined : " er ekki skilgreint!",
 			novalue : " skilagildi nauðsynlegt!",
 			customarray : "Fall skal skila fylki!",

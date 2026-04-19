@@ -4,11 +4,11 @@
  * Version: 1.5.6
  *
  * Authors: Rodney Rehm, Addy Osmani (patches for FF)
- * Web: http://medialize.github.com/jQuery-contextMenu/
+ * Web: https://medialize.github.com/jQuery-contextMenu/
  *
  * Licensed under
- *   MIT License http://www.opensource.org/licenses/mit-license
- *   GPL v3 http://opensource.org/licenses/GPL-3.0
+ *   MIT License https://www.opensource.org/licenses/mit-license
+ *   GPL v3 https://opensource.org/licenses/GPL-3.0
  *
  */
 
@@ -195,7 +195,7 @@ var // currently active contextMenu trigger
             
             if (!$this.hasClass('context-menu-disabled')) {
                 // theoretically need to fire a show event at <menu>
-                // http://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html#context-menus
+                // https://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html#context-menus
                 // var evt = jQuery.Event("show", { data: data, pageX: e.pageX, pageY: e.pageY, relatedTarget: this });
                 // e.data.$menu.trigger(evt);
                 
@@ -753,7 +753,7 @@ var // currently active contextMenu trigger
             opt.$menu.find('.hover').trigger('contextmenu:blur');
             opt.$selected = null;
             // unregister key and mouse handlers
-            //$(document).off('.contextMenuAutoHide keydown.contextMenu'); // http://bugs.jquery.com/ticket/10705
+            //$(document).off('.contextMenuAutoHide keydown.contextMenu'); // https://bugs.jquery.com/ticket/10705
             $(document).off('.contextMenuAutoHide').off('keydown.contextMenu');
             // hide menu
             opt.$menu && opt.$menu[opt.animation.hide](opt.animation.duration);
@@ -1013,7 +1013,7 @@ var // currently active contextMenu trigger
         }
     };
 
-// split accesskey according to http://www.whatwg.org/specs/web-apps/current-work/multipage/editing.html#assigned-access-key
+// split accesskey according to https://www.whatwg.org/specs/web-apps/current-work/multipage/editing.html#assigned-access-key
 function splitAccesskey(val) {
     var t = val.split(/\s+/),
         keys = [];
@@ -1121,7 +1121,7 @@ $.contextMenu = function(operation, options) {
                     break;
                 /*
                 default:
-                    // http://www.quirksmode.org/dom/events/contextmenu.html
+                    // https://www.quirksmode.org/dom/events/contextmenu.html
                     $body
                         .on('mousedown' + o.ns, o.selector, o, handle.mousedown)
                         .on('mouseup' + o.ns, o.selector, o, handle.mouseup);
@@ -1280,17 +1280,17 @@ function menuChildren(items, $children, counter) {
          * Everything else will be imported as an html node, which is not interfaced with contextMenu.
          */
         
-        // http://www.whatwg.org/specs/web-apps/current-work/multipage/commands.html#concept-command
+        // https://www.whatwg.org/specs/web-apps/current-work/multipage/commands.html#concept-command
         switch (nodeName) {
-            // http://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html#the-menu-element
+            // https://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html#the-menu-element
             case 'menu':
                 item = {name: $node.attr('label'), items: {}};
                 menuChildren(item.items, $node.children(), counter);
                 break;
             
-            // http://www.whatwg.org/specs/web-apps/current-work/multipage/commands.html#using-the-a-element-to-define-a-command
+            // https://www.whatwg.org/specs/web-apps/current-work/multipage/commands.html#using-the-a-element-to-define-a-command
             case 'a':
-            // http://www.whatwg.org/specs/web-apps/current-work/multipage/commands.html#using-the-button-element-to-define-a-command
+            // https://www.whatwg.org/specs/web-apps/current-work/multipage/commands.html#using-the-button-element-to-define-a-command
             case 'button':
                 item = {
                     name: $node.text(),
@@ -1299,7 +1299,7 @@ function menuChildren(items, $children, counter) {
                 };
                 break;
             
-            // http://www.whatwg.org/specs/web-apps/current-work/multipage/commands.html#using-the-command-element-to-define-a-command
+            // https://www.whatwg.org/specs/web-apps/current-work/multipage/commands.html#using-the-command-element-to-define-a-command
 
             case 'menuitem':
             case 'command':

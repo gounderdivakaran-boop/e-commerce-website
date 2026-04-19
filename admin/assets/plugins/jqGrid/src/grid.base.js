@@ -5,8 +5,8 @@
  * @license jqGrid  4.4.3  - jQuery Grid
  * Copyright (c) 2008, Tony Tomov, tony@trirand.com
  * Dual licensed under the MIT and GPL licenses
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
  * Date: 2013-01-21
  */
 //jsHint options
@@ -195,7 +195,7 @@ $.extend($.jgrid,{
 	ajaxOptions: {},
 	from : function(source){
 		// Original Author Hugo Bonacci
-		// License MIT http://jlinq.codeplex.com/license
+		// License MIT https://jlinq.codeplex.com/license
 		var QueryObject=function(d,q){
 		if(typeof d==="string"){
 			d=$.data(d);

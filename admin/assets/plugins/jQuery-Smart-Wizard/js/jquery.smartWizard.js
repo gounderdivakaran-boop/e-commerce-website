@@ -7,8 +7,8 @@
  * https://github.com/mstratman/jQuery-Smart-Wizard
  *
  * Original URLs:
- * http://www.techlaboratory.net
- * http://tech-laboratory.blogspot.com
+ * https://www.techlaboratory.net
+ * https://tech-laboratory.blogspot.com
  */
 
 function SmartWizard(target, options) {

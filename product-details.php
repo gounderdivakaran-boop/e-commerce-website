@@ -79,7 +79,7 @@ if(isset($_POST['submit']))
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
         <!-- Fonts --> 
-		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="assets/images/favicon.ico">
 	</head>
     <body class="cnt-home">
@@ -443,7 +443,7 @@ $num=mysqli_num_rows($rt);
 								<span class="social-label">Share :</span>
 								<div class="social-icons">
 						            <ul class="list-inline">
-						                <li><a class="fa fa-facebook" href="http://facebook.com/transvelo"></a></li>
+						                <li><a class="fa fa-facebook" href="https://facebook.com/transvelo"></a></li>
 						                <li><a class="fa fa-twitter" href="#"></a></li>
 						                <li><a class="fa fa-linkedin" href="#"></a></li>
 						                <li><a class="fa fa-rss" href="#"></a></li>

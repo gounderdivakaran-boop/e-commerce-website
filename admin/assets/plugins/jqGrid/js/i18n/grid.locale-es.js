@@ -3,10 +3,10 @@
  * jqGrid Spanish Translation
  * Traduccion jqGrid en Español por Yamil Bracho
  * Traduccion corregida y ampliada por Faserline, S.L. 
- * http://www.faserline.com
+ * https://www.faserline.com
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -43,7 +43,7 @@ $.extend($.jgrid,{
 	        email: "no es una dirección de correo válida",
 	        integer: "Introduzca un valor entero",
 			date: "Introduza una fecha correcta ",
-			url: "no es una URL válida. Prefijo requerido ('http://' or 'https://')",
+			url: "no es una URL válida. Prefijo requerido ('https://' or 'https://')",
 			nodefined : " no está definido.",
 			novalue : " valor de retorno es requerido.",
 			customarray : "La función personalizada debe devolver un array.",

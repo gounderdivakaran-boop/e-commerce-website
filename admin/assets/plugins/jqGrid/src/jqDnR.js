@@ -1,9 +1,9 @@
 /*
  * jqDnR - Minimalistic Drag'n'Resize for jQuery.
  *
- * Copyright (c) 2007 Brice Burgess <bhb@iceburg.net>, http://www.iceburg.net
+ * Copyright (c) 2007 Brice Burgess <bhb@iceburg.net>, https://www.iceburg.net
  * Licensed under the MIT License:
- * http://www.opensource.org/licenses/mit-license.php
+ * https://www.opensource.org/licenses/mit-license.php
  * 
  * $Version: 2007.08.19 +r2
  */

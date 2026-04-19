@@ -1,6 +1,6 @@
 
 /*Modify for Bootstrap 3*/
-/*http://datatables.net/forums/discussion/16675/twitter-bootstrap-3*/
+/*https://datatables.net/forums/discussion/16675/twitter-bootstrap-3*/
 /* Set the defaults for DataTables initialisation */
 $.extend( true, $.fn.dataTable.defaults, {
     		"sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",

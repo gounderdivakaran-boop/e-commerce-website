@@ -3,7 +3,7 @@ GMaps.js - A Javascript library that simplifies your life
 
 GMaps.js allows you to use the potential of Google Maps in a simple way. No more extensive documentation or large amount of code.
 
-Visit the examples in [hpneo.github.com/gmaps](http://hpneo.github.com/gmaps/)
+Visit the examples in [hpneo.github.com/gmaps](https://hpneo.github.com/gmaps/)
 
 Build
 ------
@@ -355,7 +355,7 @@ Changelog
 
 License
 ---------
-MIT License. Copyright 2012 Gustavo Leon. http://github.com/hpneo
+MIT License. Copyright 2012 Gustavo Leon. https://github.com/hpneo
 
 Permission is hereby granted, free of charge, to any
 person obtaining a copy of this software and associated

@@ -25,7 +25,7 @@ The dropdowns are dismissed after a configurable delay. This fixes an issue that
 
 ## Installation
 
-You can simply download and extract the package downloaded from GitHub. Alternatively, you can download the files via [Bower](http://bower.io/) (a JavaScript package management system):
+You can simply download and extract the package downloaded from GitHub. Alternatively, you can download the files via [Bower](https://bower.io/) (a JavaScript package management system):
 
 ```
 bower install bootstrap-hover-dropdown
@@ -81,7 +81,7 @@ This also works with submenus without any other configuring since Bootstrap alre
 
 ## Demo
 
-You can view a demo for this plugin on my site: http://cameronspear.com/demos/bootstrap-hover-dropdown/
+You can view a demo for this plugin on my site: https://cameronspear.com/demos/bootstrap-hover-dropdown/
 
 ### A Note on Choosing a Selector
 
@@ -118,4 +118,4 @@ This, of course, does not speak for bugs. If you have a bug, please bring it to 
 
 ## Me
 
-Follow me on Twitter: [@CWSpear](https://twitter.com/CWSpear) or check out my [blog](http://cameronspear.com/blog/).
+Follow me on Twitter: [@CWSpear](https://twitter.com/CWSpear) or check out my [blog](https://cameronspear.com/blog/).

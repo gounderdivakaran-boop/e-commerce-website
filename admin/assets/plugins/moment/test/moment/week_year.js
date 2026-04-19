@@ -4,7 +4,7 @@ exports.week_year = {
     "iso week year": function (test) {
         test.expect(19);
 
-        // Some examples taken from http://en.wikipedia.org/wiki/ISO_week
+        // Some examples taken from https://en.wikipedia.org/wiki/ISO_week
         test.equal(moment([2005, 0, 1]).isoWeekYear(), 2004);
         test.equal(moment([2005, 0, 2]).isoWeekYear(), 2004);
         test.equal(moment([2005, 0, 3]).isoWeekYear(), 2005);
@@ -31,7 +31,7 @@ exports.week_year = {
     "week year": function (test) {
         test.expect(31);
 
-        // Some examples taken from http://en.wikipedia.org/wiki/ISO_week
+        // Some examples taken from https://en.wikipedia.org/wiki/ISO_week
         moment.lang('dow: 1,doy: 4', {week: {dow: 1, doy: 4}}); // like iso
         test.equal(moment([2005, 0, 1]).weekYear(), 2004);
         test.equal(moment([2005, 0, 2]).weekYear(), 2004);

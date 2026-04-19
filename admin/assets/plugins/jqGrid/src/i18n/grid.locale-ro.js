@@ -2,10 +2,10 @@
 /**
  * jqGrid Romanian Translation
  * Alexandru Emil Lupu contact@alecslupu.ro
- * http://www.alecslupu.ro/ 
+ * https://www.alecslupu.ro/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 			email: "nu este o adresă de e-mail validă",
 			integer: "Vă rugăm introduceți un număr valid",
 			date: "Vă rugăm să introduceți o dată validă",
-			url: "Nu este un URL valid. Prefixul  este necesar('http://' or 'https://')",
+			url: "Nu este un URL valid. Prefixul  este necesar('https://' or 'https://')",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",

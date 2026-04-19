@@ -1,10 +1,10 @@
 /* Plugin:      searchFilter v1.2.9
  * Author:      Kasey Speakman (kasey@cornerspeed.com)
- * License:     Dual Licensed, MIT and GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+ * License:     Dual Licensed, MIT and GPL v2 (https://www.gnu.org/licenses/gpl-2.0.html)
  *
  * REQUIREMENTS:
- *    jQuery 1.3+           (http://jquery.com/)
- *    A Themeroller Theme   (http://jqueryui.com/themeroller/)
+ *    jQuery 1.3+           (https://jquery.com/)
+ *    A Themeroller Theme   (https://jqueryui.com/themeroller/)
  *
  * SECURITY WARNING
  *    You should always implement server-side checking to ensure that
@@ -43,7 +43,7 @@
  *                     { op: 'gt', text: 'greater than' },
  *                     { op: 'lt', text: 'less than' }
  *                   ],
- *                   dataUrl: 'http://server/path/script.php?propName=propValue', // using this creates a select for the data input instead of an input type='text'
+ *                   dataUrl: 'https://server/path/script.php?propName=propValue', // using this creates a select for the data input instead of an input type='text'
  *                   dataValues: [ // using this creates a select for the data input instead of an input type='text'
  *                     { text: 'Data Value Display Name', value: 'data_actual_value' },
  *                     { ... }

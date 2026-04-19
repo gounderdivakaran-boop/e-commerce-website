@@ -3,17 +3,17 @@
   "version": "3.7.1",
   "description": "Handles drag and drop of files for you.",
   "keywords": [ "dragndrop", "drag and drop", "file upload", "upload" ],
-  "homepage": "http://www.dropzonejs.com",
+  "homepage": "https://www.dropzonejs.com",
   "main": [ "./lib/dropzone.js" ],
   "maintainers": [{
       "name": "Matias Meno",
       "email": "m@tias.me",
-      "web": "http://www.matiasmeno.com"
+      "web": "https://www.matiasmeno.com"
   }],
   "contributors": [{
       "name": "Matias Meno",
       "email": "m@tias.me",
-      "web": "http://www.matiasmeno.com"
+      "web": "https://www.matiasmeno.com"
   }],
   "scripts": {
     "test": "node_modules/mocha-phantomjs/bin/mocha-phantomjs test/test.html"
@@ -23,7 +23,7 @@
   },
   "licenses": [{
       "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT" 
+      "url": "https://www.opensource.org/licenses/MIT" 
   }],
   "repositories": [{
       "type": "git",

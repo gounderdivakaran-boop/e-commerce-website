@@ -4,12 +4,12 @@
  * Some of this was inspired and based on how YUI does the table datagrid but in jQuery fashion
  * we are trying to keep it as light as possible
  * Joshua Burnett josh@9ci.com	
- * http://www.greenbill.com
+ * https://www.greenbill.com
  *
  * Changes from Tony Tomov tony@trirand.com
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
  * 
 **/
 /*jshint eqeqeq:false */

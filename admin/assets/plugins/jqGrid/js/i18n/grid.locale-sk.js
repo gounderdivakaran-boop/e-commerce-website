@@ -2,10 +2,10 @@
 /**
  * jqGrid Slovak Translation
  * Milan Cibulka
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 		    email: "nie je valídny e-mail",
 		    integer: "Prosím, vložte celé číslo",
 			date: "Prosím, vložte valídny dátum",
-			url: "nie je platnou URL. Požadovaný prefix ('http://' alebo 'https://')",
+			url: "nie je platnou URL. Požadovaný prefix ('https://' alebo 'https://')",
 			nodefined : " nie je definovaný!",
 			novalue : " je vyžadovaná návratová hodnota!",
 			customarray : "Custom function mala vrátiť pole!",

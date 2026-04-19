@@ -1,5 +1,5 @@
 /*! jQuery Dynatree Plugin - v1.2.4 - 2013-02-12
-* http://dynatree.googlecode.com/
+* https://dynatree.googlecode.com/
 * Copyright (c) 2013 Martin Wendt; Licensed MIT, GPL */
 
 /* jsHint options*/
@@ -1570,7 +1570,7 @@ DynaTreeNode.prototype = {
 							}
 						});
 						// we can ignore it, since it will only be exectuted once, the the loop is ended
-						// See also http://stackoverflow.com/questions/3037598/how-to-get-around-the-jslint-error-dont-make-functions-within-a-loop
+						// See also https://stackoverflow.com/questions/3037598/how-to-get-around-the-jslint-error-dont-make-functions-within-a-loop
 					} else {
 						callback.call(tree, child, "loaded");
 						// Look for direct child with that key
@@ -1799,7 +1799,7 @@ DynaTreeNode.prototype = {
 					data = options.postProcess.call(this, data, this.dataType);
 				}
 				// Process ASPX WebMethod JSON object inside "d" property
-				// http://code.google.com/p/dynatree/issues/detail?id=202
+				// https://code.google.com/p/dynatree/issues/detail?id=202
 				else if (data && data.hasOwnProperty("d")) {
 				   data = (typeof data.d) == "string" ? $.parseJSON(data.d) : data.d;
 				}
@@ -2988,7 +2988,7 @@ $.widget("ui.dynatree", {
 
 		// focus/blur don't bubble, i.e. are not delegated to parent <div> tags,
 		// so we use the addEventListener capturing phase.
-		// See http://www.howtocreate.co.uk/tutorials/javascript/domevents
+		// See https://www.howtocreate.co.uk/tutorials/javascript/domevents
 		function __focusHandler(event) {
 			// Handles blur and focus.
 			// Fix event for IE:

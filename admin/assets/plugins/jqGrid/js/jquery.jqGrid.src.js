@@ -5,8 +5,8 @@
  * @license jqGrid  4.4.3  - jQuery Grid
  * Copyright (c) 2008, Tony Tomov, tony@trirand.com
  * Dual licensed under the MIT and GPL licenses
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
  * Date: 2013-01-21
  */
 //jsHint options
@@ -195,7 +195,7 @@ $.extend($.jgrid,{
 	ajaxOptions: {},
 	from : function(source){
 		// Original Author Hugo Bonacci
-		// License MIT http://jlinq.codeplex.com/license
+		// License MIT https://jlinq.codeplex.com/license
 		var QueryObject=function(d,q){
 		if(typeof d==="string"){
 			d=$.data(d);
@@ -3582,13 +3582,13 @@ $.jgrid.extend({
 /**
  * jqGrid extension for custom methods
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * 
  * Wildraid wildraid@mail.ru
  * Oleg Kiriljuk oleg.kiriljuk@ok-soft-gmbh.com
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
 **/
 "use strict";
 $.jgrid.extend({
@@ -4390,12 +4390,12 @@ $.jgrid.extend({
 })(jQuery);
 /*
  * jqModal - Minimalist Modaling with jQuery
- *   (http://dev.iceburg.net/jquery/jqmodal/)
+ *   (https://dev.iceburg.net/jquery/jqmodal/)
  *
  * Copyright (c) 2007,2008 Brice Burgess <bhb@iceburg.net>
  * Dual licensed under the MIT and GPL licenses:
- *   http://www.opensource.org/licenses/mit-license.php
- *   http://www.gnu.org/licenses/gpl.html
+ *   https://www.opensource.org/licenses/mit-license.php
+ *   https://www.gnu.org/licenses/gpl.html
  * 
  * $Version: 07/06/2008 +r13
  */
@@ -4459,9 +4459,9 @@ hs=function(w,t,c){return w.each(function(){var s=this._jqm;$(t).each(function()
 })(jQuery);/*
  * jqDnR - Minimalistic Drag'n'Resize for jQuery.
  *
- * Copyright (c) 2007 Brice Burgess <bhb@iceburg.net>, http://www.iceburg.net
+ * Copyright (c) 2007 Brice Burgess <bhb@iceburg.net>, https://www.iceburg.net
  * Licensed under the MIT License:
- * http://www.opensource.org/licenses/mit-license.php
+ * https://www.opensource.org/licenses/mit-license.php
  * 
  * $Version: 2007.08.19 +r2
  */
@@ -4531,9 +4531,9 @@ f1=function(k){return parseInt(E1.css(k),10)||false;};
 
 	Original work:
 
-	License:     http://creativecommons.org/licenses/LGPL/2.1/
+	License:     https://creativecommons.org/licenses/LGPL/2.1/
 	Author:      Stefan Goessner/2006
-	Web:         http://goessner.net/ 
+	Web:         https://goessner.net/ 
 
 	Modifications made:
 
@@ -4541,7 +4541,7 @@ f1=function(k){return parseInt(E1.css(k),10)||false;};
 	Description: Restructured code, JSLint validated (no strict whitespaces),
 	             added handling of empty arrays, empty strings, and int/floats values.
 	Author:      Michael Schøler/2008-01-29
-	Web:         http://michael.hinnerup.net/blog/2008/01/26/converting-json-to-xml-and-xml-to-json/
+	Web:         https://michael.hinnerup.net/blog/2008/01/26/converting-json-to-xml-and-xml-to-json/
 	
 	Description: json2xml added support to convert functions as CDATA
 	             so it will be easy to write characters that cause some problems when convert
@@ -4870,12 +4870,12 @@ var xmlJsonClass = {
  * Some of this was inspired and based on how YUI does the table datagrid but in jQuery fashion
  * we are trying to keep it as light as possible
  * Joshua Burnett josh@9ci.com	
- * http://www.greenbill.com
+ * https://www.greenbill.com
  *
  * Changes from Tony Tomov tony@trirand.com
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
  * 
 **/
 /*jshint eqeqeq:false */
@@ -5487,10 +5487,10 @@ var xmlJsonClass = {
 /*
  * jqGrid common function
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
 */
 "use strict";
 $.extend($.jgrid,{
@@ -6152,11 +6152,11 @@ $.extend($.jgrid,{
  * jqFilter  jQuery jqGrid filter addon.
  * Copyright (c) 2011, Tony Tomov, tony@trirand.com
  * Dual licensed under the MIT and GPL licenses
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
  * 
  * The work is inspired from this Stefan Pirvu
- * http://www.codeproject.com/KB/scripting/json-filtering.aspx
+ * https://www.codeproject.com/KB/scripting/json-filtering.aspx
  *
  * The filter uses JSON entities to hold filter rules and groups. Here is an example of a filter:
 
@@ -6888,10 +6888,10 @@ $.extend($.fn.jqFilter,{
 /**
  * jqGrid extension for form editing Grid Data
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/
+ * https://trirand.com/blog/
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
 **/
 "use strict";
 var rp_ge = {};
@@ -9004,10 +9004,10 @@ $.jgrid.extend({
 /**
  * jqGrid extension for manipulating Grid Data
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
 **/ 
 "use strict";
 $.jgrid.inlineEdit = $.jgrid.inlineEdit || {};
@@ -9621,10 +9621,10 @@ $.jgrid.extend({
 **
  * jqGrid extension for cellediting Grid Data
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
 **/ 
 /**
  * all events and options here are aded anonynous and not in the base grid
@@ -10120,10 +10120,10 @@ $.jgrid.extend({
 /**
  * jqGrid extension for SubGrid Data
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
 **/
 "use strict";
 $.jgrid.extend({
@@ -10417,10 +10417,10 @@ toggleSubGridRow : function(rowid) {
 /**
  * jqGrid extension - Tree Grid
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/
+ * https://trirand.com/blog/
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 
 /*jshint eqeqeq:false */
@@ -11532,10 +11532,10 @@ $.jgrid.extend({
 /*
  * jqGrid extension for constructing Grid Data from external file
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
 **/ 
 
 "use strict";
@@ -11749,8 +11749,8 @@ $.jgrid.extend({
  * jqGrid addons using jQuery UI 
  * Author: Mark Williams
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
  * depends on jQuery UI 
 **/
 "use strict";

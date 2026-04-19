@@ -4,8 +4,8 @@
  * linquize
  * https://github.com/linquize/jqGrid
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
  * 
 **/
 $.jgrid = $.jgrid || {};
@@ -43,7 +43,7 @@ $.extend($.jgrid,{
 			email: "不是有效的e-mail地址",
 			integer: "請輸入有效整数",
 			date: "請輸入有效時間",
-			url: "網址無效。前綴必須為 ('http://' 或 'https://')",
+			url: "網址無效。前綴必須為 ('https://' 或 'https://')",
 			nodefined : " 未定義！",
 			novalue : " 需要傳回值！",
 			customarray : "自訂函數應傳回陣列！",

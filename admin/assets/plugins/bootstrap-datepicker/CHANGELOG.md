@@ -56,7 +56,7 @@ Small optimizations release
 v1.0.1
 ------
 
-* Support for [Bower](http://twitter.github.com/bower/)
+* Support for [Bower](https://twitter.github.com/bower/)
 * Component pickers are now aligned under the input, not the add-on element.
 * Japanese locale now has "today" and "format".
 * "remove" method removes `.data().date` if the datepicker is on a non-input.

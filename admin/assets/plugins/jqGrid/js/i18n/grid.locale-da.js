@@ -2,10 +2,10 @@
 /**
  * jqGrid Danish Translation
  * Aesiras A/S
- * http://www.aesiras.dk
+ * https://www.aesiras.dk
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 	        email: "er ikke en gyldig email",
 	        integer: "Indtast venligst et gyldigt heltal",
 			date: "Indtast venligst en gyldig datoværdi",
-			url: "er ugyldig URL. Prefix mangler ('http://' or 'https://')",
+			url: "er ugyldig URL. Prefix mangler ('https://' or 'https://')",
 			nodefined : " er ikke defineret!",
 			novalue : " returværdi kræves!",
 			customarray : "Custom function should return array!",

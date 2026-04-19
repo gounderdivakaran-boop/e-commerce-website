@@ -1,13 +1,13 @@
 /*!
  * jQuery xmlDOM Plugin v1.0
- * http://outwestmedia.com/jquery-plugins/xmldom/
+ * https://outwestmedia.com/jquery-plugins/xmldom/
  *
  * Released: 2009-04-06
  * Version: 1.0
  *
  * Copyright (c) 2009 Jonathan Sharp, Out West Media LLC.
  * Dual licensed under the MIT and GPL licenses.
- * http://docs.jquery.com/License
+ * https://docs.jquery.com/License
  */
 (function($) {
 	// IE DOMParser wrapper

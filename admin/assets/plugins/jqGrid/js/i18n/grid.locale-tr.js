@@ -2,10 +2,10 @@
 /**
  * jqGrid Turkish Translation
  * Erhan Gündoğan (erhan@trposta.net)
- * http://blog.zakkum.com
+ * https://blog.zakkum.com
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -41,7 +41,7 @@ $.extend($.jgrid,{
 	        maxValue:"girilen değer daha küçük ya da buna eşit olmalıdır",
 	        email: "geçerli bir e-posta adresi değildir",
 	        integer: "Lütfen bir tamsayı giriniz",
-			url: "Geçerli bir URL değil. ('http://' or 'https://') ön eki gerekli.",
+			url: "Geçerli bir URL değil. ('https://' or 'https://') ön eki gerekli.",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",

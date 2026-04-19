@@ -2,10 +2,10 @@
 /**
  * jqGrid Hebrew Translation
  * Shuki Shukrun shukrun.shuki@gmail.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 			email: "היא לא כתובת איימל תקינה",
 			integer: "אנא, הכנס מספר שלם",
 			date: "אנא, הכנס תאריך תקין",
-			url: "הכתובת אינה תקינה. דרושה תחילית ('http://' או 'https://')",
+			url: "הכתובת אינה תקינה. דרושה תחילית ('https://' או 'https://')",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",

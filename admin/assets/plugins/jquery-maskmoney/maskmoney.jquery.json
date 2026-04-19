@@ -11,13 +11,13 @@
   "author": {
     "name": "Diego Plentz",
     "email": "diego@plentz.org",
-    "url": "http://plentz.org"
+    "url": "https://plentz.org"
   },
   "maintainers": [
     {
       "name": "Diego Plentz",
       "email": "diego@plentz.org",
-      "url": "http://plentz.org"
+      "url": "https://plentz.org"
     },
     {
       "name": "Plínio Balduino",
@@ -32,9 +32,9 @@
     }
   ],
   "bugs": "https://github.com/plentz/jquery-maskmoney/issues",
-  "homepage": "http://plentz.github.com/jquery-maskmoney",
-  "docs": "http://plentz.github.com/jquery-maskmoney",
-  "demo": "http://plentz.github.com/jquery-maskmoney",
+  "homepage": "https://plentz.github.com/jquery-maskmoney",
+  "docs": "https://plentz.github.com/jquery-maskmoney",
+  "demo": "https://plentz.github.com/jquery-maskmoney",
   "download": "https://raw.github.com/plentz/jquery-maskmoney/master/jquery.maskMoney.js",
   "dependencies": {
     "jquery": ">=1.6"

@@ -315,7 +315,7 @@
     }
 
     // left zero fill a number
-    // see http://jsperf.com/left-zero-filling for performance comparison
+    // see https://jsperf.com/left-zero-filling for performance comparison
     function leftZeroFill(number, targetLength) {
         var output = number + '';
         while (output.length < targetLength) {
@@ -1073,7 +1073,7 @@
         });
     }
 
-    // Code from http://stackoverflow.com/questions/3561493/is-there-a-regexp-escape-function-in-javascript
+    // Code from https://stackoverflow.com/questions/3561493/is-there-a-regexp-escape-function-in-javascript
     function regexpEscape(s) {
         return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     }

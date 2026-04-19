@@ -3,9 +3,9 @@
 // Version 1.01 customized version (see comment below)
 //
 // Cory S.N. LaViska
-// A Beautiful Site (http://abeautifulsite.net/)
+// A Beautiful Site (https://abeautifulsite.net/)
 //
-// More info: http://abeautifulsite.net/2008/09/jquery-context-menu-plugin/
+// More info: https://abeautifulsite.net/2008/09/jquery-context-menu-plugin/
 //
 // Terms of Use
 //
@@ -15,7 +15,7 @@
 // 2011-02-17 Martin Wendt: 
 //            Changed stopPropagation() to preventDefault() in order to make it
 //            work with Dynatree drag'n'drop.  
-//            See http://code.google.com/p/dynatree/issues/detail?id=174
+//            See https://code.google.com/p/dynatree/issues/detail?id=174
 // 2012-09-27 Martin Wendt: 
 //            fixed position in a fancy layout
 //

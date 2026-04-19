@@ -1,6 +1,6 @@
 ## Autosize
 
-Small jQuery plugin to allow dynamic resizing of textarea height, so that it grows as based on visitor input.  To use, just call the `.autosize()` method on any textarea element. Example `$('textarea').autosize();`.  See the [project page](http://jacklmoore.com/autosize/) for documentation, caveats, and a demonstration.  Released under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
+Small jQuery plugin to allow dynamic resizing of textarea height, so that it grows as based on visitor input.  To use, just call the `.autosize()` method on any textarea element. Example `$('textarea').autosize();`.  See the [project page](https://jacklmoore.com/autosize/) for documentation, caveats, and a demonstration.  Released under the [MIT license](https://www.opensource.org/licenses/mit-license.php).
 
 ## Changelog
 

@@ -11,7 +11,7 @@ I worked on the personal project recently, and I was trying to find the jQuery s
 perfect-scrollbar is very tiny but *perfect*(for me, and maybe for the most of developers) jQuery scrollbar plugin.  
 I hope you love this!
 
-Demo: http://noraesae.github.com/perfect-scrollbar/
+Demo: https://noraesae.github.com/perfect-scrollbar/
 
 What means *perfect*?
 ---------------------

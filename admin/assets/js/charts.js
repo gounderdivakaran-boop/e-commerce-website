@@ -2,7 +2,7 @@ var Charts = function () {
     //function to initiate jQRangeSlider
     //There are plenty of options you can set to control the precise looks of your plot. 
     //You can control the ticks on the axes, the legend, the graph type, etc.
-    //For more information, please visit http://www.flotcharts.org/
+    //For more information, please visit https://www.flotcharts.org/
     var runCharts = function () {
         // Basic Chart 
         var d1 = [];

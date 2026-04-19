@@ -2,15 +2,15 @@
 /**
  * jqGrid Polish Translation
  * Łukasz Schab lukasz@freetree.pl
- * http://FreeTree.pl
+ * https://FreeTree.pl
  *
- * Updated names, abbreviations, currency and date/time formats for Polish norms (also corresponding with CLDR v21.0.1 --> http://cldr.unicode.org/index) 
+ * Updated names, abbreviations, currency and date/time formats for Polish norms (also corresponding with CLDR v21.0.1 --> https://cldr.unicode.org/index) 
  * Tomasz Pęczek tpeczek@gmail.com
- * http://tpeczek.blogspot.com; http://tpeczek.codeplex.com
+ * https://tpeczek.blogspot.com; https://tpeczek.codeplex.com
  *
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -47,7 +47,7 @@ $.extend($.jgrid,{
 			email: "nie jest poprawnym adresem e-mail",
 			integer: "Proszę wpisać poprawną liczbę",
 			date: "Proszę podaj poprawną datę",
-			url: "jest niewłaściwym adresem URL. Pamiętaj o prefiksie ('http://' lub 'https://')",
+			url: "jest niewłaściwym adresem URL. Pamiętaj o prefiksie ('https://' lub 'https://')",
 			nodefined: " niezdefiniowane!",
 			novalue: " wymagana jest wartość zwracana!",
 			customarray: "Funkcja niestandardowa powinna zwracać tablicę!",

@@ -6,7 +6,7 @@
   "version": "1.3.1",
   "author": {
     "name": "Josh Bush",
-    "url": "http://digitalbush.com"
+    "url": "https://digitalbush.com"
   },
   "licenses": [
     {
@@ -15,8 +15,8 @@
     }
   ],
   "bugs": "https://github.com/digitalBush/jquery.maskedinput/issues",
-  "homepage": "http://digitalbush.com/projects/masked-input-plugin/",
-  "docs": "http://digitalbush.com/projects/masked-input-plugin/#usage",
+  "homepage": "https://digitalbush.com/projects/masked-input-plugin/",
+  "docs": "https://digitalbush.com/projects/masked-input-plugin/#usage",
   "dependencies": {
     "jquery": ">=1.5"
   }

@@ -1,8 +1,8 @@
 /*!
 	Autosize v1.17.8 - 2013-09-07
 	Automatically adjust textarea height based on user input.
-	(c) 2013 Jack Moore - http://www.jacklmoore.com/autosize
-	license: http://www.opensource.org/licenses/mit-license.php
+	(c) 2013 Jack Moore - https://www.jacklmoore.com/autosize
+	license: https://www.opensource.org/licenses/mit-license.php
 */
 (function (factory) {
 	if (typeof define === 'function' && define.amd) {

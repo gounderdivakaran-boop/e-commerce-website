@@ -4,8 +4,8 @@
  * Paul Tiseo ptiseo@wasteconsultants.com
  * 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
 **/ 
 $.jgrid.extend({
 	getPostData : function(){

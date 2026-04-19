@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Dropzone.js" src="http://www.dropzonejs.com/images/logo.png" />
+  <img alt="Dropzone.js" src="https://www.dropzonejs.com/images/logo.png" />
 </h1>
 
 *Version 3.7.1*
@@ -14,10 +14,10 @@ it still works as a jQuery module).
 
 It is written as a [component](https://github.com/component/component) but
 there's a standalone version, and an [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
-module that's compatible with [RequireJS](http://requirejs.org) in the downloads
+module that's compatible with [RequireJS](https://requirejs.org) in the downloads
 folder.
 
-![Screenshot](http://i.imgur.com/zXyTjMp.png)
+![Screenshot](https://i.imgur.com/zXyTjMp.png)
 
 
 Master  
@@ -71,7 +71,7 @@ new Dropzone("div#my-dropzone", { /* options */ });
 
 > Note that dropzones don't have to be forms. But if you choose another element you have to pass the `url` parameter in the options.
 
-For configuration options please look at the [documentation on the website](http://www.dropzonejs.com/#configuration)
+For configuration options please look at the [documentation on the website](https://www.dropzonejs.com/#configuration)
 or at the [source](https://github.com/enyo/dropzone/blob/master/src/dropzone.coffee#L90).
 
 
@@ -92,7 +92,7 @@ myDropzone.on("error", function(file, message) { alert(message); });
 ```
 
 For a list of all events, please look at the chapter 
-[»listen to events«](http://www.dropzonejs.com/#listen_to_events) in the documentation
+[»listen to events«](https://www.dropzonejs.com/#listen_to_events) in the documentation
 or at the [source](src/dropzone.coffee#L43).
 
 
@@ -108,7 +108,7 @@ For all the other browsers, dropzone provides an oldschool file input fallback.
 
 ## Why another library?
 
-I realize that there [are](http://valums.com/ajax-upload/) [already](http://tutorialzine.com/2011/09/html5-file-upload-jquery-php/) [other](http://code.google.com/p/html5uploader/) [libraries](http://blueimp.github.com/jQuery-File-Upload/) out there but the reason I decided to write my own are the following:
+I realize that there [are](https://valums.com/ajax-upload/) [already](https://tutorialzine.com/2011/09/html5-file-upload-jquery-php/) [other](https://code.google.com/p/html5uploader/) [libraries](https://blueimp.github.com/jQuery-File-Upload/) out there but the reason I decided to write my own are the following:
 
 - I didn't want it to be too big, and to cumbersome to dive into.
 - I want to design my own elements. I only want to register callbacks so I can update my elements accordingly.
@@ -119,8 +119,8 @@ I realize that there [are](http://valums.com/ajax-upload/) [already](http://tuto
 
 ## Other projects
 
-You might also be interested in my [open source tooltip library Opentip](http://www.opentip.org/).
-![Opentip](http://i.imgur.com/Zubpo.png)
+You might also be interested in my [open source tooltip library Opentip](https://www.opentip.org/).
+![Opentip](https://i.imgur.com/Zubpo.png)
 
 License
 -------

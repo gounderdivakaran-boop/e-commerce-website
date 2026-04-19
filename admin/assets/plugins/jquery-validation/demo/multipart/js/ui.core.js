@@ -1,11 +1,11 @@
 /*
  * jQuery UI 1.7.1
  *
- * Copyright (c) 2009 AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright (c) 2009 AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
  * and GPL (GPL-LICENSE.txt) licenses.
  *
- * http://docs.jquery.com/UI
+ * https://docs.jquery.com/UI
  */
 ;jQuery.ui || (function($) {
 
@@ -106,7 +106,7 @@ $.ui = {
 if (isFF2) {
 	var attr = $.attr,
 		removeAttr = $.fn.removeAttr,
-		ariaNS = "http://www.w3.org/2005/07/aaa",
+		ariaNS = "https://www.w3.org/2005/07/aaa",
 		ariaState = /^aria-/,
 		ariaRole = /^wairole:/;
 

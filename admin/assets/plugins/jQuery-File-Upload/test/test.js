@@ -6,7 +6,7 @@
  * https://blueimp.net
  *
  * Licensed under the MIT license:
- * http://www.opensource.org/licenses/MIT
+ * https://www.opensource.org/licenses/MIT
  */
 
 /*jslint nomen: true, unparam: true */
@@ -57,11 +57,11 @@ $(function () {
     });
 
     test('Data attribute options', function () {
-        $('#fileupload').attr('data-url', 'http://example.org');
+        $('#fileupload').attr('data-url', 'https://example.org');
         $('#fileupload').fileupload();
         strictEqual(
             $('#fileupload').fileupload('option', 'url'),
-            'http://example.org'
+            'https://example.org'
         );
     });
 
@@ -891,7 +891,7 @@ $(function () {
         $('#fileupload').fileupload('add', {files: files});
         buttonbar.find('.start').click();
         buttonbar.find('.cancel').click();
-        files[0].deleteUrl = 'http://example.org/banana.jpg';
+        files[0].deleteUrl = 'https://example.org/banana.jpg';
         ($('#fileupload').data('blueimp-fileupload') ||
                 $('#fileupload').data('fileupload'))
             ._renderDownload(files)

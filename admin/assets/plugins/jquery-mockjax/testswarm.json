@@ -1,5 +1,5 @@
 { "testswarm" : {
-  "name" : "jQuery Mockjax Commit <a href=\"http://github.com/appendto/jquery-mockjax/commit/{$REV_FULL$}\">#{$REV$}</a>",
+  "name" : "jQuery Mockjax Commit <a href=\"https://github.com/appendto/jquery-mockjax/commit/{$REV_FULL$}\">#{$REV$}</a>",
   "jobs" : [
     { "browsers" : "popular",
       "suites"   : {

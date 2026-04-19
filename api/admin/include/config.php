@@ -61,4 +61,4 @@ function db_ready() {
     return ($con && !mysqli_connect_errno()) || ($GLOBALS['DEMO_MODE'] ?? false);
 }
 ?>
-
+

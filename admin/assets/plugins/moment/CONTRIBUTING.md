@@ -11,7 +11,7 @@ See [the english unit tests](https://github.com/timrwood/moment/blob/develop/tes
 Submitting Issues
 =================
 
-If you are submitting a bug, please create a [jsfiddle](http://jsfiddle.net/) demonstrating the issue.
+If you are submitting a bug, please create a [jsfiddle](https://jsfiddle.net/) demonstrating the issue.
 
 Contributing
 ============

@@ -1,8 +1,8 @@
 # Colorpicker plugin for Twitter Bootstrap
 
-Originally written by [Stefan Petre](http://www.eyecon.ro/)
+Originally written by [Stefan Petre](https://www.eyecon.ro/)
 
-Read the documentation [here](http://mjaalnir.github.com/bootstrap-colorpicker/)
+Read the documentation [here](https://mjaalnir.github.com/bootstrap-colorpicker/)
 
 
 ## Contributors

@@ -1,7 +1,7 @@
 // XRegExp 1.5.1
 // (c) 2007-2012 Steven Levithan
 // MIT License
-// <http://xregexp.com>
+// <https://xregexp.com>
 // Provides an augmented, extensible, cross-browser implementation of regular expressions,
 // including support for additional syntax, flags, and methods
 
@@ -221,7 +221,7 @@ if (XRegExp) {
     // var xregexpImgFileNames = XRegExp.matchChain(html, [
     //     {regex: /<img\b([^>]+)>/i, backref: 1}, // <img> tag attributes
     //     {regex: XRegExp('(?ix) \\s src=" (?<src> [^"]+ )'), backref: "src"}, // src attribute values
-    //     {regex: XRegExp("^http://xregexp\\.com(/[^#?]+)", "i"), backref: 1}, // xregexp.com paths
+    //     {regex: XRegExp("^https://xregexp\\.com(/[^#?]+)", "i"), backref: 1}, // xregexp.com paths
     //     /[^\/]+$/ // filenames (strip directory paths)
     // ]);
     XRegExp.matchChain = function (str, chain) {
@@ -1699,8 +1699,8 @@ function processUrls(code)
 			match = null
 			;
 		
-		// We include &lt; and &gt; in the URL for the common cases like <http://google.com>
-		// The problem is that they get transformed into &lt;http://google.com&gt;
+		// We include &lt; and &gt; in the URL for the common cases like <https://google.com>
+		// The problem is that they get transformed into &lt;https://google.com&gt;
 		// Where as &gt; easily looks like part of the URL string.
 	
 		if (match = gt.exec(m))
@@ -1981,7 +1981,7 @@ sh.Highlighter.prototype = {
 	 */
 	removeNestedMatches: function(matches)
 	{
-		// Optimized by Jose Prado (http://joseprado.com)
+		// Optimized by Jose Prado (https://joseprado.com)
 		for (var i = 0; i < matches.length; i++) 
 		{ 
 			if (matches[i] === null)
@@ -2377,10 +2377,10 @@ return sh;
 // CommonJS
 typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter : null;/**
  * SyntaxHighlighter
- * http://alexgorbatchev.com/SyntaxHighlighter
+ * https://alexgorbatchev.com/SyntaxHighlighter
  *
  * SyntaxHighlighter is donationware. If you are using it, please donate.
- * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ * https://alexgorbatchev.com/SyntaxHighlighter/donate.html
  *
  * @version
  * 3.0.83 (July 02 2010)
@@ -2435,7 +2435,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 })();
 
 /*
-    http://www.JSON.org/json2.js
+    https://www.JSON.org/json2.js
     2011-02-23
     Public Domain.
 */
@@ -2690,7 +2690,7 @@ var dtLinks = [
 	$('code.datatables_ref').live('click', function () {
 		var i = $.inArray( this.innerHTML.replace(/"/g,''), dtOptions );
 		if ( i !== -1 ) {
-			window.location.href = "http://datatables.net/ref#"+dtLinks[i];
+			window.location.href = "https://datatables.net/ref#"+dtLinks[i];
 		}
 	} );
 } );

@@ -1,7 +1,7 @@
 Bootstrap Modal v2.2.0
 =============
 
-See live demo [here](http://jschr.github.com/bootstrap-modal/).
+See live demo [here](https://jschr.github.com/bootstrap-modal/).
 
 Extends Bootstrap's native modals to provide additional functionality. Introduces a **ModalManager** class that operates behind the scenes to handle multiple modals by listening on their events. 
 
@@ -84,7 +84,7 @@ The element or selector to set the focus to once the modal is shown.
 If set to true, the modal will replace the topmost modal when opened.
 
 + **attentionAnimation**
-Set the animation used by the `attention` method. Any animation in [animate.css](http://daneden.me/animate/) is supported but only the *shake* animation is included by default.
+Set the animation used by the `attention` method. Any animation in [animate.css](https://daneden.me/animate/) is supported but only the *shake* animation is included by default.
 
 + **modalOverflow**
 Set this property to true for modals with highly dynamic content. This will force the modal to behave as if it is larger than the viewport.
@@ -109,7 +109,7 @@ Provide a custom modalmanager backdrop. This backdrop is used when `$element.mod
 Disable Background Scrolling
 -----------
 
-If you want to prevent the background page from scrolling (see [demo](http://jschr.github.com/bootstrap-modal/) for example) you must wrap the page contents in a `<div class="page-container">`. For example:
+If you want to prevent the background page from scrolling (see [demo](https://jschr.github.com/bootstrap-modal/) for example) you must wrap the page contents in a `<div class="page-container">`. For example:
 
 	<body>
 		<div class="page-container">
@@ -139,7 +139,7 @@ You can use `data-tabindex` instead of the default `tabindex` to specify the tab
     <input type="text" data-tabindex="1" />
     <input type="text" data-tabindex="2" />
 
-See the stackable example on the [demo](http://jschr.github.com/bootstrap-modal/) page for an example.
+See the stackable example on the [demo](https://jschr.github.com/bootstrap-modal/) page for an example.
 
 
 	

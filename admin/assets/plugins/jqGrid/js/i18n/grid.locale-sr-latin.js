@@ -2,10 +2,10 @@
 /**
  * jqGrid Serbian latin Translation
  * Bild Studio info@bild-studio.net
- * http://www.bild-studio.com
+ * https://www.bild-studio.com
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 			email: "nije ispravna email adresa, nije valjda da ne umeš ukucati mail!?",
 			integer: "Unesi celobrojnu vrednost ",
 			date: "Unesite ispravan datum",
-			url: "nije ispravan URL. Potreban je prefiks ('http://' or 'https://')",
+			url: "nije ispravan URL. Potreban je prefiks ('https://' or 'https://')",
 			nodefined : " nije definisan!",
 			novalue : " zahtevana je povratna vrednost!",
 			customarray : "Prilagođena funkcija treba da vrati niz!",

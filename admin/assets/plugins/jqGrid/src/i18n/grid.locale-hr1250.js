@@ -5,8 +5,8 @@
  * msajko@gmail.com
  * 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -43,7 +43,7 @@ $.extend($.jgrid,{
 			email: "neispravan e-mail",
 			integer: "Molim, unjeti ispravan cijeli broj (integer)",
 			date: "Molim, unjeti ispravan datum ",
-			url: "neispravan URL. Prefiks je obavezan ('http://' or 'https://')",
+			url: "neispravan URL. Prefiks je obavezan ('https://' or 'https://')",
 			nodefined : " nije definiran!",
 			novalue : " zahtjevan podatak je obavezan!",
 			customarray : "Opcionalna funkcija trebala bi bili polje (array)!",
@@ -106,8 +106,8 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'd.m.Y.',
 			masks : {
-				// see http://php.net/manual/en/function.date.php for PHP format used in jqGrid
-				// and see http://docs.jquery.com/UI/Datepicker/formatDate
+				// see https://php.net/manual/en/function.date.php for PHP format used in jqGrid
+				// and see https://docs.jquery.com/UI/Datepicker/formatDate
 				// and https://github.com/jquery/globalize#dates for alternative formats used frequently
 				ISO8601Long: "Y-m-d H:i:s",
 				ISO8601Short: "Y-m-d",

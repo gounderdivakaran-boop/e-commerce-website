@@ -1,12 +1,12 @@
 # Summernote
 Super Simple WYSIWYG Editor on Bootstrap(3.0 and 2.x).
 
-[![Build Status](https://secure.travis-ci.org/HackerWins/summernote.png)](http://travis-ci.org/HackerWins/summernote)
+[![Build Status](https://secure.travis-ci.org/HackerWins/summernote.png)](https://travis-ci.org/HackerWins/summernote)
 
 ### Summernote
 Summernote is a javascript program that helps you to create WYSIWYG Editor on web.
 
-Demo Page: http://hackerwins.github.io/summernote/
+Demo Page: https://hackerwins.github.io/summernote/
 
 ### Why Summernote?
 
@@ -15,8 +15,8 @@ Summernote has something specials no like others.
 Simple UI, Interative WYSIWYG editing, easy integrate Backend server and so much others.
 
 #### Inspired by
-* Gmail WYSIWYG Editor (http://www.gmail.com)
-* Redactor (http://imperavi.com/redactor/)
+* Gmail WYSIWYG Editor (https://www.gmail.com)
+* Redactor (https://imperavi.com/redactor/)
 
 ### Easy to install
 
@@ -72,8 +72,8 @@ $('#summernote').destroy();
 ```
 
 #### Dependencies
-* jQuery: http://jquery.com/
-* bootstrap: http://twitter.github.io/bootstrap/
+* jQuery: https://jquery.com/
+* bootstrap: https://twitter.github.io/bootstrap/
 * fontAwesome: https://github.com/FortAwesome/Font-Awesome
 
 ### Supported platform
@@ -148,7 +148,7 @@ grunt test
 
 ### Contacts
 * Email: susukang98@gmail.com
-* Twitter: http://twitter.com/hackerwins
+* Twitter: https://twitter.com/hackerwins
 
 ### License
 summernote may be freely distributed under the MIT license.

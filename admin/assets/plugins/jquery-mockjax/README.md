@@ -1,5 +1,5 @@
 # jQuery Mockjax: Ajax request mocking #
-[http://github.com/appendto/jquery-mockjax/](http://github.com/appendto/jquery-mockjax/)
+[https://github.com/appendto/jquery-mockjax/](https://github.com/appendto/jquery-mockjax/)
 
 jQuery Mockjax provides request/response mocking for ajax requests with
 jQuery and provides all standard behaviors in the request/response flow.
@@ -22,26 +22,26 @@ Copyright (c) 2012 appendTo LLC.
 
 Dual licensed under the MIT or GPL licenses.
 
-[http://appendto.com/open-source-licenses](http://appendto.com/open-source-licenses)
+[https://appendto.com/open-source-licenses](https://appendto.com/open-source-licenses)
 
 ## Documentation ##
 
 Most backend developers are familiar with the concepts of [mocking
-objects](http://en.wikipedia.org/wiki/Mock_object) or stubbing in
+objects](https://en.wikipedia.org/wiki/Mock_object) or stubbing in
 methods for unit testing. For those not familiar with mocking, it’s the
 simulation of an interface or API for testing or integration development
 purposes. Mocking with front-end development though is still quite new.
 
-Much of the development that [appendTo](http://appendto.com) does
+Much of the development that [appendTo](https://appendto.com) does
 focuses on front-end development tied to
-[RESTFUL](http://en.wikipedia.org/wiki/Representational_State_Transfer)
+[RESTFUL](https://en.wikipedia.org/wiki/Representational_State_Transfer)
 web services. **As such we’re able to spec out the service contract and
 data format at the beginning of a project and develop the front-end
 interface against mock data while the back end team builds the
 production services.**
 
 The plugin was originally developed by appendTo back in
-March 2010 and the [team](http://twitter.com/appendto/team) has been
+March 2010 and the [team](https://twitter.com/appendto/team) has been
 using it in all of its projects since.
 
 ### API
@@ -67,7 +67,7 @@ checkout this list:
       * `responseXML`: A string specifying the mocked XML for the request.
       * `proxy`: A string specifying a path to a file, from which the contents will be returned for the request.
       * `lastModified`: A date string specifying the mocked last-modified time for the request. This is used by `$.ajax` to determine if the requested data is new since the last request.
-      * `etag`: A string specifying a unique identifier referencing a specific version of the requested data. This is used by `$.ajax` to determine if the requested data is new since the last request. (see [HTTP_ETag](http://en.wikipedia.org/wiki/HTTP_ETag))
+      * `etag`: A string specifying a unique identifier referencing a specific version of the requested data. This is used by `$.ajax` to determine if the requested data is new since the last request. (see [HTTP_ETag](https://en.wikipedia.org/wiki/HTTP_ETag))
 * `$.mockjaxClear()`
   * Removes all mockjax handlers.
 * `$.mockjaxClear(id)`
@@ -94,7 +94,7 @@ code:
     <html>
       <head>
         <title>Fortune App</title>
-        <script src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.7.0.min.js"></script>
       </head>
     <body>
       <div id="fortune"></div>
@@ -129,7 +129,7 @@ the following code:
 
 **Defining a JSON string inline requires a `JSON.stringify` method to be
 available. For some browsers you may need to include
-[json2.js](http://json.org/json2.js), which is included in the `lib` folder**
+[json2.js](https://json.org/json2.js), which is included in the `lib` folder**
 
 **If you plan on mocking xml responses, you may also have to include
 `jquery.xmldom.js`, which can also be found in the `lib` folder.**
@@ -162,10 +162,10 @@ flexibility in Mockjax and creating responses.
 jQuery is able to handle and parse `Text`, `HTML`, `JSON`, `JSONP`,
 `Script` and `XML` data formats and Mockjax is able to mock any of those
 formats. Two things to note, depending upon how you mock out `JSON` and
-`JSONP` you may need to include [json2.js](http://json.org/json2.js) for
+`JSONP` you may need to include [json2.js](https://json.org/json2.js) for
 the `JSON.stringify()` method. Additionally if you mock XML inline,
 you’ll need to include the
-[`xmlDOM`](http://github.com/appendto/jquery-xmldom) plugin that
+[`xmlDOM`](https://github.com/appendto/jquery-xmldom) plugin that
 transforms a string of XML into a DOM object. If you use the proxy
 approach outlined below, there’s no need to include either the JSON or
 XMLDOM plugins.

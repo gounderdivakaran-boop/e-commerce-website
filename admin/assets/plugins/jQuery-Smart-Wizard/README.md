@@ -1,17 +1,17 @@
 # jQuery Smart Wizard
 
 Version 3 and later at
-http://mstratman.github.com/jQuery-Smart-Wizard/
+https://mstratman.github.com/jQuery-Smart-Wizard/
 
 Original version 2 and earlier are from
-http://www.techlaboratory.net/products.php?product=smartwizard
+https://www.techlaboratory.net/products.php?product=smartwizard
 
 Licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
-http://creativecommons.org/licenses/by-sa/3.0/
+https://creativecommons.org/licenses/by-sa/3.0/
 
 ## Getting Started
 
-To see some examples, please visit http://mstratman.github.com/jQuery-Smart-Wizard/
+To see some examples, please visit https://mstratman.github.com/jQuery-Smart-Wizard/
 
 Basic Usage:
 

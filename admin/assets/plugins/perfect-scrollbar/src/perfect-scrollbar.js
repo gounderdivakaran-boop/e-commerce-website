@@ -1,4 +1,4 @@
-/* Copyright (c) 2012 HyeonJe Jun (http://github.com/noraesae)
+/* Copyright (c) 2012 HyeonJe Jun (https://github.com/noraesae)
  * Licensed under the MIT License
  */
 'use strict';

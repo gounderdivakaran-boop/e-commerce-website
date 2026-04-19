@@ -7,7 +7,7 @@
   "author": {
     "name": "Jörn Zaefferer",
     "email": "joern.zaefferer@gmail.com",
-    "url": "http://bassistance.de"
+    "url": "https://bassistance.de"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
+      "url": "https://www.opensource.org/licenses/MIT"
     }
   ],
   "scripts": {

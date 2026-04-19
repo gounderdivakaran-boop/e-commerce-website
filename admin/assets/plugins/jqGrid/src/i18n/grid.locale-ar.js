@@ -2,10 +2,10 @@
 /**
  * jqGrid Arabic Translation
  * 
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -41,7 +41,7 @@ $.extend($.jgrid,{
 			maxValue: "يجب أن تكون القيمة أقل أو تساوي 0",
 			email: "بريد غير صحيح",
 			integer: "سجل عدد طبييعي صحيح",
-			url: "ليس عنوانا صحيحا. البداية الصحيحة ('http://' أو 'https://')",
+			url: "ليس عنوانا صحيحا. البداية الصحيحة ('https://' أو 'https://')",
 			nodefined : " ليس محدد!",
 			novalue : " قيمة الرجوع مطلوبة!",
 			customarray : "يجب على الدالة الشخصية أن تنتج جدولا",

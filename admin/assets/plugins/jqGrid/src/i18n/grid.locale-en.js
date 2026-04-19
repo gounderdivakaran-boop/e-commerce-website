@@ -2,10 +2,10 @@
 /**
  * jqGrid English Translation
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 			email: "is not a valid e-mail",
 			integer: "Please, enter valid integer value",
 			date: "Please, enter valid date value",
-			url: "is not a valid URL. Prefix required ('http://' or 'https://')",
+			url: "is not a valid URL. Prefix required ('https://' or 'https://')",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",
@@ -105,8 +105,8 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'n/j/Y',
 			masks : {
-				// see http://php.net/manual/en/function.date.php for PHP format used in jqGrid
-				// and see http://docs.jquery.com/UI/Datepicker/formatDate
+				// see https://php.net/manual/en/function.date.php for PHP format used in jqGrid
+				// and see https://docs.jquery.com/UI/Datepicker/formatDate
 				// and https://github.com/jquery/globalize#dates for alternative formats used frequently
 				// one can find on https://github.com/jquery/globalize/tree/master/lib/cultures many
 				// information about date, time, numbers and currency formats used in different countries

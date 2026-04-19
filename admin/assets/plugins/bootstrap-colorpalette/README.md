@@ -1,11 +1,11 @@
 # bootstrap-colorpalette
 Simple color palette for Bootstrap
 
-#### [Online Demo](http://extremefe.github.io/bootstrap-colorpalette/)
+#### [Online Demo](https://extremefe.github.io/bootstrap-colorpalette/)
 # Requirements
 
-* [Bootstrap](http://twitter.github.com/bootstrap/) 2.3.2+
-* [jQuery](http://jquery.com/) 1.8.1+
+* [Bootstrap](https://twitter.github.com/bootstrap/) 2.3.2+
+* [jQuery](https://jquery.com/) 1.8.1+
 
 # Example
 

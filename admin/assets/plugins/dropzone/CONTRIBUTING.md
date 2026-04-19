@@ -38,8 +38,8 @@ the library.
 Coffeescript & Stylus (-> Javascript & CSS)
 ------------------------------------------
 
-Dropzone is written in [Coffeescript](http://coffeescript.org) and
-[Stylus](http://learnboost.github.com/stylus/) so *do not* make
+Dropzone is written in [Coffeescript](https://coffeescript.org) and
+[Stylus](https://learnboost.github.com/stylus/) so *do not* make
 changes to the Javascript or CSS files
 
 **I will not merge requests written in Javascript or CSS.**
@@ -49,7 +49,7 @@ Please don't include compiled `.js` or `.css` files in your pull requests but on
 immediately what you changed.
 
 
-To build the library use [grunt](http://gruntjs.com).
+To build the library use [grunt](https://gruntjs.com).
 
 ```bash
 $ grunt -h # Displays available options

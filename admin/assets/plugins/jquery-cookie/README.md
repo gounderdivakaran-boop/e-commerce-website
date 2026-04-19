@@ -12,7 +12,7 @@ Include script *after* the jQuery library (unless you are packaging scripts some
 <script src="/path/to/jquery.cookie.js"></script>
 ```
 
-**Do not include the script directly from GitHub (http://raw.github.com/...).** The file is being served as text/plain and as such being blocked
+**Do not include the script directly from GitHub (https://raw.github.com/...).** The file is being served as text/plain and as such being blocked
 in Internet Explorer on Windows 7 for instance (because of the wrong MIME type). Bottom line: GitHub is not a CDN.
 
 The plugin can also be loaded as AMD module.
@@ -100,7 +100,7 @@ Define the path where the cookie is valid. *By default the path of the cookie is
 
 > Due to an obscure bug in the underlying WinINET InternetGetCookie implementation, IE’s document.cookie will not return a cookie if it was set with a path attribute containing a filename.
 
-(From [Internet Explorer Cookie Internals (FAQ)](http://blogs.msdn.com/b/ieinternals/archive/2009/08/20/wininet-ie-cookie-internals-faq.aspx))
+(From [Internet Explorer Cookie Internals (FAQ)](https://blogs.msdn.com/b/ieinternals/archive/2009/08/20/wininet-ie-cookie-internals-faq.aspx))
 
 This means one cannot set a path using `path: window.location.pathname` in case such pathname contains a filename like so: `/check.html` (or at least, such cookie cannot be read correctly).
 

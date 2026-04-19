@@ -2,10 +2,10 @@
 /**
  * jqGrid Bulgarian Translation 
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 		    email: "�� � ������� ��. �����",
 		    integer: "�������� ������� ���� �����",
 			date: "�������� ������� ����",
-			url: "e ��������� URL. �������� �� �������('http://' ��� 'https://')",
+			url: "e ��������� URL. �������� �� �������('https://' ��� 'https://')",
 			nodefined : " � ������������!",
 			novalue : " ������� ������� �� ��������!",
 			customarray : "������. ������� ������ �� ����� �����!",

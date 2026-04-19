@@ -2,10 +2,10 @@
 /**
  * jqGrid Lithuanian Translation
  * aur1mas aur1mas@devnet.lt
- * http://aur1mas.devnet.lt
+ * https://aur1mas.devnet.lt
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 			email: "neteisingas el. pašto adresas",
 			integer: "Įveskite teisingą sveikąjį skaičių",
 			date: "Įveskite teisingą datą",
-			url: "blogas adresas. Nepamirškite pridėti ('http://' arba 'https://')",
+			url: "blogas adresas. Nepamirškite pridėti ('https://' arba 'https://')",
 			nodefined : " nėra apibrėžta!",
 			novalue : " turi būti gražinama kokia nors reikšmė!",
 			customarray : "Custom f-ja turi grąžinti masyvą!",

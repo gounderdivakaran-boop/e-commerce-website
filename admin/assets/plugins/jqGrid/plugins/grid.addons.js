@@ -2,10 +2,10 @@
 /*
  * jqGrid methods without support. Use as you wish
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/
+ * https://trirand.com/blog/
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl-2.0.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl-2.0.html
  *
  * This list of deprecated methods.
  * If you instead want to use them, please include this file after the grid main file.
@@ -40,7 +40,7 @@ $.jgrid.extend({
 			// Note: stringResult is intentionally declared "undefined by default".
 			//  you are velcome to define stringResult expressly in the options you pass to searchGrid()
 			//  stringResult is a "safeguard" measure to insure we post sensible data when communicated as form-encoded
-			//  see http://github.com/tonytomov/jqGrid/issues/#issue/36
+			//  see https://github.com/tonytomov/jqGrid/issues/#issue/36
 			//
 			//  If this value is not expressly defined in the incoming options,
 			// lower in the code we will infer the value based on value of multipleSearch
@@ -254,7 +254,7 @@ $.jgrid.extend({
 					if(fields.length>0){
 						$("<div id='"+fid+"' role='dialog' tabindex='-1'></div>").insertBefore("#gview_"+$t.p.id);
 						// Before we create searchFilter we need to decide if we want to get back a string or a JS object.
-						//  see http://github.com/tonytomov/jqGrid/issues/#issue/36 for background on the issue.
+						//  see https://github.com/tonytomov/jqGrid/issues/#issue/36 for background on the issue.
 						// If p.stringResult is defined, it was explisitly passed to us by user. Honor the choice, whatever it is.
 						if (p.stringResult===undefined) {
 							// to provide backward compatibility, inferring stringResult value from multipleSearch

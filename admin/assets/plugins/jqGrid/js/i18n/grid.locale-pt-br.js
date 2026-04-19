@@ -2,13 +2,13 @@
 /**
  * jqGrid Brazilian-Portuguese Translation
  * Sergio Righi sergio.righi@gmail.com
- * http://curve.com.br
+ * https://curve.com.br
  * 
  * Updated by Jonnas Fonini
- * http://fonini.net
+ * https://fonini.net
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -45,7 +45,7 @@ $.extend($.jgrid,{
 	        email: "este e-mail não é válido",
 	        integer: "Por favor, informe um valor inteiro",
 			date: "Por favor, informe uma data válida",
-			url: "não é uma URL válida. Prefixo obrigatório ('http://' or 'https://')",
+			url: "não é uma URL válida. Prefixo obrigatório ('https://' or 'https://')",
 			nodefined : " não está definido!",
 			novalue : " um valor de retorno é obrigatório!",
 			customarray : "Função customizada deve retornar um array!",

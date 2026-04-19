@@ -2,7 +2,7 @@
   "name": "Gritter",
   "version": "1.7.4",
   "description": "A small growl-like notification plugin for jQuery",
-  "homepage": "http://boedesign.com/blog/2009/07/11/growl-for-jquery-gritter/",
+  "homepage": "https://boedesign.com/blog/2009/07/11/growl-for-jquery-gritter/",
   "keywords": [
     "package",
     "gritter"
@@ -20,19 +20,19 @@
   "maintainers": [
     {
       "name": "Jordan Boesch",      
-      "web": "http://boedesign.com" 
+      "web": "https://boedesign.com" 
     } 
   ],
   "contributors": [
     {
       "name": "Jordan Boesch",      
-      "web": "http://boedesign.com" 
+      "web": "https://boedesign.com" 
     } 
   ],
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://www.opensource.org/licenses/mit-license.php"
+      "url": "https://www.opensource.org/licenses/mit-license.php"
     }
   ],
   "repositories": [

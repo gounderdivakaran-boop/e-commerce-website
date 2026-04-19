@@ -1,11 +1,11 @@
 /**
  * QUnit v1.11.0 - A JavaScript Unit Testing Framework
  *
- * http://qunitjs.com
+ * https://qunitjs.com
  *
  * Copyright 2012 jQuery Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  */
 
 (function( window ) {
@@ -38,7 +38,7 @@ var QUnit,
 	 * with IE 7 (and prior) where Error.prototype.toString is
 	 * not properly implemented
 	 *
-	 * Based on http://es5.github.com/#x15.11.4.4
+	 * Based on https://es5.github.com/#x15.11.4.4
 	 *
 	 * @param {String|Error} error
 	 * @return {String} error message
@@ -1751,13 +1751,13 @@ QUnit.equiv = (function() {
 
 /**
  * jsDump Copyright (c) 2008 Ariel Flesler - aflesler(at)gmail(dot)com |
- * http://flesler.blogspot.com Licensed under BSD
- * (http://www.opensource.org/licenses/bsd-license.php) Date: 5/15/2008
+ * https://flesler.blogspot.com Licensed under BSD
+ * (https://www.opensource.org/licenses/bsd-license.php) Date: 5/15/2008
  *
  * @projectDescription Advanced and extensible data dumping for Javascript.
  * @version 1.0.0
  * @author Ariel Flesler
- * @link {http://flesler.blogspot.com/2008/05/jsdump-pretty-dump-of-any-javascript.html}
+ * @link {https://flesler.blogspot.com/2008/05/jsdump-pretty-dump-of-any-javascript.html}
  */
 QUnit.jsDump = (function() {
 	function quote( str ) {
@@ -1996,13 +1996,13 @@ function inArray( elem, array ) {
 
 /*
  * Javascript Diff Algorithm
- *  By John Resig (http://ejohn.org/)
+ *  By John Resig (https://ejohn.org/)
  *  Modified by Chu Alan "sprite"
  *
  * Released under the MIT license.
  *
  * More Info:
- *  http://ejohn.org/projects/javascript-diff-algorithm/
+ *  https://ejohn.org/projects/javascript-diff-algorithm/
  *
  * Usage: QUnit.diff(expected, actual)
  *

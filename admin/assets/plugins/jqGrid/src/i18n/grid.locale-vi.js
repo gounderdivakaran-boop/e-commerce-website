@@ -2,10 +2,10 @@
 /**
  * jqGrid Vietnamese Translation
  * Lê Đình Dũng dungtdc@gmail.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 			email: "không phải là một email đúng",
 			integer: "Hãy điền đúng số nguyên",
 			date: "Hãy điền đúng ngày tháng",
-			url: "không phải là URL. Khởi đầu bắt buộc là ('http://' hoặc 'https://')",
+			url: "không phải là URL. Khởi đầu bắt buộc là ('https://' hoặc 'https://')",
 			nodefined : " chưa được định nghĩa!",
 			novalue : " giá trị trả về bắt buộc phải có!",
 			customarray : "Hàm nên trả về một mảng!",
@@ -105,8 +105,8 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'n/j/Y',
 			masks : {
-				// see http://php.net/manual/en/function.date.php for PHP format used in jqGrid
-				// and see http://docs.jquery.com/UI/Datepicker/formatDate
+				// see https://php.net/manual/en/function.date.php for PHP format used in jqGrid
+				// and see https://docs.jquery.com/UI/Datepicker/formatDate
 				// and https://github.com/jquery/globalize#dates for alternative formats used frequently
 				// one can find on https://github.com/jquery/globalize/tree/master/lib/cultures many
 				// information about date, time, numbers and currency formats used in different countries

@@ -3,8 +3,8 @@
  * jqGrid Galician Translation
  * Translated by Jorge Barreiro <yortx.barry@gmail.com>
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -41,7 +41,7 @@ $.extend($.jgrid,{
 	        email: "non é un enderezo de correo válido",
 	        integer: "Introduza un valor enteiro",
 			date: "Introduza unha data correcta ",
-			url: "non é unha URL válida. Prefixo requerido ('http://' ou 'https://')",
+			url: "non é unha URL válida. Prefixo requerido ('https://' ou 'https://')",
 			nodefined : " non está definido.",
 			novalue : " o valor de retorno é obrigatorio.",
 			customarray : "A función persoalizada debe devolver un array.",

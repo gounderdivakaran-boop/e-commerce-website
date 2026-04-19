@@ -14,15 +14,15 @@
 	],
 	"author": {
 		"name": "Jack Moore",
-		"url": "http://www.jacklmoore.com",
+		"url": "https://www.jacklmoore.com",
 		"email": "hello@jacklmoore.com"
 	},
 	"licenses": [
 		{
 			"type": "MIT",
-			"url": "http://www.opensource.org/licenses/mit-license.php"
+			"url": "https://www.opensource.org/licenses/mit-license.php"
 		}
 	],
-	"homepage": "http://www.jacklmoore.com/autosize",
-	"demo": "http://www.jacklmoore.com/autosize"
+	"homepage": "https://www.jacklmoore.com/autosize",
+	"demo": "https://www.jacklmoore.com/autosize"
 }

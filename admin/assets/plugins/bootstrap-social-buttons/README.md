@@ -2,7 +2,7 @@
 
 **Clean (unofficial) social media buttons for Bootstrap using Font Awesome.**
 
-[See a live example](http://noizwaves.github.io/bootstrap-social-buttons/)
+[See a live example](https://noizwaves.github.io/bootstrap-social-buttons/)
 
 Social Buttons for Twitter Bootstrap is a plugin/mixin for Twitter Bootstrap that provides great looking (unofficial) themes for various social media buttons.
 
@@ -29,7 +29,7 @@ Once you have cloned the repo, if you are using CSS then:
 
 Note: when using Bootstrap 3, use 'social-buttons-3.{ext}' instead of 'social-buttons.{ext}'!
 
-1. Include Bootstrap and Font Awesome in your app (see [this guide](http://www.bootstrapcdn.com/#tab_fontawesome))
+1. Include Bootstrap and Font Awesome in your app (see [this guide](https://www.bootstrapcdn.com/#tab_fontawesome))
 2. Include social-buttons.css in your app
 3. Start using buttons!
 
@@ -69,7 +69,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
+https://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,

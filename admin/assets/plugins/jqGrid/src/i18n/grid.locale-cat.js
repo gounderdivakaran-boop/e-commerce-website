@@ -2,10 +2,10 @@
 /**
  * jqGrid Catalan Translation
  * Traducció jqGrid en Catatà per Faserline, S.L.
- * http://www.faserline.com
+ * https://www.faserline.com
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 		    email: "no és una direcció de correu vàlida",
 		    integer: "Introdueixi un valor enter",
 			date: "Introdueixi una data correcta ",
-			url: "no és una URL vàlida. Prefix requerit ('http://' or 'https://')",
+			url: "no és una URL vàlida. Prefix requerit ('https://' or 'https://')",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",

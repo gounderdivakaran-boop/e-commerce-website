@@ -3,10 +3,10 @@
  * jqGrid Czech Translation
  * Pavel Jirak pavel.jirak@jipas.cz
  * doplnil Thomas Wagner xwagne01@stud.fit.vutbr.cz
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -43,7 +43,7 @@ $.extend($.jgrid,{
 		    email: "není validní e-mail",
 		    integer: "Prosím, vložte celé číslo",
 			date: "Prosím, vložte validní datum",
-			url: "není platnou URL. Vyžadován prefix ('http://' or 'https://')",
+			url: "není platnou URL. Vyžadován prefix ('https://' or 'https://')",
 			nodefined : " není definován!",
 			novalue : " je vyžadována návratová hodnota!",
 			customarray : "Custom function mělá vrátit pole!",

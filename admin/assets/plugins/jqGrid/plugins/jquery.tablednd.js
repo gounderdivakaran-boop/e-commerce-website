@@ -2,7 +2,7 @@
  * TableDnD plug-in for JQuery, allows you to drag and drop table rows
  * You can set up various options to control how the system will work
  * Copyright (c) Denis Howlett <denish@isocra.com>
- * Licensed like jQuery, see http://docs.jquery.com/License.
+ * Licensed like jQuery, see https://docs.jquery.com/License.
  *
  * Configuration options:
  * 
@@ -199,7 +199,7 @@ jQuery.tableDnD = {
         if (e.offsetHeight == 0) {
             /** Safari 2 doesn't correctly grab the offsetTop of a table row
             this is detailed here:
-            http://jacob.peargrove.com/blog/2006/technical/table-row-offsettop-bug-in-safari/
+            https://jacob.peargrove.com/blog/2006/technical/table-row-offsettop-bug-in-safari/
             the solution is likewise noted there, grab the offset of a table cell in the row - the firstChild.
             note that firefox will return a text node as a first child, so designing a more thorough
             solution may need to take that into account, for now this seems to work in firefox, safari, ie */

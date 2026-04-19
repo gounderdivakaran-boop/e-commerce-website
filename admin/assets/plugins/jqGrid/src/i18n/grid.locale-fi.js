@@ -3,10 +3,10 @@
  * jqGrid (fi) Finnish Translation
  * Jukka Inkeri  awot.fi  2010-05-19
  * Alex Grönholm  alex.gronholm@nextday.fi  2011-05-18
- * http://awot.fi
+ * https://awot.fi
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -43,7 +43,7 @@ $.extend($.jgrid,{
 	        email: "ei ole kelvollinen s&auml;postiosoite",
 	        integer: "Anna kelvollinen kokonaisluku",
 			date: "Anna kelvollinen pvm",
-			url: "Ei ole kelvollinen linkki(URL). Alku oltava ('http://' tai 'https://')",
+			url: "Ei ole kelvollinen linkki(URL). Alku oltava ('https://' tai 'https://')",
 			nodefined: " ei ole m&auml;&auml;ritelty!",
 			novalue: " paluuarvo vaaditaan!",
 			customarray: "Oman funktion tulee palauttaa jono!",

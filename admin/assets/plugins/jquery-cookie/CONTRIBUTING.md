@@ -1,7 +1,7 @@
 ##Issues
 
 - Report issues or feature requests on [GitHub Issues](https://github.com/carhartl/jquery-cookie/issues).
-- If reporting a bug, please add a [simplified example](http://sscce.org/).
+- If reporting a bug, please add a [simplified example](https://sscce.org/).
 
 ##Pull requests
 - Create a new topic branch for every separate change you make.
@@ -13,12 +13,12 @@
 ###Tools
 We use the following tools for development:
 
-- [Qunit](http://qunitjs.com/) for tests.
-- [NodeJS](http://nodejs.org/download/) required to run grunt and the test server only.
-- [Grunt](http://gruntjs.com/getting-started) for task management.
+- [Qunit](https://qunitjs.com/) for tests.
+- [NodeJS](https://nodejs.org/download/) required to run grunt and the test server only.
+- [Grunt](https://gruntjs.com/getting-started) for task management.
 
 ###Getting started 
-Install [NodeJS](http://nodejs.org/).  
+Install [NodeJS](https://nodejs.org/).  
 Install globally grunt-cli using the following command:
 
     $ npm install -g grunt-cli
@@ -43,7 +43,7 @@ Start a test server from the project root:
 
 Open the following URL in a browser:
 
-    $ open http://0.0.0.0:8124/test/index.html
+    $ open https://0.0.0.0:8124/test/index.html
 
 _Note: we recommend cleaning all the browser cookies before running the tests, that can avoid false positive failures._
 

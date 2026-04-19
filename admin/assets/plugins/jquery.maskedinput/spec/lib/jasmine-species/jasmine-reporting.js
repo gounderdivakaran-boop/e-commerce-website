@@ -33,7 +33,7 @@ jasmine.reporting.StyledHtmlReporter.prototype.reportRunnerStarting = function(r
   this.outerDiv = this.createDom('div', { className: 'jasmine_reporter' },
       this.createDom('div', { className: 'banner' },
         this.createDom('div', { className: 'logo' },
-            this.createDom('a', { href: 'http://pivotal.github.com/jasmine/', target: "_blank" }, "Jasmine"),
+            this.createDom('a', { href: 'https://pivotal.github.com/jasmine/', target: "_blank" }, "Jasmine"),
             this.createDom('span', { className: 'version' }, runner.env.versionString())),
         this.createDom('div', { className: 'options' },
             "Show ",

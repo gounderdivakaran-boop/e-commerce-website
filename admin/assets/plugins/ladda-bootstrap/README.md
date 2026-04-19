@@ -2,11 +2,11 @@
 
 Buttons with built-in loading indicators, effectively bridging the gap between action and feedback. 
 
-[Check out the demo page](http://msurguy.github.io/ladda-bootstrap/).
+[Check out the demo page](https://msurguy.github.io/ladda-bootstrap/).
 
 ## Instructions
 
-Please see the demo page for the details: (http://msurguy.github.io/ladda-bootstrap/).
+Please see the demo page for the details: (https://msurguy.github.io/ladda-bootstrap/).
 
 #### HTML
 
@@ -17,11 +17,11 @@ Ladda buttons must be given the class ```ladda-button``` and the button label ne
 ```
 
 Buttons accepts three attributes:
-- **data-style**: one of the button styles, full list in [demo](http://lab.hakim.se/ladda/) *[required]*
+- **data-style**: one of the button styles, full list in [demo](https://lab.hakim.se/ladda/) *[required]*
 - **data-color**: green/red/blue/purple/mint
 - **data-size**: xs/s/l/xl, defaults to medium
 - **data-spinner-size**: 40, pixel dimensions of spinner, defaults to dynamic size based on the button height
-- **data-spinner-color**: A hex code or any [named CSS color](http://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/). 
+- **data-spinner-color**: A hex code or any [named CSS color](https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/). 
 
 #### JavaScript
 
@@ -71,4 +71,4 @@ The project is tested in Chrome and Firefox. It Should Work™ in the current st
 
 MIT licensed
 
-Copyright (C) 2013 Hakim El Hattab, http://hakim.se
+Copyright (C) 2013 Hakim El Hattab, https://hakim.se

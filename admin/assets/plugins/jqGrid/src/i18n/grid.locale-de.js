@@ -3,11 +3,11 @@
  * jqGrid German Translation
  * Version 1.0.0 (developed for jQuery Grid 3.3.1)
  * Olaf Klöppel opensource@blue-hit.de
- * http://blue-hit.de/ 
+ * https://blue-hit.de/ 
  *
  * Updated for jqGrid 3.8
  * Andreas Flack
- * http://www.contentcontrol-berlin.de
+ * https://www.contentcontrol-berlin.de
  *
  * Updated for jQuery 4.4
  * Oleg Kiriljuk oleg.kiriljuk@ok-soft-gmbh.com
@@ -15,8 +15,8 @@
  * https://github.com/jquery/globalize/blob/master/lib/cultures/globalize.culture.de.js
  *
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -53,7 +53,7 @@ $.extend($.jgrid,{
 		    email: "ist keine gültige E-Mail-Adresse",
 		    integer: "Bitte geben Sie eine Ganzzahl ein",
 			date: "Bitte geben Sie ein gültiges Datum ein",
-			url: "ist keine gültige URL. Präfix muss eingegeben werden ('http://' oder 'https://')",
+			url: "ist keine gültige URL. Präfix muss eingegeben werden ('https://' oder 'https://')",
 			nodefined : " ist nicht definiert!",
 			novalue : " Rückgabewert ist erforderlich!",
 			customarray : "Benutzerdefinierte Funktion sollte ein Array zurückgeben!",
@@ -115,8 +115,8 @@ $.extend($.jgrid,{
 			srcformat: 'Y-m-d',
 			newformat: 'd.m.Y',
 			masks : {
-				// see http://php.net/manual/en/function.date.php for PHP format used in jqGrid
-				// and see http://docs.jquery.com/UI/Datepicker/formatDate
+				// see https://php.net/manual/en/function.date.php for PHP format used in jqGrid
+				// and see https://docs.jquery.com/UI/Datepicker/formatDate
 				// and https://github.com/jquery/globalize#dates for alternative formats used frequently
 		        ISO8601Long: "Y-m-d H:i:s",
 		        ISO8601Short: "Y-m-d",

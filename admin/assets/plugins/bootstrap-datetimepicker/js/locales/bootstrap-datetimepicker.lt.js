@@ -1,16 +1,16 @@
-ï»¿/**
+/**
  * Lithuanian translation for bootstrap-datetimepicker
- * Å arÅ«nas Gliebus <ssharunas@yahoo.co.uk>
+ * Šarunas Gliebus <ssharunas@yahoo.co.uk>
  */
 
 ;(function($){
     $.fn.datetimepicker.dates['lt'] = {
-        days: ["Sekmadienis", "Pirmadienis", "Antradienis", "TreÄiadienis", "Ketvirtadienis", "Penktadienis", "Å eÅ¡tadienis", "Sekmadienis"],
-        daysShort: ["S", "Pr", "A", "T", "K", "Pn", "Å ", "S"],
-        daysMin: ["Sk", "Pr", "An", "Tr", "Ke", "Pn", "Å t", "Sk"],
-        months: ["Sausis", "Vasaris", "Kovas", "Balandis", "GeguÅ¾Ä—", "BirÅ¾elis", "Liepa", "RugpjÅ«tis", "RugsÄ—jis", "Spalis", "Lapkritis", "Gruodis"],
+        days: ["Sekmadienis", "Pirmadienis", "Antradienis", "Treciadienis", "Ketvirtadienis", "Penktadienis", "Šeštadienis", "Sekmadienis"],
+        daysShort: ["S", "Pr", "A", "T", "K", "Pn", "Š", "S"],
+        daysMin: ["Sk", "Pr", "An", "Tr", "Ke", "Pn", "Št", "Sk"],
+        months: ["Sausis", "Vasaris", "Kovas", "Balandis", "Gegue", "Birelis", "Liepa", "Rugpjutis", "Rugsejis", "Spalis", "Lapkritis", "Gruodis"],
         monthsShort: ["Sau", "Vas", "Kov", "Bal", "Geg", "Bir", "Lie", "Rugp", "Rugs", "Spa", "Lap", "Gru"],
-        today: "Å iandien",
+        today: "Šiandien",
 		suffix: [],
 		meridiem: [],
         weekStart: 1

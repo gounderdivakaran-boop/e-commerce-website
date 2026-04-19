@@ -1,11 +1,11 @@
 ;(function($){
 /**
- * jqGrid Russian Translation v1.0 02.07.2009 (based on translation by Alexey Kanaev v1.1 21.01.2009, http://softcore.com.ru)
+ * jqGrid Russian Translation v1.0 02.07.2009 (based on translation by Alexey Kanaev v1.1 21.01.2009, https://softcore.com.ru)
  * Sergey Dyagovchenko
- * http://d.sumy.ua
+ * https://d.sumy.ua
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
         email: "некорректное значение e-mail",
         integer: "Пожалуйста, введите целое число",
         date: "Пожалуйста, введите правильную дату",
-        url: "неверная ссылка. Необходимо ввести префикс ('http://' или 'https://')",
+        url: "неверная ссылка. Необходимо ввести префикс ('https://' или 'https://')",
 		nodefined : " не определено!",
 		novalue : " возвращаемое значение обязательно!",
 		customarray : "Пользовательская функция должна возвращать массив!",

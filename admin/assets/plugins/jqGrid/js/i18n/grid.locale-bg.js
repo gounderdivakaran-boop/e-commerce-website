@@ -2,10 +2,10 @@
 /**
  * jqGrid Bulgarian Translation 
  * Tony Tomov tony@trirand.com
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
@@ -42,7 +42,7 @@ $.extend($.jgrid,{
 			email: "не е валиден ел. адрес",
 			integer: "Въведете валидно цяло число",
 			date: "Въведете валидна дата",
-			url: "e невалиден URL. Изискава се префикс('http://' или 'https://')",
+			url: "e невалиден URL. Изискава се префикс('https://' или 'https://')",
 			nodefined : " е недефинирана!",
 			novalue : " изисква връщане на стойност!",
 			customarray : "Потреб. Функция трябва да върне масив!",

@@ -26,7 +26,7 @@ $(document).ready(function(){
 		return result;
 	}, "Your password must be at least 6 characters long and contain at least one number and one character.");
 
-	// a custom method making the default value for companyurl ("http://") invalid, without displaying the "invalid url" message
+	// a custom method making the default value for companyurl ("https://") invalid, without displaying the "invalid url" message
 	jQuery.validator.addMethod("defaultInvalid", function(value, element) {
 		return value != element.defaultValue;
 	}, "");

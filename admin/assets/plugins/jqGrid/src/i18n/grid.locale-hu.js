@@ -2,10 +2,10 @@
 /**
  * jqGrid Hungarian Translation
  * Őrszigety Ádám udx6bs@freemail.hu
- * http://trirand.com/blog/ 
+ * https://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * https://www.opensource.org/licenses/mit-license.php
+ * https://www.gnu.org/licenses/gpl.html
 **/
 
 $.jgrid = $.jgrid || {};
@@ -43,7 +43,7 @@ $.extend($.jgrid,{
 			email: "hibás emailcím",
 			integer: "Kérjük adjon meg egy helyes egész számot",
 			date: "Kérjük adjon meg egy helyes dátumot",
-			url: "nem helyes cím. Előtag kötelező ('http://' vagy 'https://')",
+			url: "nem helyes cím. Előtag kötelező ('https://' vagy 'https://')",
 			nodefined : " nem definiált!",
 			novalue : " visszatérési érték kötelező!!",
 			customarray : "Custom function should return array!",

@@ -2,11 +2,11 @@
   "name": "bootstrap-timepicker",
   "description": "Timepicker widget for Twitter Bootstrap 2.*",
   "version": "0.2.3",
-  "homepage": "http://jdewit.github.com/bootstrap-timepicker",
+  "homepage": "https://jdewit.github.com/bootstrap-timepicker",
   "author": {
     "name": "Joris de Wit",
     "email": "joris.w.dewit@gmail.com",
-    "url": "http://jorisdewit.ca"
+    "url": "https://jorisdewit.ca"
   },
   "repository": {
     "type": "git",

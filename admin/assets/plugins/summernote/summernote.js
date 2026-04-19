@@ -674,7 +674,7 @@
         rng.select(); recordUndo(welEditable);
 
         var bProtocol = sLinkUrl.toLowerCase().indexOf('://') !== -1;
-        var sLinkUrlWithProtocol = bProtocol ? sLinkUrl : 'http://' + sLinkUrl;
+        var sLinkUrlWithProtocol = bProtocol ? sLinkUrl : 'https://' + sLinkUrl;
 
         //IE: createLink when range collapsed.
         if (bMSIE && rng.isCollapsed()) {
@@ -1381,7 +1381,7 @@
                      '<div class="note-link-popover popover bottom in" style="display: none;">' +
                        '<div class="arrow"></div>' +
                        '<div class="popover-content note-link-content">' +
-                         '<a href="http://www.google.com" target="_blank">www.google.com</a>&nbsp;&nbsp;' +
+                         '<a href="https://www.google.com" target="_blank">www.google.com</a>&nbsp;&nbsp;' +
                          '<div class="note-insert btn-group">' +
                          '<button type="button" class="btn btn-default btn-sm btn-small" title="Edit" data-event="showLinkDialog" tabindex="-1"><i class="icon-edit"></i></button>' +
                          '<button type="button" class="btn btn-default btn-sm btn-small" title="Unlink" data-event="unlink" tabindex="-1"><i class="icon-unlink"></i></button>' +

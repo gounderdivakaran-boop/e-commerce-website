@@ -1,11 +1,11 @@
 /*
  * jqModal - Minimalist Modaling with jQuery
- *   (http://dev.iceburg.net/jquery/jqmodal/)
+ *   (https://dev.iceburg.net/jquery/jqmodal/)
  *
  * Copyright (c) 2007,2008 Brice Burgess <bhb@iceburg.net>
  * Dual licensed under the MIT and GPL licenses:
- *   http://www.opensource.org/licenses/mit-license.php
- *   http://www.gnu.org/licenses/gpl.html
+ *   https://www.opensource.org/licenses/mit-license.php
+ *   https://www.gnu.org/licenses/gpl.html
  * 
  * $Version: 07/06/2008 +r13
  */

@@ -47,7 +47,7 @@ module.exports = function(grunt) {
       options: {
         template: 'test/template/jasmine-gmaps.html',
         specs: 'test/spec/*.js',
-        vendor: 'http://maps.google.com/maps/api/js?sensor=true',
+        vendor: 'https://maps.google.com/maps/api/js?sensor=true',
         styles: 'test/style.css'
       },
       src : '<%= concat.dist.src %>'

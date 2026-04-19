@@ -136,7 +136,7 @@ asyncTest('Dynamic response status callback', function() {
             equals(xhr.status, 500, 'Dynamically set response status matches');
 
             if( $.fn.jquery !== '1.5.2') {
-                // This assertion fails in 1.5.2 due to this bug: http://bugs.jquery.com/ticket/9854
+                // This assertion fails in 1.5.2 due to this bug: https://bugs.jquery.com/ticket/9854
                 // The statusText is being modified internally by jQuery in 1.5.2
                 equals(xhr.statusText, "Internal Server Error", 'Dynamically set response statusText matches');
             }
@@ -163,7 +163,7 @@ asyncTest('Default Response Settings', function() {
             equals(xhr.status, 200, 'Response status matches default');
 
             if( $.fn.jquery !== '1.5.2') {
-                // This assertion fails in 1.5.2 due to this bug: http://bugs.jquery.com/ticket/9854
+                // This assertion fails in 1.5.2 due to this bug: https://bugs.jquery.com/ticket/9854
                 // The statusText is being modified internally by jQuery in 1.5.2
                 equals(xhr.statusText, "OK", 'Response statusText matches default');
             }
@@ -746,7 +746,7 @@ asyncTest('Response returns jsonp and return value from ajax is a promise if sup
     window.rquery =  /\?/;
 
     $.mockjax({
-        url:"http://api*",
+        url:"https://api*",
         responseText:{
             success:true,
             ids:[21327211]
@@ -756,7 +756,7 @@ asyncTest('Response returns jsonp and return value from ajax is a promise if sup
     });
 
     var promiseObject = $.ajax({
-        url:"http://api.twitter.com/1/followers/ids.json?screen_name=test_twitter_user",
+        url:"https://api.twitter.com/1/followers/ids.json?screen_name=test_twitter_user",
         dataType:"jsonp"
     });
 
@@ -797,7 +797,7 @@ asyncTest('Grouping deferred responses, if supported', function() {
     window.rquery =  /\?/;
 
     $.mockjax({
-        url:"http://api*",
+        url:"https://api*",
         responseText:{
             success:true,
             ids:[21327211]
@@ -807,15 +807,15 @@ asyncTest('Grouping deferred responses, if supported', function() {
     });
 
     var req1 = $.ajax({
-        url:"http://api.twitter.com/1/followers/ids.json?screen_name=test_twitter_user",
+        url:"https://api.twitter.com/1/followers/ids.json?screen_name=test_twitter_user",
         dataType:"jsonp"
     });
     var req2 = $.ajax({
-        url:"http://api.twitter.com/1/followers/ids.json?screen_name=test_twitter_user",
+        url:"https://api.twitter.com/1/followers/ids.json?screen_name=test_twitter_user",
         dataType:"jsonp"
     });
     var req3 = $.ajax({
-        url:"http://api.twitter.com/1/followers/ids.json?screen_name=test_twitter_user",
+        url:"https://api.twitter.com/1/followers/ids.json?screen_name=test_twitter_user",
         dataType:"jsonp"
     });
 
@@ -1143,7 +1143,7 @@ asyncTest( 'Test bug fix for $.mockjaxSettings', function() {
 
 asyncTest("Preserve responseText inside a response function when using jsonp and a success callback", function(){
     $.mockjax({
-        url: "http://some/fake/jsonp/endpoint",
+        url: "https://some/fake/jsonp/endpoint",
         // The following line works...
         // responseText: [{ "data" : "JSONP is cool" }]
         // But doesn't not work when setting this.responseText in response
@@ -1153,7 +1153,7 @@ asyncTest("Preserve responseText inside a response function when using jsonp and
     });
 
     $.ajax({
-        url: "http://some/fake/jsonp/endpoint",
+        url: "https://some/fake/jsonp/endpoint",
         dataType: "jsonp",
         success: function(data) {
             deepEqual(data, [{ "data" : "JSONP is cool" }]);
@@ -1200,19 +1200,19 @@ $.mockjaxClear(id);
         });
 
         $.mockjax({
-            url: 'http://google.com',
+            url: 'https://google.com',
             responseText: 'alert("Hello world");'
         });
 
         $.mockjax({
-            url: 'http://another-cross-domain.com',
+            url: 'https://another-cross-domain.com',
             responseText: function() {
                 alert("Get script mock");
             }
         });
 
         $.ajax({
-            url: 'http://google.com',
+            url: 'https://google.com',
             dataType: 'script',
             success: function(data) {
                 $('ul').append('<li>script: completed (' + data.test + ')</li>');
