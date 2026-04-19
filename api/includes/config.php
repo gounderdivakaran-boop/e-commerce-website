@@ -9,42 +9,55 @@ define('DB_USER',   getenv('DB_USER')   ?: 'root');
 define('DB_PASS',   getenv('DB_PASS')   ?: '');
 define('DB_NAME',   getenv('DB_NAME')   ?: 'shopping');
 
-// Create connection
-// Disable mysqli exceptions (to prevent fatal crashes on PHP 8.1+)
+// Disable mysqli exceptions
 mysqli_report(MYSQLI_REPORT_OFF);
 
+// Attempt connection (suppress warnings with @)
 try {
     if (substr(DB_SERVER, 0, 10) === '/cloudsql/') {
-        // Connect via Unix Socket (Cloud Run / Cloud SQL)
-        $con = mysqli_connect(null, DB_USER, DB_PASS, DB_NAME, null, DB_SERVER);
+        $con = @mysqli_connect(null, DB_USER, DB_PASS, DB_NAME, null, DB_SERVER);
     } else {
-        // Standard TCP connection (Local XAMPP or Cloud DB)
-        $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+        $con = @mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
     }
 } catch (Exception $e) {
     $con = false;
-    error_log("Connection Exception: " . $e->getMessage());
 }
 
-// Performance & Error Handling
-ini_set('display_errors', 1); // Forced ON for debugging white screen
-ini_set('log_errors', 1);
-error_reporting(E_ALL);
+// Error logging optimized for environment
+if (isset($_SERVER['VERCEL'])) {
+    ini_set('display_errors', 0);
+    error_reporting(E_ERROR | E_PARSE);
+} else {
+    ini_set('display_errors', 1);
+    ini_set('log_errors', 1);
+    error_reporting(E_ALL);
+}
+
+$GLOBALS['DEMO_MODE'] = false;
+
+// Auto-enable Demo Mode if on Vercel and no remote DB
+if (isset($_SERVER['VERCEL']) && DB_SERVER === 'localhost') {
+    $GLOBALS['DEMO_MODE'] = true;
+}
 
 // Check connection
 if (!$con || mysqli_connect_errno()) {
-    $errorMsg = $con ? mysqli_connect_error() : "Could not connect to database server.";
+    $errorMsg = mysqli_connect_error() ?: "Could not connect to database server.";
     error_log("Failed to connect to MySQL: " . $errorMsg);
     
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
     
-    // Provide a helpful message for deployment
-    if (DB_SERVER === 'localhost') {
-        $_SESSION['errmsg'] = "Database unavailable. If you are on the live site, please configure your Cloud Database environment variables.";
-    } else {
-        $_SESSION['errmsg'] = "Database connection error: " . $errorMsg;
-    }
+    $GLOBALS['DEMO_MODE'] = true;
+}
+
+/**
+ * Check if database is ready or if we are in demo mode
+ */
+function db_ready() {
+    global $con;
+    return ($con && !mysqli_connect_errno()) || ($GLOBALS['DEMO_MODE'] ?? false);
 }
 ?>
+

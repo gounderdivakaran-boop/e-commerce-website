@@ -9,26 +9,54 @@ define('DB_USER',   getenv('DB_USER')   ?: 'root');
 define('DB_PASS',   getenv('DB_PASS')   ?: '');
 define('DB_NAME',   getenv('DB_NAME')   ?: 'shopping');
 
-// Create connection
-if (str_starts_with(DB_SERVER, '/cloudsql/')) {
-    // Connect via Unix Socket (Cloud Run / Cloud SQL)
-    $con = mysqli_connect(null, DB_USER, DB_PASS, DB_NAME, null, DB_SERVER);
-} else {
-    // Standard TCP connection (Local XAMPP)
-    $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+// Disable mysqli exceptions
+mysqli_report(MYSQLI_REPORT_OFF);
+
+// Attempt connection (suppress warnings with @)
+try {
+    if (str_starts_with(DB_SERVER, '/cloudsql/')) {
+        $con = @mysqli_connect(null, DB_USER, DB_PASS, DB_NAME, null, DB_SERVER);
+    } else {
+        $con = @mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+    }
+} catch (Exception $e) {
+    $con = false;
 }
 
-// Performance & Error Handling
-ini_set('display_errors', getenv('APP_DEBUG') ? 1 : 0);
-ini_set('log_errors', 1);
-error_reporting(E_ALL);
+// Error logging optimized for environment
+if (isset($_SERVER['VERCEL'])) {
+    ini_set('display_errors', 0);
+    error_reporting(E_ERROR | E_PARSE);
+} else {
+    ini_set('display_errors', 1);
+    ini_set('log_errors', 1);
+    error_reporting(E_ALL);
+}
+
+$GLOBALS['DEMO_MODE'] = false;
+
+// Auto-enable Demo Mode if on Vercel and no remote DB
+if (isset($_SERVER['VERCEL']) && DB_SERVER === 'localhost') {
+    $GLOBALS['DEMO_MODE'] = true;
+}
 
 // Check connection
-if (mysqli_connect_errno()) {
+if (mysqli_connect_errno() || !$con) {
     error_log("Failed to connect to MySQL: " . mysqli_connect_error());
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    $_SESSION['errmsg'] = "Database connection failed. Please ensure MySQL is started in XAMPP.";
+    
+    $GLOBALS['DEMO_MODE'] = true;
+    $_SESSION['errmsg'] = "Database Offline: Running in DEMO MODE.";
+}
+
+/**
+ * Check if database is ready or if we are in demo mode
+ */
+function db_ready() {
+    global $con;
+    return ($con && !mysqli_connect_errno()) || ($GLOBALS['DEMO_MODE'] ?? false);
 }
 ?>
+
