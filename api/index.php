@@ -1,15 +1,18 @@
 <?php session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+error_reporting(0);
 include('includes/config.php');
-if(isset($_GET['action']) && $_GET['action']=="add"){
+
+// Define if DB is ready (using the global flag or checking connection)
+$is_db_ready = db_ready();
+
+if(isset($_GET['action']) && $_GET['action']=="add" && $is_db_ready){
 	$id=intval($_GET['id']);
 	if(isset($_SESSION['cart'][$id])){
 		$_SESSION['cart'][$id]['quantity']++;
 	}else{
 		$sql_p="SELECT * FROM products WHERE id={$id}";
 		$query_p=mysqli_query($con,$sql_p);
-		if(mysqli_num_rows($query_p)!=0){
+		if($query_p && mysqli_num_rows($query_p)!=0){
 			$row_p=mysqli_fetch_array($query_p);
 			$_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
 		
@@ -19,8 +22,6 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 	}
 		echo "<script type='text/javascript'> document.location ='my-cart.php'; </script>";
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,10 +32,9 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>Nexus Elite Home Page</title>
+	    <title>Nexus Elite | Secure Shopping</title>
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -44,13 +44,11 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 	    <link rel="stylesheet" href="assets/css/red.css">
 	    <link rel="stylesheet" href="assets/css/owl.carousel.css">
 		<link rel="stylesheet" href="assets/css/owl.transitions.css">
-		<!--<link rel="stylesheet" href="assets/css/owl.theme.css">-->
 		<link href="assets/css/lightbox.css" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/animate.min.css">
 		<link rel="stylesheet" href="assets/css/rateit.css">
 		<link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
 
-		<!-- Demo Purpose Only. Should be removed in production -->
 		<link rel="stylesheet" href="assets/css/config.css">
 
 		<link href="assets/css/green.css" rel="alternate stylesheet" title="Green color">
@@ -59,13 +57,7 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		<link href="assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
 		<link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-	    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	    
-	    <!-- Smart Modern Design System -->
-	    <link rel="stylesheet" href="assets/css/smart-modern.css">
-	    
-	    <!-- Fallback for essential icons -->
-	    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 	    
 	    <!-- Favicon -->
 	    <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -93,17 +85,22 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 			</div><!-- /.sidemenu-holder -->	
 			
 			<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
-				<!-- ========================================== SECTION – MODERN HERO ========================================= -->
+				<!-- ========================================== SECTION – HERO ========================================= -->
 			
-<div class="hero-section" style="background: linear-gradient(rgba(248, 249, 250, 0.8), rgba(248, 249, 250, 0.8)), url('assets/images/lifestyle-hero.jpg'); border-radius: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-	<div class="hero-content" style="max-width: 800px; text-align: center;">
-		<span style="color: #9A8C7D; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">The Future of Shopping</span>
-		<h1 style="font-family: 'Playfair Display', serif; font-size: 4rem; margin-top: 10px; color: #2C3E50;">Curated Elegance for Your Lifestyle.</h1>
-		<p style="font-size: 1.1rem; color: #6C757D; margin-bottom: 30px;">Discover our hand-picked collection of premium essentials, designed for those who appreciate the finer things.</p>
-		<div class="buttons">
-			<a href="#all" class="btn btn-primary" style="padding: 18px 45px !important; font-size: 1rem !important;">EXPLORE COLLECTION</a>
-		</div>
-	</div>
+<div id="hero" class="homepage-slider3">
+	<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+		<div class="full-width-slider">	
+			<div class="item" style="background-image: url(assets/images/sliders/slider1.jpg);">
+				<!-- /.container-fluid -->
+			</div><!-- /.item -->
+		</div><!-- /.full-width-slider -->
+	    
+	    <div class="full-width-slider">
+			<div class="item full-width-slider" style="background-image: url(assets/images/sliders/slider2.jpg);">
+			</div><!-- /.item -->
+		</div><!-- /.full-width-slider -->
+
+	</div><!-- /.owl-main -->
 </div>
 			
 <!-- ========================================= SECTION – HERO : END ========================================= -->	
@@ -162,33 +159,21 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		</div><!-- /.row -->
 
 		<!-- ============================================== SCROLL TABS ============================================== -->
-		<div  >
-			<div class="more-info-tab clearfix" style="margin-top: 50px;">
-			   <h3 class="new-product-title pull-left" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #2C3E50; margin-bottom: 30px;">Featured Essentials</h3>
+		<div  id="product-tabs-slider" class="scroll-tabs inner-bottom-vs  wow fadeInUp">
+			<div class="more-info-tab clearfix">
+			   <h3 class="new-product-title pull-left">Featured Products</h3>
 			</div>
-
-            <!-- Category Scroller -->
-            <div class="category-scroller">
-                <a href="index.php" class="category-item active">All Collections</a>
-                <?php $sql=mysqli_query($con,"select id,categoryName  from category");
-                while($row=mysqli_fetch_array($sql)) { ?>
-                    <a href="category.php?cid=<?php echo $row['id'];?>" class="category-item"><?php echo $row['categoryName'];?></a>
-                <?php } ?>
-            </div>
 
 			<div class="tab-content outer-top-xs">
 				<div class="tab-pane in active" id="all">			
 					<div class="product-slider">
-						<div class="owl-carousel home-owl-carousel custom-carousel owl-theme" >
+						<div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
 <?php
-$ret=mysqli_query($con,"select * from products");
-while ($row=mysqli_fetch_array($ret)) 
-{
-	# code...
-
-
+if ($is_db_ready) {
+    $ret=mysqli_query($con,"select * from products");
+    while ($row=mysqli_fetch_array($ret)) 
+    {
 ?>
-
 						    	
 		<div class="item">
 			<div class="products">
@@ -218,7 +203,7 @@ while ($row=mysqli_fetch_array($ret))
 			
 		</div><!-- /.product-info -->
 		<?php if($row['productAvailability']=='In Stock'){?>
-					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-info">Add to Cart</a></div>
+					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary">Add to Cart</a></div>
 				<?php } else {?>
 						<div class="action" style="color:red">Out of Stock</div>
 					<?php } ?>
@@ -226,14 +211,15 @@ while ($row=mysqli_fetch_array($ret))
       
 			</div><!-- /.products -->
 		</div><!-- /.item -->
-	<?php } ?>
+	<?php } 
+} else { ?>
+    <!-- Demo Mode Content -->
+    <div class="item"><div class="alert alert-info">Running in Demo Mode. Connect database to see real products.</div></div>
+<?php } ?>
 
 			</div><!-- /.home-owl-carousel -->
 					</div><!-- /.product-slider -->
 				</div>
-
-
-
 			</div>
 		</div>
 		    
@@ -263,27 +249,6 @@ while ($row=mysqli_fetch_array($ret))
     <script src="assets/js/bootstrap-select.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/scripts.js"></script>
-
-	<!-- For demo purposes – can be removed on production -->
-	
-	<script src="switchstylesheet/switchstylesheet.js"></script>
-	
-	<script>
-		$(document).ready(function(){ 
-			$(".changecolor").switchstylesheet( { seperator:"color"} );
-			$('.show-theme-options').click(function(){
-				$(this).parent().toggleClass('open');
-				return false;
-			});
-		});
-
-		$(window).bind("load", function() {
-		   $('.show-theme-options').delay(2000).trigger('click');
-		});
-	</script>
-	<!-- For demo purposes – can be removed on production : End -->
-
-	
 
 </body>
 </html>
