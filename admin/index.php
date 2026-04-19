@@ -10,7 +10,18 @@ if(isset($_POST['submit']))
 	$password=$_POST['password'];
     
     // Check if database is ready
-    if (!isset($con) || !$con || mysqli_connect_errno()) {
+    $is_db_ready = db_ready();
+    
+    // Demo Mode Bypass
+    if (($GLOBALS['DEMO_MODE'] ?? false) && $username === 'admin' && $password === 'admin') {
+        $_SESSION['alogin'] = 'admin';
+        $_SESSION['id'] = 0;
+        $_SESSION['demo_mode'] = true;
+        header("location:dashboard.php");
+        exit();
+    }
+
+    if (!$is_db_ready) {
         $_SESSION['errmsg'] = "Database connection error. Please ensure MySQL is running in XAMPP.";
         header("location:index.php");
         exit();

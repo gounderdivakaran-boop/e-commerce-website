@@ -21,15 +21,20 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+$GLOBALS['DEMO_MODE'] = false;
+
 if (!$con || mysqli_connect_errno()) {
     $errorMsg = mysqli_connect_error() ?: "Could not connect to database server.";
     error_log("Admin DB Connection Error: " . $errorMsg);
     
+    // Enable Demo Mode if connection fails
+    $GLOBALS['DEMO_MODE'] = true;
+    
     // Provide a helpful message for local development
     if (DB_SERVER === 'localhost' || DB_SERVER === '127.0.0.1') {
-        $_SESSION['errmsg'] = "Database Connection Failed: Please ensure MySQL is running in XAMPP and the 'shopping' database is imported.";
+        $_SESSION['errmsg'] = "Database Offline: Running in DEMO MODE. Use 'admin' / 'admin' to explore.";
     } else {
-        $_SESSION['errmsg'] = "Database is currently unavailable. Please contact the administrator.";
+        $_SESSION['errmsg'] = "Database is currently unavailable. Running in DEMO MODE.";
     }
 }
 
@@ -39,10 +44,11 @@ ini_set('log_errors', 1);
 error_reporting(E_ALL);
 
 /**
- * Check if database is ready
+ * Check if database is ready or if we are in demo mode
  */
 function db_ready() {
     global $con;
-    return $con && !mysqli_connect_errno();
+    return ($con && !mysqli_connect_errno()) || ($GLOBALS['DEMO_MODE'] ?? false);
 }
-?>
+?>
+

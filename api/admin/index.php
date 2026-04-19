@@ -9,7 +9,19 @@ if(isset($_POST['submit']))
 	$username=$_POST['username'];
 	$password=$_POST['password'];
     
-    if (!db_ready()) {
+    // Check if database is ready
+    $is_db_ready = db_ready();
+    
+    // Demo Mode Bypass
+    if (($GLOBALS['DEMO_MODE'] ?? false) && $username === 'admin' && $password === 'admin') {
+        $_SESSION['alogin'] = 'admin';
+        $_SESSION['id'] = 0;
+        $_SESSION['demo_mode'] = true;
+        header("location:dashboard.php");
+        exit();
+    }
+
+    if (!$is_db_ready) {
         $_SESSION['errmsg'] = "Database connection lost. Please check your MySQL server.";
         header("location:index.php");
         exit();
