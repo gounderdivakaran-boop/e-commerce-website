@@ -1,14 +1,14 @@
 <?php session_start();
-error_reporting(0);
+error_reporting(E_ALL);
 include('includes/config.php');
-if(isset($_GET['action']) && $_GET['action']=="add"){
+if(isset($_GET['action']) && $_GET['action']=="add" && $con){
 	$id=intval($_GET['id']);
 	if(isset($_SESSION['cart'][$id])){
 		$_SESSION['cart'][$id]['quantity']++;
 	}else{
 		$sql_p="SELECT * FROM products WHERE id={$id}";
 		$query_p=mysqli_query($con,$sql_p);
-		if(mysqli_num_rows($query_p)!=0){
+		if($query_p && mysqli_num_rows($query_p)!=0){
 			$row_p=mysqli_fetch_array($query_p);
 			$_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
 		
@@ -175,10 +175,14 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 					<div class="product-slider">
 						<div class="owl-carousel home-owl-carousel custom-carousel owl-theme" >
 <?php
+if ($con) {
 $ret=mysqli_query($con,"select * from products");
+} else {
+$ret = false;
+}
+if ($ret) {
 while ($row=mysqli_fetch_array($ret)) 
 {
-	# code...
 
 
 ?>
@@ -220,7 +224,9 @@ while ($row=mysqli_fetch_array($ret))
       
 			</div><!-- /.products -->
 		</div><!-- /.item -->
-	<?php } ?>
+	<?php }
+} // end if($ret)
+?>
 
 			</div><!-- /.home-owl-carousel -->
 					</div><!-- /.product-slider -->

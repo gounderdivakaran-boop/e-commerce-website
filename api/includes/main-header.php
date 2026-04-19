@@ -62,6 +62,7 @@ if(!empty($_SESSION['cart'])){
 		<ul class="dropdown-menu">
 		
 		 <?php
+    if ($con) {
     $sql = "SELECT * FROM products WHERE id IN(";
 			foreach($_SESSION['cart'] as $id => $value){
 			$sql .=$id. ",";
@@ -97,7 +98,7 @@ if(!empty($_SESSION['cart'])){
 					</div>
 				</div><!-- /.cart-item -->
 			
-				<?php } }?>
+				<?php } } } // end if($con) ?>
 				<div class="clearfix"></div>
 			<hr>
 		

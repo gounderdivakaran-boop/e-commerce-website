@@ -4,6 +4,9 @@ error_reporting(0);
 include('includes/config.php');
 // Code user Registration
 if(isset($_POST['submit'])) {
+    if (!db_ready()) {
+        $_SESSION['errmsg'] = "Database is currently unavailable. Please try again later.";
+    } else {
     $name = $_POST['fullname'];
     $email = $_POST['emailid'];
     $contactno = $_POST['contactno'];
@@ -18,10 +21,16 @@ if(isset($_POST['submit'])) {
         echo "<script>alert('Registration failed - please try again');</script>";
     }
     mysqli_stmt_close($stmt);
+    }
 }
 
 // Code for User login
 if(isset($_POST['login'])) {
+    if (!db_ready()) {
+        $_SESSION['errmsg'] = "Database is currently unavailable. Login is disabled in preview mode.";
+        header("location:login.php");
+        exit();
+    }
     $email = $_POST['email'];
     $password = $_POST['password'];
     

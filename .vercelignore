@@ -1,0 +1,12 @@
+*.sql
+*.zip
+*.rar
+Dockerfile
+docker-compose.yml
+.git
+.github
+node_modules
+.vscode
+.idea
+admin/productimages
+api/admin/productimages
