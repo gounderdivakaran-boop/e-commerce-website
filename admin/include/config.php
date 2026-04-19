@@ -12,16 +12,29 @@ define('DB_NAME',   getenv('DB_NAME')   ?: 'shopping');
 // Disable mysqli exceptions
 mysqli_report(MYSQLI_REPORT_OFF);
 
-$con = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+// Disable mysqli exceptions
+mysqli_report(MYSQLI_REPORT_OFF);
+
+$con = @mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
 // Error logging
-ini_set('display_errors', 1);
-ini_set('log_errors', 1);
-error_reporting(E_ALL);
+if (!isset($_SERVER['VERCEL'])) {
+    ini_set('display_errors', 1);
+    ini_set('log_errors', 1);
+    error_reporting(E_ALL);
+} else {
+    ini_set('display_errors', 0);
+    error_reporting(E_ERROR | E_PARSE);
+}
 
 $GLOBALS['DEMO_MODE'] = false;
 
-if (mysqli_connect_errno()) {
+// Auto-enable Demo Mode if on Vercel and no remote DB configured
+if (isset($_SERVER['VERCEL']) && DB_SERVER === 'localhost') {
+    $GLOBALS['DEMO_MODE'] = true;
+}
+
+if (mysqli_connect_errno() || !$con) {
     error_log("Failed to connect to MySQL: " . mysqli_connect_error());
     if (session_status() === PHP_SESSION_NONE) {
         session_start();

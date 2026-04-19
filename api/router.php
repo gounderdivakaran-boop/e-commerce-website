@@ -1,13 +1,14 @@
-<?php
-/**
- * Single-entry-point router for Vercel.
- * All requests go through this file, which resolves
- * the correct PHP page from the api/ directory.
- */
+ob_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// Error reporting optimized for environment
+if (isset($_SERVER['VERCEL'])) {
+    ini_set('display_errors', 0);
+    error_reporting(E_ERROR | E_PARSE);
+} else {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+}
 
 // Log the request for debugging
 error_log("Router handling request: " . $_SERVER['REQUEST_URI']);

@@ -13,8 +13,8 @@ define('DB_NAME',   getenv('DB_NAME')   ?: 'shopping');
 // Disable mysqli exceptions for manual handling
 mysqli_report(MYSQLI_REPORT_OFF);
 
-// Attempt connection
-$con = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+// Attempt connection (suppress warnings with @ to prevent "headers already sent" errors)
+$con = @mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
 // Error logging and session handling
 if (session_status() === PHP_SESSION_NONE) {
@@ -22,6 +22,11 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $GLOBALS['DEMO_MODE'] = false;
+
+// Auto-enable Demo Mode if on Vercel and no remote DB configured
+if (isset($_SERVER['VERCEL']) && DB_SERVER === 'localhost') {
+    $GLOBALS['DEMO_MODE'] = true;
+}
 
 if (!$con || mysqli_connect_errno()) {
     $errorMsg = mysqli_connect_error() ?: "Could not connect to database server.";
@@ -38,10 +43,15 @@ if (!$con || mysqli_connect_errno()) {
     }
 }
 
-// Global debug settings
-ini_set('display_errors', 1);
-ini_set('log_errors', 1);
-error_reporting(E_ALL);
+// Global debug settings (be careful on production)
+if (!isset($_SERVER['VERCEL'])) {
+    ini_set('display_errors', 1);
+    ini_set('log_errors', 1);
+    error_reporting(E_ALL);
+} else {
+    ini_set('display_errors', 0);
+    error_reporting(E_ERROR | E_PARSE);
+}
 
 /**
  * Check if database is ready or if we are in demo mode
