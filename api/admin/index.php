@@ -4,6 +4,11 @@ error_reporting(0);
 include("includes/config.php");
 if(isset($_POST['submit']))
 {
+    if (!db_ready()) {
+        $_SESSION['errmsg'] = "Database is currently unavailable. Admin login is disabled in preview mode.";
+        header("location:index.php");
+        exit();
+    }
 	$username=$_POST['username'];
 	$password=$_POST['password'];
     
