@@ -12,31 +12,36 @@ header("Referrer-Policy: strict-origin-when-cross-origin");
 // Relaxed CSP for local development and Google integration
 header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com https://cdn.jsdelivr.net https://code.jquery.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.googleusercontent.com; frame-src 'self' https://accounts.google.com https://www.google.com;");
 
-// Database Credentials
-if (isset($_SERVER['VERCEL'])) {
+// Environment Detection (Local vs Cloud)
+$is_cloud = (isset($_SERVER['VERCEL']) || (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] !== 'localhost'));
+
+if ($is_cloud) {
     // Production (Cloud) - Prioritize Vercel Variables with hardcoded fallbacks
-    define('DB_SERVER', getenv('DB_SERVER') ?: 'mysql-8d474cb-gounderdivakaran-0f47.g.aivencloud.com');
-    define('DB_USER',   getenv('DB_USER')   ?: 'avnadmin');
-    define('DB_PASS',   getenv('DB_PASS')   ?: 'AVNS_S7QTFAZrai9x7WfPn4F');
-    define('DB_NAME',   getenv('DB_NAME')   ?: 'defaultdb');
-    define('DB_PORT',   getenv('DB_PORT')   ?: '12863');
+    $db_host = getenv('DB_SERVER') ?: 'mysql-8d474cb-gounderdivakaran-0f47.g.aivencloud.com';
+    $db_user = getenv('DB_USER')   ?: 'avnadmin';
+    $db_pass = getenv('DB_PASS')   ?: 'AVNS_S7QTFAZrai9x7WfPn4F';
+    $db_name = getenv('DB_NAME')   ?: 'defaultdb';
+    $db_port = getenv('DB_PORT')   ?: '12863';
+    
+    define('DB_SERVER', $db_host);
+    define('DB_USER',   $db_user);
+    define('DB_PASS',   $db_pass);
+    define('DB_NAME',   $db_name);
+    define('DB_PORT',   (int)$db_port);
 } else {
     // Local (XAMPP)
     define('DB_SERVER', 'localhost');
     define('DB_USER',   'root');
     define('DB_PASS',   '');
     define('DB_NAME',   'shopping');
-    define('DB_PORT',   '3306');
+    define('DB_PORT',   3306);
 }
 
-// Disable mysqli exceptions for manual handling
-mysqli_report(MYSQLI_REPORT_OFF);
+// Establish Connection
+$con = @mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 
-// Attempt connection
-try {
-    $con = @mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
-} catch (Exception $e) {
-    $con = false;
+if (!$con) {
+    $db_error = mysqli_connect_error();
 }
 
 // Environment-aware error reporting
