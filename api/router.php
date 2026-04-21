@@ -55,19 +55,24 @@ if ($isAdmin) {
     $file = $targetDir . '/' . $page;
 }
 
-// Check if the request is for a static file (like an image)
-$rootFile = __DIR__ . '/../' . $uri;
-if (file_exists($rootFile) && !is_dir($rootFile) && strpos($uri, '.php') === false) {
-    $mime = 'application/octet-stream';
-    if (strpos($uri, '.png') !== false) $mime = 'image/png';
-    if (strpos($uri, '.jpg') !== false || strpos($uri, '.jpeg') !== false) $mime = 'image/jpeg';
-    if (strpos($uri, '.gif') !== false) $mime = 'image/gif';
-    if (strpos($uri, '.css') !== false) $mime = 'text/css';
-    if (strpos($uri, '.js') !== false) $mime = 'application/javascript';
-    
-    header('Content-Type: ' . $mime);
-    readfile($rootFile);
-    exit;
+// Robust Static File Resolver (Images, CSS, JS)
+$searchPaths = [
+    __DIR__ . '/../' . $uri, // Root
+    __DIR__ . '/' . $uri,    // API folder
+    __DIR__ . '/admin/' . str_replace('admin/', '', $uri), // Admin internal
+];
+
+foreach ($searchPaths as $tryPath) {
+    if (file_exists($tryPath) && !is_dir($tryPath) && strpos($uri, '.php') === false) {
+        $ext = strtolower(pathinfo($tryPath, PATHINFO_EXTENSION));
+        $mimes = ['png'=>'image/png', 'jpg'=>'image/jpeg', 'jpeg'=>'image/jpeg', 'gif'=>'image/gif', 'css'=>'text/css', 'js'=>'application/javascript'];
+        $mime = $mimes[$ext] ?? 'application/octet-stream';
+        
+        header('Content-Type: ' . $mime);
+        header('Cache-Control: public, max-age=86400'); // Cache for 24h
+        readfile($tryPath);
+        exit;
+    }
 }
 
 if (file_exists($file)) {
