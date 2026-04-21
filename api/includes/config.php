@@ -14,12 +14,12 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-i
 
 // Database Credentials
 if (isset($_SERVER['VERCEL'])) {
-    // Production (Cloud) - Values are managed in Vercel Dashboard
-    define('DB_SERVER', getenv('DB_SERVER'));
-    define('DB_USER',   getenv('DB_USER'));
-    define('DB_PASS',   getenv('DB_PASS'));
-    define('DB_NAME',   getenv('DB_NAME'));
-    define('DB_PORT',   getenv('DB_PORT'));
+    // Production (Cloud) - Prioritize Vercel Variables with hardcoded fallbacks
+    define('DB_SERVER', getenv('DB_SERVER') ?: 'mysql-8d474cb-gounderdivakaran-0f47.g.aivencloud.com');
+    define('DB_USER',   getenv('DB_USER')   ?: 'avnadmin');
+    define('DB_PASS',   getenv('DB_PASS')   ?: 'AVNS_S7QTFAZrai9x7WfPn4F');
+    define('DB_NAME',   getenv('DB_NAME')   ?: 'defaultdb');
+    define('DB_PORT',   getenv('DB_PORT')   ?: '12863');
 } else {
     // Local (XAMPP)
     define('DB_SERVER', 'localhost');
