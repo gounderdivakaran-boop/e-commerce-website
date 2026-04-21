@@ -1,9 +1,5 @@
 {
   "name": "nexus-elite/e-commerce",
   "description": "Premium E-commerce Platform",
-  "require": {
-    "php": ">=8.0",
-    "ext-mysqli": "*",
-    "ext-pdo": "*"
-  }
+  "require": {}
 }
