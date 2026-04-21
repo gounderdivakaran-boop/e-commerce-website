@@ -12,21 +12,29 @@ header("Referrer-Policy: strict-origin-when-cross-origin");
 // Relaxed CSP for local development and Google integration
 header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com https://cdn.jsdelivr.net https://code.jquery.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.googleusercontent.com; frame-src 'self' https://accounts.google.com https://www.google.com;");
 
-define('DB_SERVER', getenv('DB_SERVER') ?: 'localhost');
-define('DB_USER',   getenv('DB_USER')   ?: 'root');
-define('DB_PASS',   getenv('DB_PASS')   ?: '');
-define('DB_NAME',   getenv('DB_NAME')   ?: 'shopping');
+// Database Credentials
+if (isset($_SERVER['VERCEL'])) {
+    // Production (Cloud) - Values are managed in Vercel Dashboard
+    define('DB_SERVER', getenv('DB_SERVER'));
+    define('DB_USER',   getenv('DB_USER'));
+    define('DB_PASS',   getenv('DB_PASS'));
+    define('DB_NAME',   getenv('DB_NAME'));
+    define('DB_PORT',   getenv('DB_PORT'));
+} else {
+    // Local (XAMPP)
+    define('DB_SERVER', 'localhost');
+    define('DB_USER',   'root');
+    define('DB_PASS',   '');
+    define('DB_NAME',   'shopping');
+    define('DB_PORT',   '3306');
+}
 
 // Disable mysqli exceptions for manual handling
 mysqli_report(MYSQLI_REPORT_OFF);
 
 // Attempt connection
 try {
-    if (str_starts_with(DB_SERVER, '/cloudsql/')) {
-        $con = @mysqli_connect(null, DB_USER, DB_PASS, DB_NAME, null, DB_SERVER);
-    } else {
-        $con = @mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-    }
+    $con = @mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 } catch (Exception $e) {
     $con = false;
 }

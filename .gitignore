@@ -10,3 +10,9 @@ Thumbs.db
 
 # PHP logs
 *.log
+
+# Deployment & Security
+cloud_deploy.php
+seed_products_cloud_helper.php
+.gemini/
+api/.gemini/
