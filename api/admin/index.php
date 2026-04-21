@@ -109,10 +109,10 @@ if(isset($_POST['submit']))
 							<h3>Sign In</h3>
 						</div>
 						<div class="module-body">
-							<span style="color:red;"><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
+							<span style="color:red;"><?php echo htmlentities($_SESSION['errmsg'] ?? ""); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text" id="inputEmail" name="username" placeholder="Username">
+									<input class="span12" type="text" id="inputEmail" name="username" placeholder="Username" value="<?php echo isset($_POST['username']) ? htmlentities($_POST['username']) : ''; ?>">
 								</div>
 							</div>
 							<div class="control-group">
