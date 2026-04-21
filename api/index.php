@@ -70,6 +70,9 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 	    <!-- Smart Modern Design System -->
 	    <link rel="stylesheet" href="assets/css/smart-modern.css">
 	    
+	    <!-- Premium Luxury Design System -->
+	    <link rel="stylesheet" href="assets/css/premium_elite.css">
+	    
 	    <!-- Fallback for essential icons -->
 	    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	    

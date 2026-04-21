@@ -1,9 +1,29 @@
 <style>
-.premium-brand { font-family: 'Outfit', sans-serif; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; padding: 20px; text-align: center; border: 1px solid #e2e8f0; border-radius: 12px; transition: all 0.3s ease; }
-.premium-brand:hover { border-color: #6366f1; color: #6366f1; transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+.premium-brand { 
+    font-family: 'Outfit', sans-serif; 
+    font-weight: 700; 
+    color: #ffffff; 
+    text-transform: uppercase; 
+    letter-spacing: 4px; 
+    font-size: 1.3rem; 
+    padding: 30px; 
+    text-align: center; 
+    border-radius: 15px; 
+    transition: all 0.4s ease; 
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.premium-brand:hover { 
+    background: linear-gradient(145deg, #6366f1, #4338ca);
+    color: #ffffff; 
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+    border-color: #f59e0b;
+}
 </style>
 <div id="brands-carousel" class="logo-slider wow fadeInUp">
-		<h3 class="section-title">Popular & Premium Brands</h3>
+		<h3 class="section-title">✨ Popular & Premium Brands ✨</h3>
 		<div class="logo-slider-inner">	
 			<div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
 				<div class="item">
