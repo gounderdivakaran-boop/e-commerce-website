@@ -152,8 +152,8 @@ error:function (){}
 			<div class="row">
 				<!-- Sign-in -->			
 <div class="col-md-6 col-sm-6 sign-in">
-	<h4 class="">sign in</h4>
-	<p class="">Hello, Welcome to your account.</p>
+	<h4 class="" style="font-family: 'Playfair Display', serif; font-weight: 800; color: var(--primary);">NEXUS ELITE LOGIN</h4>
+	<p class="">Welcome back to the flagship marketplace.</p>
 	<form class="register-form outer-top-xs" method="post">
 	<span style="color:red;" >
 <?php
@@ -181,8 +181,8 @@ echo htmlentities($_SESSION['errmsg'] = "");
 
 <!-- create a new account -->
 <div class="col-md-6 col-sm-6 create-new-account">
-	<h4 class="checkout-subtitle">create a new account</h4>
-	<p class="text title-tag-line">Create your own excellence account.</p>
+	<h4 class="checkout-subtitle" style="font-family: 'Playfair Display', serif; font-weight: 800; color: var(--secondary);">JOIN THE ELITE</h4>
+	<p class="text title-tag-line">Create your global marketplace account today.</p>
 	<form class="register-form outer-top-xs" role="form" method="post" name="register" onSubmit="return valid();">
 <div class="form-group">
 	    <label class="info-title" for="fullname">Full Name <span>*</span></label>
