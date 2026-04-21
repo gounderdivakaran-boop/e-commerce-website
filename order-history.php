@@ -108,11 +108,13 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 			
 			<tbody>
 
-<?php $query=mysqli_query($con,"select products.productImage1 as pimg1,products.productName as pname,products.id as proid,orders.productId as opid,orders.quantity as qty,products.productPrice as pprice,products.shippingCharge as shippingcharge,orders.paymentMethod as paym,orders.orderDate as odate,orders.id as orderid from orders join products on orders.productId=products.id where orders.userId='".$_SESSION['id']."' and orders.paymentMethod is not null");
+<?php 
+$query = safe_query("select products.productImage1 as pimg1,products.productName as pname,products.id as proid,orders.productId as opid,orders.quantity as qty,products.productPrice as pprice,products.shippingCharge as shippingcharge,orders.paymentMethod as paym,orders.orderDate as odate,orders.id as orderid from orders join products on orders.productId=products.id where orders.userId='".$_SESSION['id']."' and orders.paymentMethod is not null");
 $cnt=1;
-while($row=mysqli_fetch_array($query))
-{
+if($query) {
+    while($row=mysqli_fetch_array($query)) {
 ?>
+
 				<tr>
 					<td><?php echo $cnt;?></td>
 					<td class="cart-image">
@@ -139,7 +141,8 @@ while($row=mysqli_fetch_array($query))
  <a href="javascript:void(0);" onClick="popUpWindow('track-order.php?oid=<?php echo htmlentities($row['orderid']);?>');" title="Track order">
 					Track</td>
 				</tr>
-<?php $cnt=$cnt+1;} ?>
+<?php $cnt=$cnt+1; } } ?>
+
 				
 			</tbody><!-- /tbody -->
 		</table><!-- /table -->
