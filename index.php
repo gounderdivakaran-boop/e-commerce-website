@@ -32,6 +32,8 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 	    <meta name="description" content="Discover Nexus Elite, the ultimate destination for premium lifestyle essentials. Shop our curated collection of high-quality products with secure checkout and fast delivery.">
 	    <meta name="keywords" content="Nexus Elite, premium shopping, e-commerce, luxury essentials, curated collection, secure marketplace">
 	    <meta name="robots" content="index, follow">
+	    <meta name="google-site-verification" content="googlebb21cb1dc11ef2c0" />
+
 	    
 	    <!-- Open Graph / Facebook -->
 	    <meta property="og:type" content="website">
