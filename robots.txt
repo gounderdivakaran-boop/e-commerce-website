@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://e-commerce-website-topaz-iota-60.vercel.app/sitemap.xml

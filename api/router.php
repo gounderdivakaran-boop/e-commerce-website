@@ -11,11 +11,20 @@ ob_start();
 if (isset($_SERVER['VERCEL'])) {
     ini_set('display_errors', 0);
     error_reporting(E_ERROR | E_PARSE);
+    
+    // Security Headers to prevent "Dangerous Site" warnings
+    header("X-Frame-Options: SAMEORIGIN");
+    header("X-XSS-Protection: 1; mode=block");
+    header("X-Content-Type-Options: nosniff");
+    header("Referrer-Policy: strict-origin-when-cross-origin");
+    header("Permissions-Policy: geolocation=(), microphone=(), camera=()");
+    header("Content-Security-Policy: default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; font-src 'self' https: data:;");
 } else {
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 }
+
 
 // Log the request for debugging
 error_log("Router handling request: " . $_SERVER['REQUEST_URI']);
