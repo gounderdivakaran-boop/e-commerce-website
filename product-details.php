@@ -8,14 +8,14 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		$_SESSION['cart'][$id]['quantity']++;
 	}else{
 		$sql_p="SELECT * FROM products WHERE id={$id}";
-		$query_p=mysqli_query($con,$sql_p);
-		if(mysqli_num_rows($query_p)!=0){
+		$query_p=safe_query($sql_p);
+		if($query_p && mysqli_num_rows($query_p)!=0){
 			$row_p=mysqli_fetch_array($query_p);
 			$_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
 					echo "<script>alert('Product has been added to the cart')</script>";
 		echo "<script type='text/javascript'> document.location ='my-cart.php'; </script>";
 		}else{
-			$message="Product ID is invalid";
+			$message="Product ID is invalid or Database Offline";
 		}
 	}
 }
@@ -27,8 +27,13 @@ header('location:login.php');
 }
 else
 {
-mysqli_query($con,"insert into wishlist(userId,productId) values('".$_SESSION['id']."','$pid')");
-echo "<script>alert('Product aaded in wishlist');</script>";
+$stmt = safe_query_prepare("insert into wishlist(userId,productId) values(?,?)");
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "ii", $_SESSION['id'], $pid);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    echo "<script>alert('Product added in wishlist');</script>";
+}
 header('location:my-wishlist.php');
 
 }
@@ -41,10 +46,12 @@ if(isset($_POST['submit']))
     $name=$_POST['name'];
     $summary=$_POST['summary'];
     $review=$_POST['review'];
-    $stmt = mysqli_prepare($con, "INSERT INTO productreviews(productId,quality,price,value,name,summary,review) VALUES(?,?,?,?,?,?,?)");
-    mysqli_stmt_bind_param($stmt, "iiiisss", $pid, $qty, $price, $value, $name, $summary, $review);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
+    $stmt = safe_query_prepare("INSERT INTO productreviews(productId,quality,price,value,name,summary,review) VALUES(?,?,?,?,?,?,?)");
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "iiiisss", $pid, $qty, $price, $value, $name, $summary, $review);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+    }
 }
 
 
@@ -101,11 +108,14 @@ if(isset($_POST['submit']))
 	<div class="container">
 		<div class="breadcrumb-inner">
 <?php
-$stmt = mysqli_prepare($con, "SELECT category.categoryName as catname, subcategory.subcategory as subcatname, products.productName as pname FROM products JOIN category ON category.id=products.category JOIN subcategory ON subcategory.id=products.subcategory WHERE products.id=?");
-mysqli_stmt_bind_param($stmt, "i", $pid);
-mysqli_stmt_execute($stmt);
-$ret = mysqli_stmt_get_result($stmt);
-while ($rw=mysqli_fetch_array($ret)) {
+$stmt = safe_query_prepare("SELECT category.categoryName as catname, subcategory.subcategory as subcatname, products.productName as pname FROM products JOIN category ON category.id=products.category JOIN subcategory ON subcategory.id=products.subcategory WHERE products.id=?");
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "i", $pid);
+    mysqli_stmt_execute($stmt);
+    $ret = mysqli_stmt_get_result($stmt);
+} else { $ret = false; }
+if ($ret) {
+    while ($rw=mysqli_fetch_array($ret)) {
 
 ?>
 
@@ -216,12 +226,15 @@ while ($rws=mysqli_fetch_array($ret)) {
 				</div>
 			</div><!-- /.sidebar -->
 <?php 
-$stmt = mysqli_prepare($con, "SELECT * FROM products WHERE id=?");
-mysqli_stmt_bind_param($stmt, "i", $pid);
-mysqli_stmt_execute($stmt);
-$ret = mysqli_stmt_get_result($stmt);
-while($row=mysqli_fetch_array($ret))
-{
+$stmt = safe_query_prepare("SELECT * FROM products WHERE id=?");
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "i", $pid);
+    mysqli_stmt_execute($stmt);
+    $ret = mysqli_stmt_get_result($stmt);
+} else { $ret = false; }
+if ($ret) {
+    while($row=mysqli_fetch_array($ret))
+    {
 
 ?>
 
@@ -302,9 +315,10 @@ while($row=mysqli_fetch_array($ret))
 					<div class='col-sm-6 col-md-7 product-info-block'>
 						<div class="product-info">
 							<h1 class="name"><?php echo htmlentities($row['productName']);?></h1>
-<?php $rt=mysqli_query($con,"select * from productreviews where productId='$pid'");
-$num=mysqli_num_rows($rt);
-{
+<?php 
+$rt=safe_query("select * from productreviews where productId='$pid'");
+$num = ($rt) ? mysqli_num_rows($rt) : 0;
+if($rt) {
 ?>		
 							<div class="rating-reviews m-t-20">
 								<div class="row">
@@ -602,14 +616,16 @@ while($rvw=mysqli_fetch_array($qry))
 	<div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs">
 	   
 		<?php 
-$stmt = mysqli_prepare($con, "SELECT * FROM products WHERE subCategory=? AND category=?");
-mysqli_stmt_bind_param($stmt, "ss", $subcid, $cid);
-mysqli_stmt_execute($stmt);
-$qry = mysqli_stmt_get_result($stmt);
-while($rw=mysqli_fetch_array($qry))
-{
-
-			?>	
+$stmt = safe_query_prepare("SELECT * FROM products WHERE subCategory=? AND category=?");
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "ss", $subcid, $cid);
+    mysqli_stmt_execute($stmt);
+    $qry = mysqli_stmt_get_result($stmt);
+} else { $qry = false; }
+if ($qry) {
+    while($rw=mysqli_fetch_array($qry))
+    {
+?>	
 
 
 		<div class="item item-carousel">

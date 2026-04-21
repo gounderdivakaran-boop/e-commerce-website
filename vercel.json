@@ -13,7 +13,7 @@
       "dest": "/$1/$2"
     },
     {
-      "src": "/admin/(assets|scripts|productimages)/(.*)",
+      "src": "/admin/(assets|scripts|productimages|bootstrap|css|images|js)/(.*)",
       "dest": "/admin/$1/$2"
     },
     {

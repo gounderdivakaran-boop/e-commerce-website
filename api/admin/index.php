@@ -62,10 +62,10 @@ if(isset($_POST['submit']))
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Nexus Elite | Admin login</title>
-	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link type="text/css" href="css/theme.css" rel="stylesheet">
-	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+	<link type="text/css" href="/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="/admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link type="text/css" href="/admin/css/theme.css" rel="stylesheet">
+	<link type="text/css" href="/admin/images/icons/css/font-awesome.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 </head>
 <body>
@@ -142,7 +142,7 @@ if(isset($_POST['submit']))
 			<b class="copyright">&copy; 2026 Nexus Elite </b> All rights reserved.
 		</div>
 	</div>
-	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/admin/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="/admin/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+	<script src="/admin/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </body>

@@ -9,15 +9,19 @@ if(isset($_POST['submit'])) {
     $contactno = $_POST['contactno'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     
-    $stmt = mysqli_prepare($con, "INSERT INTO users(name, email, contactno, password) VALUES(?, ?, ?, ?)");
-    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $contactno, $password);
-    
-    if(mysqli_stmt_execute($stmt)) {
-        echo "<script>alert('You are successfully registered');</script>";
+    $stmt = safe_query_prepare("INSERT INTO users(name, email, contactno, password) VALUES(?, ?, ?, ?)");
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $contactno, $password);
+        
+        if(mysqli_stmt_execute($stmt)) {
+            echo "<script>alert('You are successfully registered');</script>";
+        } else {
+            echo "<script>alert('Registration failed - please try again');</script>";
+        }
+        mysqli_stmt_close($stmt);
     } else {
-        echo "<script>alert('Registration failed - please try again');</script>";
+        echo "<script>alert('Database offline - cannot register at this time');</script>";
     }
-    mysqli_stmt_close($stmt);
 }
 
 // Code for User login
@@ -25,11 +29,20 @@ if(isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     
-    $stmt = mysqli_prepare($con, "SELECT * FROM users WHERE email=?");
-    mysqli_stmt_bind_param($stmt, "s", $email);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    $num = mysqli_fetch_array($result);
+    $stmt = safe_query_prepare("SELECT * FROM users WHERE email=?");
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $num = mysqli_fetch_array($result);
+        
+        if($num && (password_verify($password, $num['password']) || $num['password'] === md5($password))) {
+            // ... (rest of logic)
+        }
+        mysqli_stmt_close($stmt);
+    } else {
+        $_SESSION['errmsg'] = "Database Offline: Please try again later.";
+    }
     
     if($num && (password_verify($password, $num['password']) || $num['password'] === md5($password))) {
         // Upgrade password hash if it was md5
@@ -119,8 +132,11 @@ if(isset($_POST['login'])) {
         <!-- Fonts --> 
 		<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		
-		<!-- Favicon -->
+	    <!-- Favicon -->
 		<link rel="shortcut icon" href="assets/images/favicon.ico">
+		
+		<!-- Google Sign-In Client ID (Placeholder) -->
+		<script src="https://accounts.google.com/gsi/client" async defer></script>
 <script type="text/javascript">
 function valid()
 {
@@ -189,6 +205,35 @@ error:function (){}
 <div class="col-md-6 col-sm-6 sign-in">
 	<h4 class="">sign in</h4>
 	<p class="">Hello, Welcome to your account.</p>
+	
+	<!-- Google Sign-In Button Container -->
+	<div style="margin-bottom: 25px; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px;">
+		<div id="g_id_onload"
+			 data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+			 data-context="signin"
+			 data-ux_mode="popup"
+			 data-callback="handleCredentialResponse"
+			 data-auto_prompt="false">
+		</div>
+		<div class="g_id_signin"
+			 data-type="standard"
+			 data-shape="rectangular"
+			 data-theme="outline"
+			 data-text="signin_with"
+			 data-size="large"
+			 data-logo_alignment="left"
+			 data-width="100%">
+		</div>
+	</div>
+
+	<script>
+	function handleCredentialResponse(response) {
+		console.log("Encoded JWT ID token: " + response.credential);
+		// In a real app, you would send this token to your server for validation
+		alert("Google Login successful (Demo Mode)! Token received.");
+	}
+	</script>
+
 	<form class="register-form outer-top-xs" method="post">
 	<span style="color:red;" >
 <?php

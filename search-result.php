@@ -12,14 +12,17 @@ if(isset($_GET['pid']) && $_GET['action']=="wishlist" ){
     {
         $pid=$_GET['pid'];
         $uid=$_SESSION['id'];
-        $stmt = mysqli_prepare($con, "INSERT INTO wishlist(userId,productId) VALUES(?, ?)");
-        mysqli_stmt_bind_param($stmt, "ii", $uid, $pid);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
+        $stmt = safe_query_prepare("INSERT INTO wishlist(userId,productId) VALUES(?, ?)");
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "ii", $uid, $pid);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+        }
         header('location:my-wishlist.php');
     }
 }
-$find="%".$_POST['product']."%";
+$product_term = $_POST['product'] ?? $_GET['product'] ?? '';
+$find="%".$product_term."%";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,14 +106,15 @@ $find="%".$_POST['product']."%";
   
         <ul class="nav">
             <li class="dropdown menu-item">
-              <?php $sql=mysqli_query($con,"select id,subcategory  from subcategory");
-
-while($row=mysqli_fetch_array($sql))
-{
-    ?>
+              <?php 
+              $sql = safe_query("select id,subcategory from subcategory");
+              if ($sql) {
+                  while($row=mysqli_fetch_array($sql)) {
+              ?>
                 <a href="sub-category.php?scid=<?php echo $row['id'];?>" class="dropdown-toggle"><i class="icon fa fa-desktop fa-fw"></i>
                 <?php echo $row['subcategory'];?></a>
-                <?php }?>
+                <?php } 
+              } else { echo "<a>No Categories</a>"; } ?>
                         
 </li>
 </ul>
@@ -126,10 +130,11 @@ while($row=mysqli_fetch_array($sql))
 		<h4 class="widget-title">Category</h4>
 	</div>
 	<div class="sidebar-widget-body m-t-10">
-	         <?php $sql=mysqli_query($con,"select id,categoryName  from category");
-while($row=mysqli_fetch_array($sql))
-{
-    ?>
+	         <?php 
+             $sql = safe_query("select id,categoryName from category");
+             if ($sql) {
+                 while($row=mysqli_fetch_array($sql)) {
+             ?>
 		<div class="accordion">
 	    	<div class="accordion-group">
 	            <div class="accordion-heading">
@@ -139,7 +144,8 @@ while($row=mysqli_fetch_array($sql))
 	            </div>  
 	        </div>
 	    </div>
-	    <?php } ?>
+	    <?php } 
+             } ?>
 	</div><!-- /.sidebar-widget-body -->
 </div><!-- /.sidebar-widget -->
 
@@ -178,11 +184,16 @@ while($row=mysqli_fetch_array($sql))
 							<div class="category-product  inner-top-vs">
 								<div class="row">									
 			<?php
-$stmt = mysqli_prepare($con, "SELECT * FROM products WHERE productName LIKE ?");
-mysqli_stmt_bind_param($stmt, "s", $find);
-mysqli_stmt_execute($stmt);
-$ret = mysqli_stmt_get_result($stmt);
-$num=mysqli_num_rows($ret);
+$stmt = safe_query_prepare("SELECT * FROM products WHERE productName LIKE ?");
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "s", $find);
+    mysqli_stmt_execute($stmt);
+    $ret = mysqli_stmt_get_result($stmt);
+    $num = ($ret) ? mysqli_num_rows($ret) : 0;
+} else {
+    $num = 0;
+}
+
 if($num>0)
 {
 while ($row=mysqli_fetch_array($ret)) 

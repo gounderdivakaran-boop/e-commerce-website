@@ -157,10 +157,10 @@ error:function (){}
 	<form class="register-form outer-top-xs" method="post">
 	<span style="color:red;" >
 <?php
-echo htmlentities($_SESSION['errmsg']);
+echo htmlentities($_SESSION['errmsg'] ?? '');
 ?>
 <?php
-echo htmlentities($_SESSION['errmsg']="");
+echo htmlentities($_SESSION['errmsg'] = "");
 ?>
 	</span>
 		<div class="form-group">

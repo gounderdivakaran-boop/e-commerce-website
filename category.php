@@ -9,14 +9,13 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		$_SESSION['cart'][$id]['quantity']++;
 	}else{
 		$sql_p="SELECT * FROM products WHERE id={$id}";
-		$query_p=mysqli_query($con,$sql_p);
-		if(mysqli_num_rows($query_p)!=0){
+		$query_p=safe_query($sql_p);
+		if($query_p && mysqli_num_rows($query_p)!=0){
 			$row_p=mysqli_fetch_array($query_p);
 			$_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
-				// echo "<script>alert('Product has been added to the cart')</script>";
 		echo "<script type='text/javascript'> document.location ='my-cart.php'; </script>";
 		}else{
-			$message="Product ID is invalid";
+			$message="Product ID is invalid or Database Offline";
 		}
 	}
 	
@@ -31,11 +30,13 @@ if(isset($_GET['pid']) && $_GET['action']=="wishlist" ){
     {
         $pid=$_GET['pid'];
         $uid=$_SESSION['id'];
-        $stmt = mysqli_prepare($con, "INSERT INTO wishlist(userId,productId) VALUES(?, ?)");
-        mysqli_stmt_bind_param($stmt, "ii", $uid, $pid);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
-        echo "<script>alert('Product added in wishlist');</script>";
+        $stmt = safe_query_prepare("INSERT INTO wishlist(userId,productId) VALUES(?, ?)");
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "ii", $uid, $pid);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+            echo "<script>alert('Product added in wishlist');</script>";
+        }
         header('location:my-wishlist.php');
     }
 }
@@ -123,16 +124,20 @@ if(isset($_GET['pid']) && $_GET['action']=="wishlist" ){
         <ul class="nav">
             <li class="dropdown menu-item">
               <?php 
-$stmt = mysqli_prepare($con, "SELECT id, subcategory FROM subcategory WHERE categoryid=?");
-mysqli_stmt_bind_param($stmt, "i", $cid);
-mysqli_stmt_execute($stmt);
-$sql = mysqli_stmt_get_result($stmt);
+$stmt = safe_query_prepare("SELECT id, subcategory FROM subcategory WHERE categoryid=?");
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "i", $cid);
+    mysqli_stmt_execute($stmt);
+    $sql = mysqli_stmt_get_result($stmt);
+} else { $sql = false; }
+if ($sql) {
 while($row=mysqli_fetch_array($sql))
 {
 ?>
                 <a href="sub-category.php?scid=<?php echo $row['id'];?>" class="dropdown-toggle"><i class="icon fa fa-desktop fa-fw"></i>
                 <?php echo $row['subcategory'];?></a>
-                <?php }?>
+                <?php }
+} ?>
                         
 </li>
 </ul>
@@ -148,10 +153,11 @@ while($row=mysqli_fetch_array($sql))
 		<h4 class="widget-title">Category</h4>
 	</div>
 	<div class="sidebar-widget-body m-t-10">
-	         <?php $sql=mysqli_query($con,"select id,categoryName  from category");
-while($row=mysqli_fetch_array($sql))
-{
-    ?>
+	         <?php 
+             $sql = safe_query("select id,categoryName from category");
+             if ($sql) {
+                 while($row=mysqli_fetch_array($sql)) {
+             ?>
 		<div class="accordion">
 	    	<div class="accordion-group">
 	            <div class="accordion-heading">
@@ -161,7 +167,8 @@ while($row=mysqli_fetch_array($sql))
 	            </div>  
 	        </div>
 	    </div>
-	    <?php } ?>
+	    <?php } 
+             } ?>
 	</div><!-- /.sidebar-widget-body -->
 </div><!-- /.sidebar-widget -->
 
@@ -207,13 +214,15 @@ while($row=mysqli_fetch_array($sql))
 							<div class="category-product  inner-top-vs">
 								<div class="row">									
 			<?php
-$stmt = mysqli_prepare($con, "SELECT * FROM products WHERE category=?");
-mysqli_stmt_bind_param($stmt, "i", $cid);
-mysqli_stmt_execute($stmt);
-$ret = mysqli_stmt_get_result($stmt);
-$num=mysqli_num_rows($ret);
-if($num>0)
-{
+$stmt = safe_query_prepare("SELECT * FROM products WHERE category=?");
+if ($stmt) {
+    mysqli_stmt_bind_param($stmt, "i", $cid);
+    mysqli_stmt_execute($stmt);
+    $ret = mysqli_stmt_get_result($stmt);
+} else { $ret = false; }
+if ($ret) {
+    $num = mysqli_num_rows($ret);
+    if($num>0) {
 while ($row=mysqli_fetch_array($ret)) 
 {?>	
 		<div class="col-sm-6 col-md-4 wow fadeInUp">

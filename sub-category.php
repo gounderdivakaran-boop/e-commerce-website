@@ -9,14 +9,13 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		$_SESSION['cart'][$id]['quantity']++;
 	}else{
 		$sql_p="SELECT * FROM products WHERE id={$id}";
-		$query_p=mysqli_query($con,$sql_p);
-		if(mysqli_num_rows($query_p)!=0){
+		$query_p=safe_query($sql_p);
+		if($query_p && mysqli_num_rows($query_p)!=0){
 			$row_p=mysqli_fetch_array($query_p);
 			$_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
-								// echo "<script>alert('Product has been added to the cart')</script>";
 		echo "<script type='text/javascript'> document.location ='my-cart.php'; </script>";
 		}else{
-			$message="Product ID is invalid";
+			$message="Product ID is invalid or Database Offline";
 		}
 	}
 }
@@ -123,10 +122,11 @@ if(isset($_GET['pid']) && $_GET['action']=="wishlist" ){
 		<h4 class="widget-title">Category</h4>
 	</div>
 	<div class="sidebar-widget-body m-t-10">
-	         <?php $sql=mysqli_query($con,"select id,categoryName  from category");
-while($row=mysqli_fetch_array($sql))
-{
-    ?>
+	         <?php 
+             $sql = safe_query("select id,categoryName from category");
+             if ($sql) {
+                 while($row=mysqli_fetch_array($sql)) {
+             ?>
 		<div class="accordion">
 	    	<div class="accordion-group">
 	            <div class="accordion-heading">
@@ -136,7 +136,8 @@ while($row=mysqli_fetch_array($sql))
 	            </div>  
 	        </div>
 	    </div>
-	    <?php } ?>
+	    <?php } 
+             } ?>
 	</div><!-- /.sidebar-widget-body -->
 </div><!-- /.sidebar-widget -->
 

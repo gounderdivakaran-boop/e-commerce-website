@@ -57,9 +57,15 @@ India
 
                 </div>
             </div>
-
- 
-</div>
+            
+            <div class="container px-4 px-lg-5">
+                <div style="width:100%; margin-top: 30px;">
+                    <h3 style="margin-bottom: 20px; font-family: 'Inter', sans-serif;">Our Location</h3>
+                    <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3501.92131934!2d77.216721!3d28.612912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b71dbff2828!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- Footer-->
    <?php include_once('includes/footer.php'); ?>

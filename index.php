@@ -7,13 +7,13 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		$_SESSION['cart'][$id]['quantity']++;
 	}else{
 		$sql_p="SELECT * FROM products WHERE id={$id}";
-		$query_p=mysqli_query($con,$sql_p);
-		if(mysqli_num_rows($query_p)!=0){
+		$query_p=safe_query($sql_p);
+		if($query_p && mysqli_num_rows($query_p)!=0){
 			$row_p=mysqli_fetch_array($query_p);
 			$_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
 		
 		}else{
-			$message="Product ID is invalid";
+			$message="Product ID is invalid or Database Offline";
 		}
 	}
 		echo "<script type='text/javascript'> document.location ='my-cart.php'; </script>";
@@ -28,12 +28,17 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<meta name="description" content="">
-		<meta name="author" content="">
-	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
-	    <meta name="robots" content="all">
-
-	    <title>Nexus Elite Home Page</title>
+	    <title>Nexus Elite | Premium E-commerce Marketplace</title>
+	    <meta name="description" content="Discover Nexus Elite, the ultimate destination for premium lifestyle essentials. Shop our curated collection of high-quality products with secure checkout and fast delivery.">
+	    <meta name="keywords" content="Nexus Elite, premium shopping, e-commerce, luxury essentials, curated collection, secure marketplace">
+	    <meta name="robots" content="index, follow">
+	    
+	    <!-- Open Graph / Facebook -->
+	    <meta property="og:type" content="website">
+	    <meta property="og:url" content="https://nexus-elite.com/">
+	    <meta property="og:title" content="Nexus Elite | Premium E-commerce Marketplace">
+	    <meta property="og:description" content="Discover the ultimate destination for premium lifestyle essentials. Shop our curated collection today.">
+	    <meta property="og:image" content="assets/images/lifestyle-hero.jpg">
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -78,6 +83,16 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 <?php include('includes/main-header.php');?>
 <?php include('includes/menu-bar.php');?>
 </header>
+
+<?php if ($GLOBALS['DEMO_MODE'] ?? false): ?>
+<div class="container" style="margin-top: 20px;">
+    <div class="alert alert-warning" style="background: #FFF9C4; border-left: 5px solid #FBC02D; color: #827717; border-radius: 8px; padding: 15px;">
+        <i class="fa fa-exclamation-triangle"></i> <strong>Database Offline:</strong> Running in <b>Demo Mode</b>. 
+        Please start MySQL in XAMPP and import <code>NexusElite_Final_Backup.sql</code> to see real products.
+        <br><small>Error: <?php echo $_SESSION['db_error'] ?? 'Connection refused'; ?></small>
+    </div>
+</div>
+<?php endif; ?>
 
 <!-- ============================================== HEADER : END ============================================== -->
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
@@ -169,10 +184,13 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
             <!-- Category Scroller -->
             <div class="category-scroller">
                 <a href="index.php" class="category-item active">All Collections</a>
-                <?php $sql=mysqli_query($con,"select id,categoryName  from category");
-                while($row=mysqli_fetch_array($sql)) { ?>
-                    <a href="category.php?cid=<?php echo $row['id'];?>" class="category-item"><?php echo $row['categoryName'];?></a>
-                <?php } ?>
+                <?php 
+                $sql=safe_query("select id,categoryName  from category");
+                if ($sql) {
+                    while($row=mysqli_fetch_array($sql)) { ?>
+                        <a href="category.php?cid=<?php echo $row['id'];?>" class="category-item"><?php echo $row['categoryName'];?></a>
+                    <?php } 
+                } ?>
             </div>
 
 			<div class="tab-content outer-top-xs">
@@ -180,12 +198,10 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 					<div class="product-slider">
 						<div class="owl-carousel home-owl-carousel custom-carousel owl-theme" >
 <?php
-$ret=mysqli_query($con,"select * from products");
-while ($row=mysqli_fetch_array($ret)) 
-{
-	# code...
-
-
+$ret=safe_query("select * from products");
+if ($ret) {
+    while ($row=mysqli_fetch_array($ret)) 
+    {
 ?>
 
 						    	
