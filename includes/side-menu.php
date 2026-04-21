@@ -2,16 +2,19 @@
     <nav class="yamm megamenu-horizontal" role="navigation">
         <ul class="nav">
             <?php 
-            $sql = mysqli_query($con, "select id,categoryName from category");
-            while($row = mysqli_fetch_array($sql)) {
+            $sql = safe_query("select id,categoryName from category");
+            if ($sql) {
+                while($row = mysqli_fetch_array($sql)) {
             ?>
+
             <li class="menu-item" style="border-bottom: 1px solid #f8f8f8;">
                 <a href="category.php?cid=<?php echo $row['id'];?>" style="padding: 15px 20px; display: block; color: var(--secondary); font-weight: 500; transition: all 0.2s;">
                     <i class="icon fa fa-angle-right" style="margin-right: 10px; color: var(--primary);"></i>
                     <?php echo $row['categoryName'];?>
                 </a>
             </li>
-            <?php } ?>
+            <?php } } ?>
+
         </ul>
     </nav>
 </div>

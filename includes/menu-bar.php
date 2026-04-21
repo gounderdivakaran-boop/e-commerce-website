@@ -17,13 +17,16 @@
                                 <a href="index.php" class="nav-link-custom <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'active' : ''; ?>">HOME</a>
                             </li>
                             <?php 
-                            $sql = mysqli_query($con, "select id,categoryName from category limit 6");
-                            while($row = mysqli_fetch_array($sql)) {
+                            $sql = safe_query("select id,categoryName from category limit 6");
+                            if ($sql) {
+                                while($row = mysqli_fetch_array($sql)) {
                             ?>
+
                             <li class="dropdown yamm">
                                 <a href="category.php?cid=<?php echo $row['id'];?>" class="nav-link-custom"> <?php echo strtoupper($row['categoryName']);?></a>
                             </li>
-                            <?php } ?>
+                            <?php } } ?>
+
 
                             <li class="dropdown yamm">
                                 <a href="admin/" class="nav-link-custom" style="color: var(--primary) !important;"> ADMIN PANEL</a>
