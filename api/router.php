@@ -55,6 +55,21 @@ if ($isAdmin) {
     $file = $targetDir . '/' . $page;
 }
 
+// Check if the request is for a static file (like an image)
+$rootFile = __DIR__ . '/../' . $uri;
+if (file_exists($rootFile) && !is_dir($rootFile) && strpos($uri, '.php') === false) {
+    $mime = 'application/octet-stream';
+    if (strpos($uri, '.png') !== false) $mime = 'image/png';
+    if (strpos($uri, '.jpg') !== false || strpos($uri, '.jpeg') !== false) $mime = 'image/jpeg';
+    if (strpos($uri, '.gif') !== false) $mime = 'image/gif';
+    if (strpos($uri, '.css') !== false) $mime = 'text/css';
+    if (strpos($uri, '.js') !== false) $mime = 'application/javascript';
+    
+    header('Content-Type: ' . $mime);
+    readfile($rootFile);
+    exit;
+}
+
 if (file_exists($file)) {
     chdir($targetDir);
     include $file;
