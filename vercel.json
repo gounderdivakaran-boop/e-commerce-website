@@ -1,24 +1,13 @@
 {
-  "version": 2,
-  "cleanUrls": false,
   "functions": {
-    "api/router.php": {
-      "runtime": "vercel-php@0.7.1",
-      "includeFiles": "**/*.php"
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.2"
     }
   },
   "routes": [
-    {
-      "src": "/(assets|css|js|font|brandsimage|img)/(.*)",
-      "dest": "/$1/$2"
-    },
-    {
-      "src": "/admin/(assets|scripts|productimages|bootstrap|css|images|js)/(.*)",
-      "dest": "/admin/$1/$2"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/router.php"
-    }
+    { "src": "/admin/productimages/(.*)", "dest": "/admin/productimages/$1" },
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/admin/assets/(.*)", "dest": "/admin/assets/$1" },
+    { "src": "/(.*)", "dest": "/api/router.php" }
   ]
 }
