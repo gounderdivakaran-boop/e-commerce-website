@@ -59,7 +59,8 @@
                             </a>
                             <div class="collapse" id="orders" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-<?php $ret=mysqli_query($con,"select count(id) as totalorders,
+<?php 
+$ret = safe_query("select count(id) as totalorders,
 count(if((orderStatus='' || orderStatus is null),0,null)) as neworders,
 count(if(orderStatus='Packed', 0,null)) as packedorders,
 count(if(orderStatus='Dispatched',  0,null)) as dispatchedorders,
@@ -68,7 +69,11 @@ count(if(orderStatus='Out For Delivery', 0,null)) as outfdorders,
 count(if(orderStatus='Delivered', 0,null)) as deliveredorders,
 count(if(orderStatus='Cancelled', 0,null)) as cancelledorders
 from orders;");
-$results=mysqli_fetch_array($ret);
+$results = $ret ? mysqli_fetch_array($ret) : [
+    'totalorders' => 0, 'neworders' => 0, 'packedorders' => 0, 
+    'dispatchedorders' => 0, 'intransitorders' => 0, 'outfdorders' => 0, 
+    'deliveredorders' => 0, 'cancelledorders' => 0
+];
 $torders=$results['totalorders'];
 $norders=$results['neworders'];
 $porders=$results['packedorders'];
@@ -77,7 +82,7 @@ $intorders=$results['intransitorders'];
 $otforders=$results['outfdorders'];
 $deliveredorders=$results['deliveredorders'];
 $cancelledorders=$results['cancelledorders'];
-?>           <a class="nav-link" href="all-orders.php">All Orders <span style="color:#fff"> [<?php echo $torders;?>]</span></a>
+?>           <a class="nav-link" href="all-orders.php">All Orders <span style="color:#fff"> [<?php echo (int)$torders;?>]</span></a>
             <a class="nav-link" href="new-order.php">New Orders <span style="color:#fff"> [<?php echo $norders;?>]</span></a>
             <a class="nav-link" href="packed-orders.php">Packed Orders <span style="color:#fff"> [<?php echo $porders;?>]</span></a>
             <a class="nav-link" href="dispatched-orders.php">Dispatched Order <span style="color:#fff"> [<?php echo $dtorders;?>]</span></a>
