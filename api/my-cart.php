@@ -201,10 +201,10 @@ if(!empty($_SESSION['cart'])){
 			$sql .=$id. ",";
 			}
 			$sql=substr($sql,0,-1) . ") ORDER BY id ASC";
-			$query = mysqli_query($con,$sql);
+			$query = safe_query($sql);
 			$totalprice=0;
 			$totalqunty=0;
-			if(!empty($query)){
+			if($query){
 			while($row = mysqli_fetch_array($query)){
 				$quantity=$_SESSION['cart'][$row['id']]['quantity'];
 				$subtotal= $_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge'];
@@ -232,14 +232,13 @@ $_SESSION['sid']=$pd;
 								<div class="rating rateit-small"></div>
 							</div>
 							<div class="col-sm-8">
-<?php $rt=mysqli_query($con,"select * from productreviews where productId='$pd'");
-$num=mysqli_num_rows($rt);
-{
+<?php 
+$rt=safe_query("select * from productreviews where productId='$pd'");
+$num = ($rt) ? mysqli_num_rows($rt) : 0;
 ?>
 								<div class="reviews">
 									( <?php echo htmlentities($num);?> Reviews )
 								</div>
-								<?php } ?>
 							</div>
 						</div><!-- /.row -->
 						
@@ -260,7 +259,7 @@ $num=mysqli_num_rows($rt);
 					<td class="cart-product-grand-total"><span class="cart-grand-total-price"><?php echo ($_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge']); ?>.00</span></td>
 				</tr>
 
-				<?php } }
+				<?php } } }
 $_SESSION['pid']=$pdtid;
 				?>
 				
@@ -334,7 +333,8 @@ while($row=mysqli_fetch_array($query))
 					<td>
 						<div class="form-group">
 		<?php
-$query=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
+$query=safe_query("select * from users where id='".$_SESSION['id']."'");
+if($query) {
 while($row=mysqli_fetch_array($query))
 {
 ?>

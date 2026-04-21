@@ -281,7 +281,8 @@ while ($row=mysqli_fetch_array($ret))
 		<div class="col-sm-6 col-md-4 wow fadeInUp"> <h3>No Product Found</h3>
 		</div>
 		
-<?php } ?>	
+<?php } } ?>	
+
 		
 	
 		

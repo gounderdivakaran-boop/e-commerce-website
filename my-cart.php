@@ -239,7 +239,6 @@ $num = ($rt) ? mysqli_num_rows($rt) : 0;
 								<div class="reviews">
 									( <?php echo htmlentities($num);?> Reviews )
 								</div>
-								<?php } ?>
 							</div>
 						</div><!-- /.row -->
 						
@@ -260,7 +259,7 @@ $num = ($rt) ? mysqli_num_rows($rt) : 0;
 					<td class="cart-product-grand-total"><span class="cart-grand-total-price"><?php echo ($_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge']); ?>.00</span></td>
 				</tr>
 
-				<?php } }
+				<?php } } }
 $_SESSION['pid']=$pdtid;
 				?>
 				
