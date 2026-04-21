@@ -240,7 +240,8 @@ if ($ret) {
                 </div>
 			</div>
 		</div>
-	<?php } ?>
+	<?php } } ?>
+
 
 			</div><!-- /.home-owl-carousel -->
 					</div><!-- /.product-slider -->
