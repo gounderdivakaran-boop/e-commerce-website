@@ -1,0 +1,334 @@
+/* 
+    Nexus Elite - Premium Design System
+    Inspired by: https://e-commerce-website-wine-omega.vercel.app
+*/
+
+:root {
+    --primary: #007BFF; /* Brand Blue */
+    --primary-dark: #0056b3;
+    --secondary: #000000; /* Black */
+    --accent: #dc3545; /* Red for prices/alerts */
+    --warning: #fbc02d; /* Yellow for badges */
+    --bg-main: #f8f9fa; /* Off-white */
+    --bg-card: #ffffff;
+    --text-main: #333333;
+    --text-muted: #777777;
+    --border-color: #eeeeee;
+    --radius: 8px;
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.05);
+    --shadow-md: 0 5px 15px rgba(0,0,0,0.1);
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-decorative: 'Playfair Display', serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+/* Header Utilities */
+.top-bar {
+    background: #f1f1f1;
+    padding: 8px 0;
+    font-size: 13px;
+}
+
+.top-bar a {
+    color: var(--text-muted);
+    margin-right: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.top-bar a:hover {
+    color: var(--primary);
+}
+
+/* Main Header */
+.main-header {
+    background: var(--bg-card);
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-container {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo-nexus { color: var(--primary); }
+.logo-elite { color: var(--secondary); }
+
+/* Search Bar */
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 25px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-button:hover {
+    background: var(--primary-dark);
+}
+
+/* Cart Widget */
+.cart-widget {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-icon-container {
+    position: relative;
+    background: var(--primary);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--warning);
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.cart-total {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* Navigation Menu */
+.navbar-custom {
+    background: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-link-custom {
+    color: var(--secondary) !important;
+    font-weight: 600;
+    padding: 15px 25px !important;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.nav-link-custom.active {
+    background: var(--primary);
+    color: white !important;
+}
+
+.nav-link-custom.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--accent);
+}
+
+/* Hero Section Re-design */
+.hero-v2 {
+    position: relative;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+}
+
+.hero-v2-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.4);
+}
+
+.hero-v2-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-v2 h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.hero-v2 p {
+    font-size: 1.25rem;
+    color: var(--secondary);
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-hero {
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-hero-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-hero-outline {
+    background: white;
+    color: var(--secondary);
+    border: 1px solid #ddd;
+}
+
+/* Sidebar Categories */
+.sidebar-header {
+    background: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Product Cards */
+.product-card-v2 {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 30px;
+}
+
+.product-card-v2:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.product-card-v2 img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-card-v2 .title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.product-card-v2 .price {
+    font-size: 1.25rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Footer Re-design */
+.footer-v2 {
+    background: white;
+    padding: 80px 0 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-column h4 {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.footer-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Banner Category Text */
+.banner-category-text {
+    font-family: var(--font-decorative);
+    font-size: 5rem;
+    color: #e0e0e0;
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    opacity: 0.5;
+}
