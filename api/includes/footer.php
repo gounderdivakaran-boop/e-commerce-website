@@ -26,7 +26,10 @@
           <li style="margin-bottom: 12px;"><a href="track-orders.php" style="color: var(--text-muted); text-decoration: none;">Track Your Order</a></li>
           <li style="margin-bottom: 12px;"><a href="my-wishlist.php" style="color: var(--text-muted); text-decoration: none;">My Wishlist</a></li>
           <li style="margin-bottom: 12px;"><a href="contact-us.php" style="color: var(--text-muted); text-decoration: none;">Customer Support</a></li>
+          <li style="margin-bottom: 12px;"><a href="privacy-policy.php" style="color: var(--text-muted); text-decoration: none;">Privacy Policy</a></li>
+          <li style="margin-bottom: 12px;"><a href="terms.php" style="color: var(--text-muted); text-decoration: none;">Terms of Service</a></li>
           <li><a href="#" style="color: var(--text-muted); text-decoration: none;">Returns & Exchanges</a></li>
+
         </ul>
       </div>
 
