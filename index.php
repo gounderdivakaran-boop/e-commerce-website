@@ -102,23 +102,29 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		
 			<div class="col-xs-12 col-sm-12 col-md-3 sidebar">
 				<!-- ================================== TOP NAVIGATION ================================== -->
-	<?php include('includes/side-menu.php');?>
+                <div class="sidebar-header">
+                    <i class="fa fa-bars"></i> CATEGORIES
+                </div>
+	            <?php include('includes/side-menu.php');?>
 <!-- ================================== TOP NAVIGATION : END ================================== -->
 			</div><!-- /.sidemenu-holder -->	
 			
-			<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
-				<!-- ========================================== SECTION – MODERN HERO ========================================= -->
+			<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder" style="position: relative;">
+				<!-- ========================================== SECTION – TARGET HERO ========================================= -->
 			
-<div class="hero-section" style="background: linear-gradient(rgba(248, 249, 250, 0.8), rgba(248, 249, 250, 0.8)), url('assets/images/lifestyle-hero.jpg'); border-radius: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-	<div class="hero-content" style="max-width: 800px; text-align: center;">
-		<span style="color: #9A8C7D; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">The Future of Shopping</span>
-		<h1 style="font-family: 'Playfair Display', serif; font-size: 4rem; margin-top: 10px; color: #2C3E50;">Curated Elegance for Your Lifestyle.</h1>
-		<p style="font-size: 1.1rem; color: #6C757D; margin-bottom: 30px;">Discover our hand-picked collection of premium essentials, designed for those who appreciate the finer things.</p>
-		<div class="buttons">
-			<a href="#all" class="btn btn-primary" style="padding: 18px 45px !important; font-size: 1rem !important;">EXPLORE COLLECTION</a>
-		</div>
-	</div>
-</div>
+                <div class="banner-category-text">Category</div>
+
+                <div class="hero-v2" style="background-image: url('assets/images/lifestyle-hero.jpg');">
+                    <div class="hero-v2-overlay"></div>
+                    <div class="hero-v2-content">
+                        <h1 style="color: var(--secondary);">GLOBAL FLAGSHIP MARKETPLACE</h1>
+                        <p>Where Premium Meets Perfection.</p>
+                        <div class="hero-buttons">
+                            <a href="#all" class="btn-hero btn-hero-primary">SHOP NOW</a>
+                            <a href="#" class="btn-hero btn-hero-outline">LEARN MORE</a>
+                        </div>
+                    </div>
+                </div>
 			
 <!-- ========================================= SECTION – HERO : END ========================================= -->	
 
@@ -126,50 +132,51 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 	<div class="info-boxes-inner">
 		<div class="row">
 			<div class="col-md-6 col-sm-4 col-lg-4">
-				<div class="info-box">
+				<div class="info-box" style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #f0f0f0;">
 					<div class="row">
-						<div class="col-xs-2">
-						     <i class="icon fa fa-dollar"></i>
+						<div class="col-xs-3">
+						     <i class="icon fa fa-dollar" style="font-size: 2rem; color: var(--primary);"></i>
 						</div>
-						<div class="col-xs-10">
-							<h4 class="info-box-heading green">money back</h4>
+						<div class="col-xs-9">
+							<h4 class="info-box-heading" style="margin: 0; font-size: 1.1rem; color: var(--secondary);">Money Back</h4>
+                            <p style="margin: 0; color: #777; font-size: 0.9rem;">30 Day Guarantee</p>
 						</div>
 					</div>	
-					<h6 class="text">30 Day Money Back Guarantee.</h6>
 				</div>
 			</div><!-- .col -->
 
 			<div class="hidden-md col-sm-4 col-lg-4">
-				<div class="info-box">
+				<div class="info-box" style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #f0f0f0;">
 					<div class="row">
-						<div class="col-xs-2">
-							<i class="icon fa fa-truck"></i>
+						<div class="col-xs-3">
+							<i class="icon fa fa-truck" style="font-size: 2rem; color: var(--primary);"></i>
 						</div>
-						<div class="col-xs-10">
-							<h4 class="info-box-heading orange">free shipping</h4>
+						<div class="col-xs-9">
+							<h4 class="info-box-heading" style="margin: 0; font-size: 1.1rem; color: var(--secondary);">Free Shipping</h4>
+                            <p style="margin: 0; color: #777; font-size: 0.9rem;">Orders over Rs. 600</p>
 						</div>
 					</div>
-					<h6 class="text">free ship-on oder over Rs. 600.00</h6>	
 				</div>
 			</div><!-- .col -->
 
 			<div class="col-md-6 col-sm-4 col-lg-4">
-				<div class="info-box">
+				<div class="info-box" style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #f0f0f0;">
 					<div class="row">
-						<div class="col-xs-2">
-							<i class="icon fa fa-gift"></i>
+						<div class="col-xs-3">
+							<i class="icon fa fa-gift" style="font-size: 2rem; color: var(--primary);"></i>
 						</div>
-						<div class="col-xs-10">
-							<h4 class="info-box-heading red">Special Sale</h4>
+						<div class="col-xs-9">
+							<h4 class="info-box-heading" style="margin: 0; font-size: 1.1rem; color: var(--secondary);">Special Sale</h4>
+                            <p style="margin: 0; color: #777; font-size: 0.9rem;">Up to 20% off</p>
 						</div>
 					</div>
-					<h6 class="text">All items-sale up to 20% off </h6>	
 				</div>
 			</div><!-- .col -->
 		</div><!-- /.row -->
 	</div><!-- /.info-boxes-inner -->
 	
 </div><!-- /.info-boxes -->
+
 <!-- ============================================== INFO BOXES : END ============================================== -->		
 			</div><!-- /.homebanner-holder -->
 			
@@ -204,43 +211,33 @@ if ($ret) {
     {
 ?>
 
-						    	
-		<div class="item">
-			<div class="products">
+						   		<div class="item">
+			<div class="product-card-v2">
+				<div class="product-image">
+					<a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>">
+					    <img src="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" alt="<?php echo htmlentities($row['productName']);?>">
+                    </a>
+				</div>
 				
-	<div class="product">		
-		<div class="product-image">
-			<div class="image">
-				<a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>">
-				<img  src="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>"  width="180" height="300" alt=""></a>
-			</div><!-- /.image -->			
-
-			                        		   
-		</div><!-- /.product-image -->
-			
-		
-		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($row['productName']);?></a></h3>
-			<div class="rating rateit-small"></div>
-			<div class="description"></div>
-
-			<div class="product-price">	
-				<span class="price">
-					Rs.<?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?>	</span>
-									
-			</div><!-- /.product-price -->
-			
-		</div><!-- /.product-info -->
-		<?php if($row['productAvailability']=='In Stock'){?>
-					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-info">Add to Cart</a></div>
-				<?php } else {?>
-						<div class="action" style="color:red">Out of Stock</div>
+				<div class="product-info">
+					<h3 class="title"><a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($row['productName']);?></a></h3>
+					<div class="rating rateit-small"></div>
+					<div class="price">
+						Rs. <?php echo htmlentities($row['productPrice']);?>
+                        <?php if($row['productPriceBeforeDiscount'] > $row['productPrice']): ?>
+						    <span style="text-decoration: line-through; color: #bbb; font-size: 0.9rem; margin-left: 10px;">Rs. <?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+                        <?php endif; ?>
+					</div>
+				</div>
+				<div class="action-btn" style="margin-top: 15px;">
+		            <?php if($row['productAvailability']=='In Stock'){?>
+					    <a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn btn-primary" style="width: 100%; border-radius: 5px;">ADD TO CART</a>
+				    <?php } else {?>
+						<div class="action" style="color:var(--accent); font-weight: 700;">OUT OF STOCK</div>
 					<?php } ?>
-			</div><!-- /.product -->
-      
-			</div><!-- /.products -->
-		</div><!-- /.item -->
+                </div>
+			</div>
+		</div>
 	<?php } ?>
 
 			</div><!-- /.home-owl-carousel -->

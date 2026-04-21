@@ -1,18 +1,25 @@
-<div class="side-menu animate-dropdown outer-bottom-xs">
-    <div class="head"><i class="icon fa fa-align-justify fa-fw"></i> Categories</div>        
+<div class="side-menu animate-dropdown outer-bottom-xs" style="background: white; border-radius: 0 0 10px 10px; border: 1px solid #f0f0f0; border-top: none;">
     <nav class="yamm megamenu-horizontal" role="navigation">
-  
         <ul class="nav">
-            <li class="dropdown menu-item">
-              <?php $sql=mysqli_query($con,"select id,categoryName  from category");
-while($row=mysqli_fetch_array($sql))
-{
-    ?>
-                <a href="category.php?cid=<?php echo $row['id'];?>" class="dropdown-toggle"><i class="icon fa fa-desktop fa-fw"></i>
-                <?php echo $row['categoryName'];?></a>
-                <?php }?>
-                        
-</li>
-</ul>
+            <?php 
+            $sql = mysqli_query($con, "select id,categoryName from category");
+            while($row = mysqli_fetch_array($sql)) {
+            ?>
+            <li class="menu-item" style="border-bottom: 1px solid #f8f8f8;">
+                <a href="category.php?cid=<?php echo $row['id'];?>" style="padding: 15px 20px; display: block; color: var(--secondary); font-weight: 500; transition: all 0.2s;">
+                    <i class="icon fa fa-angle-right" style="margin-right: 10px; color: var(--primary);"></i>
+                    <?php echo $row['categoryName'];?>
+                </a>
+            </li>
+            <?php } ?>
+        </ul>
     </nav>
 </div>
+
+<style>
+.side-menu .menu-item a:hover {
+    background: #f1f7ff;
+    padding-left: 25px !important;
+    color: var(--primary);
+}
+</style>
