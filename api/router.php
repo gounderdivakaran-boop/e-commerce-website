@@ -56,20 +56,26 @@ if ($isAdmin) {
 }
 
 // Robust Static File Resolver (Images, CSS, JS)
+$normalizedUri = str_replace('\\', '/', $uri);
 $searchPaths = [
-    __DIR__ . '/../' . $uri, // Root
-    __DIR__ . '/' . $uri,    // API folder
-    __DIR__ . '/admin/' . str_replace('admin/', '', $uri), // Admin internal
+    realpath(__DIR__ . '/../') . '/' . $normalizedUri,
+    realpath(__DIR__) . '/' . $normalizedUri,
+    realpath(__DIR__ . '/../admin/') . '/' . str_replace('admin/', '', $normalizedUri),
 ];
 
 foreach ($searchPaths as $tryPath) {
-    if (file_exists($tryPath) && !is_dir($tryPath) && strpos($uri, '.php') === false) {
+    if ($tryPath && file_exists($tryPath) && !is_dir($tryPath) && strpos($normalizedUri, '.php') === false) {
         $ext = strtolower(pathinfo($tryPath, PATHINFO_EXTENSION));
-        $mimes = ['png'=>'image/png', 'jpg'=>'image/jpeg', 'jpeg'=>'image/jpeg', 'gif'=>'image/gif', 'css'=>'text/css', 'js'=>'application/javascript'];
+        $mimes = [
+            'png'=>'image/png', 'jpg'=>'image/jpeg', 'jpeg'=>'image/jpeg', 
+            'gif'=>'image/gif', 'css'=>'text/css', 'js'=>'application/javascript',
+            'webp'=>'image/webp', 'svg'=>'image/svg+xml'
+        ];
         $mime = $mimes[$ext] ?? 'application/octet-stream';
         
         header('Content-Type: ' . $mime);
-        header('Cache-Control: public, max-age=86400'); // Cache for 24h
+        header('Cache-Control: public, max-age=86400');
+        header('Content-Length: ' . filesize($tryPath));
         readfile($tryPath);
         exit;
     }

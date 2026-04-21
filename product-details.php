@@ -189,7 +189,7 @@ while ($rws=mysqli_fetch_array($ret)) {
 									Rs. <?php echo htmlentities($rws['productPrice']);?>.00
 								</span>
 									
-							    <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>					
+							    <span class="price-before-discount">Rs.<?php echo htmlentities($rws['productPriceBeforeDiscount'] ?? '0');?></span>					
 							
 							</div><!-- /.product-price -->
 							
@@ -200,11 +200,11 @@ while ($rws=mysqli_fetch_array($ret)) {
 								
 								<div class="add-cart-button btn-group">
 									<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-								<?php if($row['productAvailability']=='In Stock'){?>
+								<?php if(($rws['productAvailability'] ?? '') =='In Stock'){?>
 										<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
 								<i class="fa fa-shopping-cart"></i>													
 							</button>
-							<a href="category.php?page=product&action=add&id=<?php echo $row['id']; ?>">
+							<a href="product-details.php?page=product&action=add&id=<?php echo $rws['id']; ?>">
 							<button class="btn btn-primary" type="button">Add to cart</button></a>
 								<?php } else {?>
 							<div class="action" style="color:red">Out of Stock</div>
@@ -257,13 +257,13 @@ if ($ret) {
 
             <div class="single-product-gallery-item" id="slide1">
                 <a data-lightbox="image-1" data-title="<?php echo htmlentities($row['productName']);?>" href="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>">
-                    <img class="img-responsive" alt="" src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" width="370" height="350" />
+                    <img class="img-responsive" alt="" src="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" width="370" height="350" />
                 </a>
             </div><!-- /.single-product-gallery-item -->
 
             <div class="single-product-gallery-item" id="slide2">
                 <a data-lightbox="image-1" data-title="Gallery" href="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage2']);?>">
-                    <img class="img-responsive" alt="" src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage2']);?>" />
+                    <img class="img-responsive" alt="" src="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage2']);?>" />
                 </a>
             </div><!-- /.single-product-gallery-item -->
 
