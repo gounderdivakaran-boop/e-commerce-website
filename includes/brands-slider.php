@@ -25,7 +25,19 @@
 					<div class="premium-brand">Dyson</div>
 				</div>
 				<div class="item">
-					<div class="premium-brand">Leica</div>
+					<div class="premium-brand">Tesla</div>
+				</div>
+				<div class="item">
+					<div class="premium-brand">Cartier</div>
+				</div>
+				<div class="item">
+					<div class="premium-brand">Microsoft</div>
+				</div>
+				<div class="item">
+					<div class="premium-brand">Mercedes</div>
+				</div>
+				<div class="item">
+					<div class="premium-brand">Prada</div>
 				</div>
 				<div class="item">
 					<div class="premium-brand">Bang & Olufsen</div>
