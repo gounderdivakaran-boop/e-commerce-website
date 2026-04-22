@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/router.php": {
+    "api/index.php": {
       "runtime": "vercel-php@0.7.4"
     }
   },
@@ -9,6 +9,6 @@
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
     { "src": "/admin/assets/(.*)", "dest": "/admin/assets/$1" },
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/api/router.php" }
+    { "src": "/(.*)", "dest": "/api/index.php" }
   ]
 }
